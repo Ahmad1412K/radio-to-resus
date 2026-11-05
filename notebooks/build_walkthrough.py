@@ -84,7 +84,8 @@ md(r"""
 | Prompt schema, scoring, inference harness | done |
 | E0 regex baseline | done |
 | v2 label audit + repair, re-freeze | done |
-| Ollama installed, output repair step, E2 zero-shot sweep (200 dev cases) | done |
+| Ollama installed, output repair step, E2 zero-shot sweep (12 models, 200 dev cases) | done |
+| E2 full dev (4 finalists, 1,482 cases) and error analysis | done |
 | E3–E9 model experiments | planned (mocked at the end) |
 """)
 
@@ -97,10 +98,10 @@ The repository is organised as Python packages. Each folder is one stage of the 
 |---|---|---|
 | `schema/` | `handover.py`: the record definition (Pydantic). `vocab.py`: allowed values. `criteria.yaml`: the 37 criteria | 1, 2 |
 | `generator/` | `generate.py`: the synthetic case generator. `rules_full.py`: the reference labeller for true records. `llm_paraphrase.py`: the Claude rewrite tooling | 4, 5 |
-| `scripts/` | one-off tools: `transcribe.py` (Whisper), `make_train_split.py`, `freeze_test.py`, `audit_v2_labels.py`, `repair_v2_labels.py`, `sweep.py` | 3, 6, 11, 12 |
+| `scripts/` | one-off tools: `transcribe.py` (Whisper), `make_train_split.py`, `freeze_test.py`, `audit_v2_labels.py`, `repair_v2_labels.py`, `sweep.py`, `error_analysis.py` | 3, 6, 11, 12, E2 |
 | `triage/` | `engine.py`: the three-valued rule engine | 7 |
 | `extract/` | `prompt_schema.py` (prompt + output schema), `run.py` (inference harness), `score.py` (metrics), `regex_baseline.py` (E0) | 8–12 |
-| `examples/` | the datasets (CSV), real audio and transcripts, the frozen-test manifest | all |
+| `examples/` | the datasets (CSV), the frozen-test manifest; the real audio and transcripts are local only (not in git) | all |
 | `runs/` | model outputs and score reports | 10, Part 2 |
 
 **How the imports work.** The notebook lives in `notebooks/`, so Python can't see
@@ -1064,11 +1065,14 @@ print("roles in one request:", [m["role"] for m in messages("…handover text…
 # =====================================================================
 md(r"""
 ---
-# Part 2: Future work (MOCK-UPS)
+# Part 2: Experiments (E2 real results; E3–E9 MOCK-UPS)
 
-> ⚠️ **Everything below uses invented placeholder numbers.** These cells show
-> *what* each planned experiment measures and *how* the result will be shown.
-> They are **not results**.
+> **E2 below shows real results**: the zero-shot screen of 12 models, full dev for the
+> 4 finalists, and the error analysis.
+>
+> ⚠️ **E3 to E9 use invented placeholder numbers.** Those cells show *what* each planned
+> experiment measures and *how* the result will be shown. They are **not results**, and
+> each one prints "MOCK DATA" until its real results file exists.
 
 **How the mock cells work.** `load_or_mock(path, mock_fn)` first looks for the
 experiment's real results file in `runs/`. If the file exists, it loads it and

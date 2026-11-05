@@ -1,6 +1,17 @@
+# core pipeline and tests
 pydantic>=2.7
 pytest
 pyyaml
 pyld
-anthropic
 jsonschema
+# Claude rewrites of the synthetic data (generator/llm_paraphrase.py); needs ANTHROPIC_API_KEY
+anthropic
+# notebook (build and execute notebooks/build_walkthrough.py)
+pandas
+matplotlib
+nbformat
+nbclient
+ipykernel
+# speech-to-text (scripts/transcribe.py), only needed to re-transcribe recordings
+faster-whisper
+av
