@@ -1,0 +1,8 @@
+model,think,n,valid_rate,usable_rate,field_f1,hallucination_rate,exact_match,correction_accuracy,triage_accuracy,under_triage_rate,silent_under_triage_rate,over_triage_rate,latency_mean_s,note
+qwen3:0.6b,off,200,0.005,0.995,0.5281,0.336,0.0,0.0,0.405,0.08,0.0,0.39,5.0,
+qwen3:1.7b,off,200,0.16,1.0,0.6394,0.1557,0.0,0.0,0.54,0.02,0.0,0.44,7.4,
+llama3.2:1b,,50,0.08,0.94,0.4062,0.2331,0.0,0.0,0.3,0.14,0.0,0.56,21.52,"stopped after smoke: usable 0.94, max latency 600s"
+gemma3:1b,,200,0.0,0.98,0.4403,0.3956,0.0,0.0,0.33,0.015,0.0,0.615,10.03,
+qwen2.5:1.5b,,50,0.14,0.98,0.5354,0.1605,0.0,0.0,0.36,0.1,0.0,0.54,18.15,"stopped after smoke: usable 0.98, max latency 600s"
+smollm2:1.7b,,50,0.0,0.84,0.4191,0.3408,0.0,0.0,0.32,0.12,0.0,0.46,128.05,"stopped after smoke: usable 0.84, max latency 602s"
+granite3.3:2b,,200,0.09,1.0,0.5673,0.3063,0.0,0.0,0.385,0.04,0.0,0.555,10.31,

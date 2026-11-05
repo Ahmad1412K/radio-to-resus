@@ -1,0 +1,286 @@
+case_id,field,retracted,corrected,model_value,crosses_threshold,kind
+H00011,signs.vitals.systolic_bp_mmhg,135,115,,False,no usable output
+H00016,identification.age_years,7,17,17,False,"value right, log in words"
+H00042,signs.vitals.spo2_percent,86,95,95,True,"value right, log in words"
+H00044,signs.vitals.heart_rate_bpm,57,77,77,False,fully right
+H00055,signs.vitals.resp_rate_per_min,35,18,35,True,kept the retracted value
+H00057,signs.vitals.heart_rate_bpm,104,84,84,False,"value right, log entry wrong"
+H00068,signs.vitals.resp_rate_per_min,40,20,20,True,"value right, log in words"
+H00078,signs.vitals.spo2_percent,83,97,,True,value left null
+H00079,signs.vitals.resp_rate_per_min,31,16,16,True,"value right, log in words"
+H00083,signs.vitals.systolic_bp_mmhg,101,121,121,False,"value right, log in words"
+H00084,signs.vitals.heart_rate_bpm,55,75,55,False,kept the retracted value
+H00089,signs.vitals.heart_rate_bpm,128,89,128,True,kept the retracted value
+H00127,identification.age_years,58,48,48,False,"value right, log in words"
+H00135,signs.vitals.heart_rate_bpm,59,79,59,False,kept the retracted value
+H00140,signs.vitals.resp_rate_per_min,26,16,26,False,kept the retracted value
+H00154,signs.vitals.resp_rate_per_min,37,12,12,True,"value right, log entry wrong"
+H00181,signs.vitals.resp_rate_per_min,4,14,14,False,"value right, log in words"
+H00216,signs.vitals.spo2_percent,82,90,90,True,"value right, log in words"
+H00224,signs.vitals.resp_rate_per_min,34,14,34,True,kept the retracted value
+H00239,signs.vitals.resp_rate_per_min,32,12,12,True,"value right, log in words"
+H00242,signs.vitals.heart_rate_bpm,127,111,127,True,kept the retracted value
+H00251,signs.vitals.resp_rate_per_min,35,17,,True,value left null
+H00258,signs.vitals.spo2_percent,82,98,98,True,"value right, log in words"
+H00266,signs.vitals.heart_rate_bpm,122,76,,True,value left null
+H00271,signs.vitals.spo2_percent,77,97,97,True,fully right
+H00273,identification.age_years,73,63,63,False,"value right, log in words"
+H00296,signs.vitals.resp_rate_per_min,39,19,39,True,kept the retracted value
+H00310,signs.vitals.systolic_bp_mmhg,85,114,,True,value left null
+H00321,signs.vitals.resp_rate_per_min,33,13,,True,value left null
+H00326,identification.age_years,23,33,,False,value left null
+H00333,signs.vitals.systolic_bp_mmhg,165,145,145,False,"value right, log in words"
+H00334,signs.vitals.resp_rate_per_min,27,17,,False,value left null
+H00344,signs.vitals.systolic_bp_mmhg,137,127,127,False,"value right, log in words"
+H00359,signs.vitals.heart_rate_bpm,126,65,126,True,kept the retracted value
+H00371,signs.vitals.spo2_percent,110,100,100,False,"value right, log in words"
+H00372,signs.vitals.systolic_bp_mmhg,107,127,127,False,"value right, log in words"
+H00376,signs.vitals.heart_rate_bpm,74,84,74,False,kept the retracted value
+H00389,identification.age_years,54,64,,False,value left null
+H00427,signs.vitals.resp_rate_per_min,10,20,10,False,kept the retracted value
+H00436,signs.vitals.spo2_percent,117,97,17,False,other wrong value
+H00437,signs.vitals.resp_rate_per_min,1,16,,False,no usable output
+H00438,signs.vitals.spo2_percent,88,96,96,True,"value right, log in words"
+H00441,signs.vitals.systolic_bp_mmhg,88,114,,True,value left null
+H00443,signs.vitals.spo2_percent,89,99,99,True,"value right, log in words"
+H00460,signs.vitals.spo2_percent,85,99,99,True,"value right, log in words"
+H00480,signs.vitals.spo2_percent,85,97,97,True,"value right, log in words"
+H00484,signs.vitals.heart_rate_bpm,92,72,92,False,kept the retracted value
+H00491,identification.age_years,35,25,25,False,"value right, log in words"
+H00492,signs.vitals.heart_rate_bpm,122,64,122,True,kept the retracted value
+H00496,signs.vitals.resp_rate_per_min,24,14,24,False,kept the retracted value
+H00503,signs.vitals.heart_rate_bpm,69,89,69,False,kept the retracted value
+H00518,signs.vitals.systolic_bp_mmhg,111,121,,False,value left null
+H00519,signs.vitals.heart_rate_bpm,122,63,122,True,kept the retracted value
+H00522,signs.vitals.spo2_percent,118,98,98,False,"value right, log in words"
+H00528,signs.vitals.resp_rate_per_min,1,19,19,False,"value right, log in words"
+H00537,signs.vitals.heart_rate_bpm,128,88,,True,no usable output
+H00538,signs.vitals.resp_rate_per_min,1,17,,False,value left null
+H00541,signs.vitals.resp_rate_per_min,45,25,45,True,kept the retracted value
+H00557,signs.vitals.spo2_percent,76,96,96,True,fully right
+H00561,signs.vitals.resp_rate_per_min,36,13,13,True,"value right, log in words"
+H00567,signs.vitals.systolic_bp_mmhg,168,148,148,False,fully right
+H00576,identification.age_years,50,60,,False,value left null
+H00578,signs.vitals.heart_rate_bpm,55,65,65,False,"value right, log in words"
+H00595,signs.vitals.spo2_percent,82,99,99,True,fully right
+H00616,signs.vitals.heart_rate_bpm,83,73,83,False,kept the retracted value
+H00623,signs.vitals.resp_rate_per_min,6,16,16,False,"value right, log in words"
+H00625,signs.vitals.spo2_percent,84,97,84,True,kept the retracted value
+H00628,signs.vitals.resp_rate_per_min,35,19,19,True,"value right, log in words"
+H00654,signs.vitals.resp_rate_per_min,1,14,14,False,"value right, log in words"
+H00679,signs.vitals.resp_rate_per_min,7,17,17,False,"value right, log entry wrong"
+H00681,signs.vitals.spo2_percent,87,97,97,True,"value right, log in words"
+H00688,signs.vitals.heart_rate_bpm,112,92,92,False,"value right, log in words"
+H00695,signs.vitals.spo2_percent,85,97,,True,value left null
+H00700,signs.vitals.heart_rate_bpm,83,93,83,False,kept the retracted value
+H00705,signs.vitals.spo2_percent,83,97,83,True,kept the retracted value
+H00719,signs.vitals.spo2_percent,82,95,95,True,"value right, log in words"
+H00738,signs.vitals.resp_rate_per_min,33,19,33,True,kept the retracted value
+H00739,identification.age_years,52,42,,False,value left null
+H00740,signs.vitals.resp_rate_per_min,33,12,33,True,kept the retracted value
+H00752,signs.vitals.spo2_percent,79,99,,True,value left null
+H00753,signs.vitals.heart_rate_bpm,67,87,67,False,kept the retracted value
+H00771,signs.vitals.heart_rate_bpm,126,87,126,True,kept the retracted value
+H00784,signs.vitals.resp_rate_per_min,7,17,,False,value left null
+H00785,signs.vitals.systolic_bp_mmhg,83,143,143,True,"value right, log in words"
+H00802,signs.vitals.systolic_bp_mmhg,135,115,,False,value left null
+H00803,signs.vitals.resp_rate_per_min,6,16,6,False,kept the retracted value
+H00816,signs.vitals.systolic_bp_mmhg,144,124,,False,value left null
+H00834,signs.vitals.systolic_bp_mmhg,88,117,,True,value left null
+H00839,identification.age_years,73,63,,False,value left null
+H00844,signs.vitals.systolic_bp_mmhg,83,131,131,True,"value right, log in words"
+H00849,signs.vitals.heart_rate_bpm,67,87,87,False,"value right, log in words"
+H00873,signs.vitals.heart_rate_bpm,100,90,100,False,kept the retracted value
+H00874,signs.vitals.resp_rate_per_min,35,13,35,True,kept the retracted value
+H00901,signs.vitals.systolic_bp_mmhg,84,144,144,True,"value right, log in words"
+H00912,signs.vitals.spo2_percent,85,95,85,True,kept the retracted value
+H00926,signs.vitals.spo2_percent,108,98,98,False,"value right, log in words"
+H00932,signs.vitals.resp_rate_per_min,28,18,28,False,kept the retracted value
+H00933,signs.vitals.resp_rate_per_min,39,19,39,True,kept the retracted value
+H00970,signs.vitals.heart_rate_bpm,125,68,125,True,kept the retracted value
+H00980,identification.age_years,52,62,62,False,"value right, log in words"
+H00988,identification.age_years,43,33,33,False,"value right, log in words"
+H01009,identification.age_years,37,27,27,False,fully right
+H01026,identification.age_years,73,83,,False,value left null
+H01031,signs.vitals.systolic_bp_mmhg,83,145,145,True,"value right, log in words"
+H01043,signs.vitals.heart_rate_bpm,57,77,57,False,kept the retracted value
+H01048,identification.age_years,44,34,34,False,"value right, log in words"
+H01050,signs.vitals.spo2_percent,84,100,84,True,kept the retracted value
+H01053,identification.age_years,42,32,,False,value left null
+H01066,signs.vitals.resp_rate_per_min,31,16,31,True,kept the retracted value
+H01081,signs.vitals.heart_rate_bpm,84,74,84,False,kept the retracted value
+H01088,signs.vitals.heart_rate_bpm,127,78,127,True,kept the retracted value
+H01106,signs.vitals.resp_rate_per_min,34,14,,True,value left null
+H01107,signs.vitals.heart_rate_bpm,122,67,122,True,kept the retracted value
+H01114,signs.vitals.resp_rate_per_min,37,14,37,True,kept the retracted value
+H01122,signs.vitals.spo2_percent,110,100,100,False,"value right, log in words"
+H01125,signs.vitals.resp_rate_per_min,36,18,18,True,fully right
+H01135,identification.age_years,50,60,,False,value left null
+H01138,signs.vitals.systolic_bp_mmhg,84,124,124,True,"value right, log in words"
+H01142,signs.vitals.resp_rate_per_min,38,18,18,True,"value right, log in words"
+H01145,signs.vitals.spo2_percent,75,95,,True,value left null
+H01146,signs.vitals.resp_rate_per_min,6,16,6,False,kept the retracted value
+H01193,signs.vitals.heart_rate_bpm,52,62,52,False,kept the retracted value
+H01203,signs.vitals.heart_rate_bpm,49,69,49,False,kept the retracted value
+H01204,signs.vitals.systolic_bp_mmhg,86,140,140,True,"value right, log in words"
+H01215,signs.vitals.systolic_bp_mmhg,86,129,86,True,kept the retracted value
+H01217,signs.vitals.spo2_percent,83,98,98,True,"value right, log in words"
+H01232,signs.vitals.spo2_percent,86,98,98,True,"value right, log in words"
+H01233,signs.vitals.spo2_percent,87,97,97,True,fully right
+H01236,signs.vitals.heart_rate_bpm,73,63,,False,value left null
+H01237,identification.age_years,18,28,,False,value left null
+H01265,signs.vitals.spo2_percent,83,96,96,True,"value right, log in words"
+H01281,signs.vitals.heart_rate_bpm,68,78,68,False,kept the retracted value
+H01297,identification.age_years,55,45,,False,value left null
+H01299,signs.vitals.heart_rate_bpm,124,65,65,True,"value right, log in words"
+H01315,signs.vitals.resp_rate_per_min,37,20,37,True,kept the retracted value
+H01338,identification.age_years,29,39,39,False,"value right, log in words"
+H01357,signs.vitals.systolic_bp_mmhg,132,112,132,False,kept the retracted value
+H01359,identification.age_years,16,26,26,False,"value right, log in words"
+H01364,signs.vitals.heart_rate_bpm,92,72,92,False,kept the retracted value
+H01365,signs.vitals.resp_rate_per_min,39,19,19,True,"value right, log in words"
+H01372,signs.vitals.heart_rate_bpm,124,73,24,True,other wrong value
+H01414,identification.age_years,25,15,15,False,"value right, log in words"
+H01433,signs.vitals.resp_rate_per_min,31,18,31,True,kept the retracted value
+H01448,signs.vitals.heart_rate_bpm,68,78,,False,value left null
+H01459,signs.vitals.heart_rate_bpm,124,97,124,True,kept the retracted value
+H01469,signs.vitals.heart_rate_bpm,128,62,,True,no usable output
+H01501,signs.vitals.heart_rate_bpm,125,86,125,True,kept the retracted value
+H01527,identification.age_years,45,35,,False,value left null
+H01539,identification.age_years,45,35,35,False,"value right, log in words"
+H01556,signs.vitals.spo2_percent,86,98,98,True,fully right
+H01560,signs.vitals.spo2_percent,79,99,99,True,"value right, log in words"
+H01561,identification.age_years,61,51,,False,value left null
+H01571,identification.age_years,54,44,44,False,"value right, log in words"
+H01584,signs.vitals.resp_rate_per_min,32,13,13,True,"value right, log in words"
+H01586,identification.age_years,42,32,,False,value left null
+H01587,signs.vitals.resp_rate_per_min,27,17,27,False,kept the retracted value
+H01592,signs.vitals.spo2_percent,106,96,96,False,"value right, log in words"
+H01604,signs.vitals.systolic_bp_mmhg,87,142,142,True,fully right
+H01606,signs.vitals.systolic_bp_mmhg,141,131,131,False,"value right, log in words"
+H01607,signs.vitals.heart_rate_bpm,107,97,97,False,"value right, log in words"
+H01648,signs.vitals.heart_rate_bpm,96,86,96,False,kept the retracted value
+H01652,signs.vitals.heart_rate_bpm,128,64,128,True,kept the retracted value
+H01654,signs.vitals.systolic_bp_mmhg,108,118,118,False,"value right, log in words"
+H01675,signs.vitals.spo2_percent,115,95,95,False,"value right, log in words"
+H01676,signs.vitals.resp_rate_per_min,35,17,35,True,kept the retracted value
+H01689,signs.vitals.heart_rate_bpm,102,82,102,False,kept the retracted value
+H01692,identification.age_years,38,48,,False,value left null
+H01695,signs.vitals.spo2_percent,85,95,,True,value left null
+H01696,signs.vitals.spo2_percent,75,95,95,True,"value right, log in words"
+H01699,signs.vitals.spo2_percent,85,97,85,True,kept the retracted value
+H01718,signs.vitals.spo2_percent,87,97,97,True,"value right, log in words"
+H01730,signs.vitals.resp_rate_per_min,35,19,35,True,kept the retracted value
+H01755,identification.age_years,57,47,,False,value left null
+H01767,signs.vitals.systolic_bp_mmhg,82,129,129,True,"value right, log in words"
+H01800,signs.vitals.resp_rate_per_min,31,13,13,True,"value right, log in words"
+H01837,identification.age_years,41,31,,False,value left null
+H01847,identification.age_years,51,41,,False,value left null
+H01857,signs.vitals.systolic_bp_mmhg,109,99,,False,value left null
+H01860,signs.vitals.heart_rate_bpm,45,65,65,False,"value right, log in words"
+H01879,signs.vitals.heart_rate_bpm,127,79,127,True,kept the retracted value
+H01880,identification.age_years,37,47,47,False,fully right
+H01889,signs.vitals.resp_rate_per_min,32,20,20,True,"value right, log in words"
+H01899,signs.vitals.systolic_bp_mmhg,141,121,121,False,"value right, log in words"
+H01907,signs.vitals.systolic_bp_mmhg,88,138,138,True,fully right
+H01910,signs.vitals.heart_rate_bpm,73,93,73,False,kept the retracted value
+H01916,identification.age_years,21,31,,False,value left null
+H01943,signs.vitals.heart_rate_bpm,125,80,,True,value left null
+H01951,signs.vitals.resp_rate_per_min,32,12,12,True,"value right, log in words"
+H01952,signs.vitals.resp_rate_per_min,34,14,,True,no usable output
+H01985,signs.vitals.spo2_percent,85,98,98,True,"value right, log in words"
+H01988,signs.vitals.resp_rate_per_min,36,17,17,True,"value right, log in words"
+H01989,signs.vitals.systolic_bp_mmhg,86,131,131,True,fully right
+H01994,signs.vitals.resp_rate_per_min,33,20,20,True,"value right, log in words"
+H02025,signs.vitals.spo2_percent,85,98,85,True,kept the retracted value
+H02026,signs.vitals.systolic_bp_mmhg,149,139,,False,value left null
+H02034,signs.vitals.systolic_bp_mmhg,92,112,112,False,"value right, log in words"
+H02047,signs.vitals.spo2_percent,118,98,98,False,"value right, log in words"
+H02070,signs.vitals.spo2_percent,87,95,95,True,"value right, log in words"
+H02072,signs.vitals.resp_rate_per_min,37,19,37,True,kept the retracted value
+H02081,signs.vitals.systolic_bp_mmhg,88,128,128,True,"value right, log in words"
+H02087,signs.vitals.spo2_percent,88,98,,True,value left null
+H02104,signs.vitals.spo2_percent,90,100,100,False,"value right, log in words"
+H02106,signs.vitals.heart_rate_bpm,127,97,,True,value left null
+H02110,signs.vitals.systolic_bp_mmhg,86,113,113,True,fully right
+H02116,signs.vitals.systolic_bp_mmhg,86,145,145,True,fully right
+H02120,signs.vitals.heart_rate_bpm,98,88,98,False,kept the retracted value
+H02130,signs.vitals.heart_rate_bpm,126,66,,True,value left null
+H02142,signs.vitals.resp_rate_per_min,31,14,14,True,"value right, log in words"
+H02167,signs.vitals.heart_rate_bpm,127,95,95,True,"value right, log in words"
+H02174,signs.vitals.systolic_bp_mmhg,145,125,,False,value left null
+H02176,identification.age_years,51,41,,False,value left null
+H02178,signs.vitals.resp_rate_per_min,1,18,,False,value left null
+H02180,signs.vitals.heart_rate_bpm,57,67,57,False,kept the retracted value
+H02181,identification.age_years,62,52,52,False,"value right, log in words"
+H02228,signs.vitals.heart_rate_bpm,80,90,80,False,kept the retracted value
+H02254,signs.vitals.systolic_bp_mmhg,83,136,136,True,fully right
+H02284,signs.vitals.resp_rate_per_min,36,17,17,True,"value right, log in words"
+H02299,signs.vitals.resp_rate_per_min,34,14,14,True,"value right, log in words"
+H02300,signs.vitals.systolic_bp_mmhg,131,121,121,False,"value right, log in words"
+H02309,signs.vitals.resp_rate_per_min,3,13,3,False,kept the retracted value
+H02319,signs.vitals.systolic_bp_mmhg,86,119,,True,value left null
+H02340,signs.vitals.spo2_percent,116,96,,False,value left null
+H02348,signs.vitals.resp_rate_per_min,35,12,35,True,kept the retracted value
+H02356,signs.vitals.spo2_percent,86,95,95,True,"value right, log in words"
+H02358,signs.vitals.systolic_bp_mmhg,88,130,131,True,other wrong value
+H02385,signs.vitals.heart_rate_bpm,56,76,56,False,kept the retracted value
+H02387,signs.vitals.heart_rate_bpm,85,75,75,False,fully right
+H02405,signs.vitals.systolic_bp_mmhg,85,136,136,True,"value right, log in words"
+H02414,signs.vitals.heart_rate_bpm,127,69,,True,value left null
+H02425,identification.age_years,19,29,,False,value left null
+H02437,signs.vitals.resp_rate_per_min,40,20,,True,value left null
+H02447,identification.age_years,18,28,,False,value left null
+H02451,signs.vitals.systolic_bp_mmhg,100,120,,False,value left null
+H02465,signs.vitals.heart_rate_bpm,47,67,,False,value left null
+H02474,signs.vitals.systolic_bp_mmhg,147,127,127,False,"value right, log in words"
+H02481,signs.vitals.spo2_percent,87,97,97,True,fully right
+H02490,signs.vitals.systolic_bp_mmhg,84,129,,True,value left null
+H02491,signs.vitals.heart_rate_bpm,106,96,,False,value left null
+H02499,signs.vitals.heart_rate_bpm,68,78,78,False,"value right, log in words"
+H02500,identification.age_years,26,36,36,False,"value right, log in words"
+H02531,identification.age_years,18,28,28,False,"value right, log in words"
+H02537,signs.vitals.systolic_bp_mmhg,83,93,93,True,fully right
+H02541,signs.vitals.systolic_bp_mmhg,88,147,,True,value left null
+H02548,signs.vitals.resp_rate_per_min,31,19,31,True,kept the retracted value
+H02595,signs.vitals.resp_rate_per_min,35,15,15,True,"value right, log in words"
+H02612,signs.vitals.systolic_bp_mmhg,86,125,125,True,fully right
+H02639,signs.vitals.resp_rate_per_min,31,9,,True,value left null
+H02641,signs.vitals.heart_rate_bpm,120,110,,True,no usable output
+H02654,signs.vitals.systolic_bp_mmhg,82,113,131,True,other wrong value
+H02657,signs.vitals.systolic_bp_mmhg,83,118,,True,value left null
+H02661,signs.vitals.spo2_percent,86,95,95,True,"value right, log entry wrong"
+H02664,signs.vitals.heart_rate_bpm,62,82,62,False,kept the retracted value
+H02669,signs.vitals.resp_rate_per_min,8,18,8,False,kept the retracted value
+H02674,signs.vitals.spo2_percent,86,98,98,True,"value right, log in words"
+H02696,signs.vitals.heart_rate_bpm,52,72,72,False,"value right, log in words"
+H02705,identification.age_years,28,38,38,False,"value right, log in words"
+H02730,identification.age_years,42,32,,False,value left null
+H02749,signs.vitals.resp_rate_per_min,27,17,17,False,"value right, log in words"
+H02751,signs.vitals.spo2_percent,87,98,98,True,"value right, log in words"
+H02755,signs.vitals.resp_rate_per_min,34,14,34,True,kept the retracted value
+H02770,signs.vitals.resp_rate_per_min,10,20,,False,value left null
+H02778,signs.vitals.systolic_bp_mmhg,88,118,118,True,fully right
+H02782,signs.vitals.spo2_percent,83,98,98,True,fully right
+H02784,signs.vitals.resp_rate_per_min,4,14,14,False,"value right, log in words"
+H02789,signs.vitals.systolic_bp_mmhg,82,142,142,True,"value right, log in words"
+H02790,signs.vitals.resp_rate_per_min,25,31,25,True,kept the retracted value
+H02794,signs.vitals.systolic_bp_mmhg,110,130,131,False,other wrong value
+H02805,signs.vitals.resp_rate_per_min,3,13,,False,value left null
+H02821,signs.vitals.resp_rate_per_min,33,16,33,True,kept the retracted value
+H02826,identification.age_years,32,22,,False,value left null
+H02827,signs.vitals.resp_rate_per_min,9,19,19,False,"value right, log in words"
+H02828,signs.vitals.spo2_percent,116,96,96,False,"value right, log in words"
+H02842,signs.vitals.spo2_percent,89,99,99,True,"value right, log in words"
+H02856,identification.age_years,18,28,,False,value left null
+H02861,signs.vitals.heart_rate_bpm,125,91,91,True,"value right, log in words"
+H02868,signs.vitals.heart_rate_bpm,102,82,82,False,"value right, log in words"
+H02869,signs.vitals.heart_rate_bpm,128,82,128,True,kept the retracted value
+H02875,signs.vitals.systolic_bp_mmhg,128,148,,False,value left null
+H02886,identification.age_years,23,13,13,False,"value right, log in words"
+H02904,signs.vitals.resp_rate_per_min,36,18,,True,no usable output
+H02905,identification.age_years,11,21,,False,value left null
+H02974,signs.vitals.systolic_bp_mmhg,153,133,133,False,fully right
+H02978,signs.vitals.resp_rate_per_min,20,30,20,True,kept the retracted value
+H02984,signs.vitals.systolic_bp_mmhg,97,87,,True,no usable output
+H02985,signs.vitals.resp_rate_per_min,1,16,16,False,"value right, log in words"

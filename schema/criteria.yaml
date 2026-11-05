@@ -1,0 +1,170 @@
+# Adult Trauma Activation Criteria - 2024 (adults 15-64 years), mapped to schema fields.
+# `text` is copied verbatim from the source document.
+# `fields` lists every schema path the criterion needs; `"injuries[].x"` means a field
+# on any element of the injuries list. A test checks that every path exists.
+
+scope:
+  age_min: 15
+  age_max: 64
+  field: identification.age_years
+
+criteria:
+  # ------------------------------------------------------------------ LEVEL I
+  - id: L1-01
+    level: 1
+    text: "GCS: < 9 prior to intubation with a mechanism due to trauma"
+    fields: [signs.gcs.total, signs.gcs.before_intubation, mechanism.type]
+  - id: L1-02
+    level: 1
+    text: "SBP: < 90 and clinical signs of shock"
+    fields: [signs.vitals.systolic_bp_mmhg, signs.clinical_signs_of_shock, signs.shock_signs]
+  - id: L1-03
+    level: 1
+    text: "Heart Rate: >120 and S/S of shock"
+    fields: [signs.vitals.heart_rate_bpm, signs.clinical_signs_of_shock, signs.shock_signs]
+  - id: L1-04
+    level: 1
+    text: "Resp Rate: <10 or >29"
+    fields: [signs.vitals.resp_rate_per_min]
+  - id: L1-05
+    level: 1
+    text: "SpO2: Room air < 90%"
+    fields: [signs.vitals.spo2_percent, signs.vitals.spo2_on_room_air]
+  - id: L1-06
+    level: 1
+    text: "Airway Compromise / Advanced airway insertion / Flail chest / Hemo/pneumothorax"
+    fields: [signs.airway, treatment.interventions, signs.flail_chest, signs.pneumothorax_or_hemothorax]
+  - id: L1-07
+    level: 1
+    text: "Active or uncontrolled hemorrhage (tourniquet in use)"
+    fields: [signs.hemorrhage, treatment.interventions]
+  - id: L1-08
+    level: 1
+    text: "Penetrating Injury - head, neck, t-shirt, boxer area"
+    fields: ["injuries[].type", "injuries[].region"]
+  - id: L1-09
+    level: 1
+    text: "Pulseless Extremity with a history of trauma"
+    fields: ["injuries[].type", "injuries[].region", mechanism.type]
+  - id: L1-10
+    level: 1
+    text: "Amputation proximal to wrist or ankle"
+    fields: ["injuries[].type", "injuries[].region"]
+  - id: L1-11
+    level: 1
+    text: "Paralysis/ Bilateral Sensory loss/suspected spinal cord injury"
+    fields: [signs.paralysis, signs.bilateral_sensory_loss, signs.suspected_spinal_cord_injury]
+  - id: L1-12
+    level: 1
+    text: "Burns Adults: Isolated burn injury greater than 20% BSA or inhalation injury (burn protocol addresses electrocution)"
+    fields: [burns.tbsa_percent, burns.inhalation_injury, burns.electrical, "injuries[].type"]
+  - id: L1-13
+    level: 1
+    text: "Unstable Pelvic Fracture"
+    fields: ["injuries[].type", "injuries[].bone", "injuries[].pelvis_unstable"]
+  - id: L1-14
+    level: 1
+    text: "Open or depressed Skull Fracture"
+    fields: ["injuries[].type", "injuries[].bone", "injuries[].open_fracture", "injuries[].depressed"]
+  - id: L1-15
+    level: 1
+    text: "2 or more Long Bone fractures: Humerus or Femur"
+    fields: ["injuries[].type", "injuries[].bone"]
+  - id: L1-16
+    level: 1
+    text: "Transfers requiring blood transfusion to maintain vital signs"
+    fields: [identification.arrival_mode, treatment.blood_transfusion_required_to_maintain_vitals]
+
+  # ------------------------------------------------------------------ LEVEL II
+  - id: L2-01
+    level: 2
+    text: "GCS: 9-13 with mechanism due to trauma"
+    fields: [signs.gcs.total, mechanism.type]
+  - id: L2-02
+    level: 2
+    text: "Falls: > 20ft (2 stories)"
+    fields: [mechanism.type, mechanism.fall.fall_type, mechanism.fall.height_ft]
+  - id: L2-03
+    level: 2
+    text: "High Risk Auto Crash: EMS arrival only / Extrication time > 20 minutes / Intrusion > 12in in occupant compartment, > 18in in another site / Ejection (partial or complete) / Death in same compartment"
+    fields: [mechanism.type, identification.arrival_mode, mechanism.vehicle.extrication_minutes,
+             mechanism.vehicle.intrusion_occupant_site_in, mechanism.vehicle.intrusion_any_site_in,
+             mechanism.vehicle.ejection, mechanism.vehicle.death_same_compartment]
+  - id: L2-04
+    level: 2
+    text: "High Risk Pedestrian, Cycle, ATV Crash: Auto vs pedestrian/bicyclist thrown, ran over OR impact > 20mph / Motorcycle or ATV >= 20 mph OR separation of rider / Any ATV crash with rollover"
+    fields: [mechanism.type, mechanism.vehicle.patient_thrown, mechanism.vehicle.run_over,
+             mechanism.vehicle.impact_speed_mph, mechanism.vehicle.rider_separated, mechanism.vehicle.rollover]
+  - id: L2-05
+    level: 2
+    text: "Assault or Blunt trauma with prolonged LOC (>5 mins) and GCS < 13"
+    fields: [mechanism.type, mechanism.loss_of_consciousness.occurred,
+             mechanism.loss_of_consciousness.duration_minutes, signs.gcs.total]
+  - id: L2-06
+    level: 2
+    text: "One Proximal Long Bone Fracture"
+    fields: ["injuries[].type", "injuries[].bone"]
+  - id: L2-07
+    level: 2
+    text: "Open Fractures proximal to wrist or ankle"
+    fields: ["injuries[].type", "injuries[].open_fracture", "injuries[].region"]
+  - id: L2-08
+    level: 2
+    text: "Penetrating Injury distal to t-shirt/boxer area, and proximal to wrist or ankle"
+    fields: ["injuries[].type", "injuries[].region"]
+  - id: L2-09
+    level: 2
+    text: "Pregnancy in traumatic event with acute abdominal pain"
+    fields: [identification.pregnant, signs.abdominal_pain, mechanism.type]
+  - id: L2-10
+    level: 2
+    text: "Degloving/Crush/Mangled extremity (not digits)"
+    fields: ["injuries[].type", "injuries[].region"]
+  - id: L2-11
+    level: 2
+    text: "Burns: 10-20% BSA with associated injuries"
+    fields: [burns.tbsa_percent, "injuries[].type"]
+  - id: L2-12
+    level: 2
+    text: "Seatbelt Sign: Chest or abdomen"
+    fields: ["injuries[].type", "injuries[].region"]
+  - id: L2-13
+    level: 2
+    text: "Blunt abdominal injury with firm or distended abdomen OR abdominal pain"
+    fields: [mechanism.type, signs.abdomen_firm_or_distended, signs.abdominal_pain]
+
+  # ------------------------------------------------------------------ LEVEL III
+  - id: L3-01
+    level: 3
+    text: "Falls: >= 55 yo same level falls, Adult falls 5-20ft"
+    fields: [identification.age_years, mechanism.fall.fall_type, mechanism.fall.height_ft]
+  - id: L3-02
+    level: 3
+    text: "Assault or Blunt trauma without prolonged LOC (<5 mins)"
+    fields: [mechanism.type, mechanism.loss_of_consciousness.occurred,
+             mechanism.loss_of_consciousness.duration_minutes]
+  - id: L3-03
+    level: 3
+    text: "Burns: < 10% without trauma"
+    fields: [burns.tbsa_percent, "injuries[].type"]
+  - id: L3-04
+    level: 3
+    text: "Low risk crash: MVC (no obvious injuries) EMS or walk in / Auto vs pedestrian < 20mph / Motorcycle or ATV crash < 20mph without separation of rider"
+    fields: [mechanism.type, identification.arrival_mode, "injuries[].type",
+             mechanism.vehicle.impact_speed_mph, mechanism.vehicle.rider_separated]
+  - id: L3-05
+    level: 3
+    text: "Amputation distal to wrist/ankle of 2 or more digits"
+    fields: ["injuries[].type", "injuries[].region", "injuries[].digits_involved"]
+  - id: L3-06
+    level: 3
+    text: "Penetrating Injury distal to wrist/ankle"
+    fields: ["injuries[].type", "injuries[].region"]
+  - id: L3-07
+    level: 3
+    text: "Open Fractures distal to wrist or ankle"
+    fields: ["injuries[].type", "injuries[].open_fracture", "injuries[].region"]
+  - id: L3-08
+    level: 3
+    text: "Near drowning/Near hanging"
+    fields: [mechanism.type]

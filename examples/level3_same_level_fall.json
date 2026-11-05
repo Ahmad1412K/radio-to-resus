@@ -1,0 +1,78 @@
+{
+  "schema_version": "1.0",
+  "identification": {
+    "age_years": 58,
+    "sex": "female",
+    "pregnant": null,
+    "gestation_weeks": null,
+    "arrival_mode": "ems_scene",
+    "eta_minutes": null
+  },
+  "mechanism": {
+    "type": "fall",
+    "description": null,
+    "fall": {
+      "fall_type": "same_level",
+      "height_ft": null
+    },
+    "vehicle": null,
+    "loss_of_consciousness": {
+      "occurred": false,
+      "duration_minutes": null
+    }
+  },
+  "injuries": [
+    {
+      "type": "fracture",
+      "region": "wrist",
+      "side": "left",
+      "suspected": true,
+      "bone": "radius",
+      "open_fracture": false,
+      "depressed": null,
+      "pelvis_unstable": null,
+      "digits_involved": null
+    }
+  ],
+  "burns": null,
+  "signs": {
+    "vitals": {
+      "systolic_bp_mmhg": 142,
+      "diastolic_bp_mmhg": null,
+      "heart_rate_bpm": 88,
+      "resp_rate_per_min": 16,
+      "spo2_percent": null,
+      "spo2_on_room_air": null
+    },
+    "gcs": {
+      "eye": null,
+      "verbal": null,
+      "motor": null,
+      "total": 15,
+      "before_intubation": null
+    },
+    "airway": null,
+    "flail_chest": null,
+    "pneumothorax_or_hemothorax": null,
+    "clinical_signs_of_shock": null,
+    "shock_signs": [],
+    "hemorrhage": null,
+    "paralysis": null,
+    "bilateral_sensory_loss": null,
+    "suspected_spinal_cord_injury": null,
+    "abdominal_pain": null,
+    "abdomen_firm_or_distended": null,
+    "trend": null
+  },
+  "treatment": {
+    "interventions": [
+      "splint"
+    ],
+    "blood_transfusion_required_to_maintain_vitals": null
+  },
+  "allergies": null,
+  "medications": null,
+  "background": null,
+  "other": null,
+  "retractions": []
+}

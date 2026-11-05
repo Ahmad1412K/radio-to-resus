@@ -1,0 +1,5 @@
+model,think,n,valid_rate,usable_rate,field_f1,hallucination_rate,exact_match,correction_accuracy,triage_accuracy,under_triage_rate,silent_under_triage_rate,over_triage_rate,latency_mean_s,note
+qwen3:1.7b,off,1482,0.1167,0.9966,0.6269,0.1465,0.0,0.0,0.5142,0.0324,0.0,0.4507,7.38,
+qwen2.5:3b,,1482,0.5715,0.9696,0.6674,0.1037,0.0,0.0175,0.7422,0.1599,0.0,0.0951,11.35,
+llama3.2:3b,,1482,0.7949,0.9696,0.6532,0.0466,0.0,0.0807,0.7011,0.1296,0.0,0.1404,25.31,
+qwen3:4b,off,1482,0.9022,0.9993,0.8315,0.0448,0.0061,0.1404,0.8489,0.0789,0.0,0.0709,43.83,

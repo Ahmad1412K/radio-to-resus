@@ -1,0 +1,266 @@
+RADIO-TO-RESUS: PIPELINE AND STATUS
+Last updated: 2026-11-04
+
+Legend:  [x] done   [~] partial   [ ] to do
+
+ DATA
+ ----
+ [x] Schema + 37 criteria                  schema/handover.py, schema/criteria.yaml
+          |
+ [x] Template generator (v0)               generator/generate.py
+          |
+     +----+---------------------------+
+     v                                v
+ [x] Train set: 10k templates         [x] Dev/Test: 3,000 cases
+     examples/synthetic_handovers_        v0 -> v1 -> v2 (Claude rewrites,
+     train_v0.csv (option A:              v2 matched to real recordings)
+     templates only)                      |
+     |                                [x] v2 labels repaired (381 fixes,
+     |                                    311 cases; log: examples/splits/
+     |                                    v2_label_repairs.csv)
+     |                                [x] Test set frozen (re-frozen after
+     |                                    repair, reason in manifest)
+     |                                    examples/splits/test_freeze.json
+     |                                    (check: python scripts/freeze_test.py --verify)
+     |                                    |
+     |   [x] Real audio -> Whisper -> [x] 3 real transcripts
+     |                                    |
+     v                                    v
+ MODEL
+ -----
+ [x] Compact prompt schema + decoding schema   extract/prompt_schema.py
+          |
+ [x] Inference harness                          extract/run.py
+     (Ollama / OpenAI-compatible e.g. vLLM; schema-constrained; resumable)
+     Ollama 0.40.13 installed on the laptop.
+ [x] Output repair (cross-field rules)          extract/postprocess.py
+     only nulls/drops contradicting details; scorer reports strict-valid
+     AND usable-after-repair rates
+ [x] Sweep driver (pull, 50-case smoke, 200 dev cases, summary table)
+     scripts/sweep.py -> runs/sweep_dev_k0.csv (log: runs/sweep_dev_k0.log)
+          |
+     +----+-------------------------------+
+     v                                    v
+ [x] E0 regex baseline                 [x] E2 zero-shot, 200 dev cases:
+                                           DONE (12 models, 200 dev
+                                           cases); best qwen3:4b F1 0.85
+                                       [x] E2 full dev (1,482 cases, 4
+                                           finalists): qwen3:4b F1 0.83,
+                                           triage 84.9%
+                                       [x] E2 error analysis
+                                           scripts/error_analysis.py
+ [ ] E1 encoder baseline                   |
+     (DeBERTa / ClinicalBERT)          [ ] E3 few-shot + prompt ablations
+                                           |
+ [ ] Training harness (QLoRA/full) --> [ ] E4 fine-tuning + data-size curve
+                                           |
+                                       [ ] E5 quantization tradeoff
+                                           |
+                                           v
+ EVALUATION
+ ----------
+     Transcript --> SLM --> said record (JSON)
+                               |
+                               v
+ [x] Rule engine (37 criteria, three-valued)   triage/engine.py
+     -> level, possible level, questions for the crew
+                               |
+                               v
+ [x] Scoring script                             extract/score.py
+     validity, field F1, hallucination, corrections,
+     triage accuracy, under/over-triage, SILENT under-triage
+                               |
+                               v
+ [ ] E6 final test (run once on frozen test set)
+ [ ] E7 Whisper-noise robustness (TTS -> Whisper -> SLM)
+ [ ] E8 audio-in models (optional)
+ [ ] E9 deployment benchmark (speed / memory on laptop / edge)
+                               |
+                               v
+ [ ] Write-up
+
+
+DONE (with key results)
+-----------------------
+- Schema, 37 criteria, vocabulary.
+- Template generator, v0 dataset (3,000 cases).
+- v1 and v2 Claude rewrites of dev/test; v2 mean 94 words (range 50-189),
+  matched to real recordings (61 / 131 / 223 words).
+- 3 real recordings transcribed with Whisper.
+- Test set frozen: 1,518 cases + real recordings, hash-checked.
+- Train set: 10,000 template cases, no overlap with dev/test. Decision:
+  templates only, no Claude-written training text.
+- Compact prompt schema: system prompt ~1,550 tokens; all 13,000 gold
+  records fit the decoding schema.
+- Scoring script, tested on known inputs (gold = perfect, empty = F1 0).
+- Rule engine: all 37 criteria. Identical to the reference labeller on
+  13,000 complete records; on 12,352 incomplete records the true level is
+  always between certain and possible level; 0 silent under-triage.
+
+- Prompt rules: added the generator's labelling conventions (arrival
+  mode = ems_scene unless transfer, SpO2 room air unless on oxygen,
+  "moving all four" / "abdomen soft" / "breath sounds equal" mappings, ...).
+  System prompt ~1,870 tokens (~2,670 with 2 few-shot examples).
+- Inference harness: extract/run.py, plumbing tested end-to-end.
+- v2 label repair: audit (scripts/audit_v2_labels.py) proposed 397
+  label changes where the v2 rewrite dropped or added a statement; each
+  reviewed by hand. 381 applied in 311 cases (dev 156, test 155), 16
+  rejected as detector false positives. Main fixes: "no injuries" not
+  said (84), "signs of shock" said but unlabelled (56), GCS components /
+  LOC / bleeding / abdomen / neuro / trend / airway / ETA not said.
+  Only said records changed; true records and true levels unchanged.
+  scripts/repair_v2_labels.py; backup examples/archive/.
+- v1/v2 text-export JSONs moved to examples/text_exports/; full test
+  suite passes (5,953).
+- Test set re-frozen with documented reason (manifest "history"); no
+  model had been run on test.
+- E0 regex baseline (v2 dev, repaired labels): field F1 0.990,
+  hallucination 0.0%, exact match 30.2%, corrections 99.3%,
+  triage accuracy 95.3%, under-triage 4.7%, silent under-triage 0.
+  (Before repair: F1 0.986, exact 26.5%, triage 93.5%.) Main weakness:
+  injuries, vehicle intrusion. (runs/e0_regex_v2_dev.*)
+
+- First model probe (qwen3:1.7b, think off, 5 dev cases): ~6 s per case
+  on the RTX 3050 Ti (~2,450 prompt + ~550 output tokens; GPU 2.9 GB).
+  3 of 5 outputs broke a cross-field schema rule that JSON-constrained
+  decoding cannot enforce (bone on a non-fracture, vehicle details on an
+  assault, intubation with airway "patent"). Added extract/postprocess.py:
+  deterministic repair that only nulls or drops the contradicting detail
+  (never invents a value). Scorer: status valid / repaired / invalid;
+  reports valid_rate (strict) and usable_rate; lists repairs. Tests for
+  the repair (tests/test_postprocess.py); suite 5,960 passing (2026-11-04, incl. tests/test_error_analysis.py).
+- E2 zero-shot screening (DONE 2026-11-02). Design: full dev takes
+  ~2.5 h per 1.7B model, so all 12 models were run on the same first 200
+  dev cases (dev order is random). 50-case smoke test first; a model is
+  dropped if <80% of outputs are usable or mean time per case >120 s.
+  Laptop RTX 3050 Ti 4 GB; think off for Qwen3.
+- E2 results (200 dev cases, 1,500-token output cap):
+    model          valid  usable  F1     halluc  triage  under  over   s/case
+    qwen3:4b       90.5%  100%    0.852  3.7%    83.0%   8.0%   9.0%   44.0
+    qwen2.5:3b     63.0%  97.5%   0.688  9.5%    71.0%   16.5%  12.0%  10.7
+    llama3.2:3b    86.0%  98.0%   0.676  4.9%    70.5%   13.0%  13.5%  25.2
+    qwen3:1.7b     16.0%  99.5%   0.638  15.4%   53.5%   2.5%   44.0%  7.4
+    gemma3:4b      3.5%   100%    0.622  36.1%   74.5%   6.5%   19.0%  39.8
+    phi4-mini      7.0%   95.5%   0.586  35.3%   65.5%   9.5%   24.5%  32.5
+    granite3.3:2b  9.0%   100%    0.567  30.6%   38.5%   4.0%   55.5%  10.3
+    qwen3:0.6b     0.5%   99.5%   0.528  33.6%   40.5%   8.0%   39.0%  5.0
+    qwen2.5:1.5b   13.0%  96.5%   0.517  16.5%   37.5%   11.0%  51.0%  6.2
+    gemma3:1b      0.0%   98.5%   0.442  39.7%   32.5%   1.5%   62.0%  9.5
+    llama3.2:1b    7.0%   88.5%   0.392  19.3%   29.5%   16.0%  54.0%  8.0
+    smollm2:1.7b   DROPPED at smoke (50 cases): usable 78% < 80%, F1 0.40
+    (E0 regex      100%   100%    0.990  0%      95.3%   4.7%   0%     -  )
+  Findings:
+  - qwen3:4b is clearly best, but still below E0 -> E3/E4 needed.
+  - Size matters most: every 3-4B model beats every <=2B model on
+    triage (65-83% vs 30-54%); over-triage falls from 39-62% to 9-25%.
+  - Small models mostly over-triage (wrong/invented findings make a case
+    look worse). qwen3:4b is the first with balanced errors.
+  - F1 and triage can disagree: gemma3:4b invents many minor details
+    (36% hallucination) that rarely change the level.
+  - Silent under-triage 0 for all 12 models.
+  - Strictly valid output is rare for most models (0-16% for <=2B); the
+    repair step makes 88-100% usable.
+  Finalists for full dev and E3: qwen3:4b, qwen2.5:3b, llama3.2:3b,
+  qwen3:1.7b (fastest that fits the laptop GPU).
+- E2 run history (why it took several runs):
+  - 3-4B models don't fit the 4 GB GPU and spill to CPU (~40 s/case,
+    ~3 h per model); they were paused, then run after the small models.
+  - One run was stopped by Claude Code (laptop low on RAM), one by hand;
+    runs are resumable (one line per case, done cases skipped).
+  - First pass dropped llama3.2:1b, qwen2.5:1.5b, smollm2:1.7b because a
+    single runaway case hit the 600 s request timeout.
+  - RULE CHANGE (2026-11-01, approved by the user): output capped at
+    1,500 tokens (extract/run.py --max-tokens; same as the OpenAI
+    backend; normal records 530-900 tokens, p99 < 1,000) and the smoke
+    gate uses MEAN instead of MAX latency. The 21 cases that had gone
+    over 1,500 tokens or timed out were deleted and re-run under the cap,
+    so all models follow the same rule. Pre-cap files:
+    runs/archive_pre_cap/. Under the cap llama3.2:1b and qwen2.5:1.5b
+    pass; smollm2 is dropped on usable rate.
+  - Logs: runs/sweep_dev_k0.log, _small.log, _cap.log. Final table:
+    runs/sweep_dev_k0.csv; per model runs/<model>_dev_k0.report.json.
+
+- E0 is optimistic (notebook 10b): its word lists and patterns come from
+  the generator. Re-phrased example sentences (own, not from any data
+  set) lose BP/HR/SpO2, meds, age and injuries. On the 3 real recordings
+  it misses vitals without "BP" labels, "auto crash"/"airbag"
+  mechanisms, "forehead" lacerations, "blood thinners", "approximately
+  35 years old", and Whisper errors ("rule over", "cool and diverted").
+  TEST-SET NOTE (2026-11-02): the regex was run on the 3 real test
+  recordings for illustration only (no labels, no score). The regex
+  baseline is FROZEN from now on: no changes based on these outputs. No
+  model has been run on the real recordings.
+
+- Presentation notebook: notebooks/radio_to_resus_walkthrough.ipynb
+  (every step run live + MOCK cells for E2-E9 that switch to real result
+  files when they exist). Rebuild: python notebooks/build_walkthrough.py
+
+OPEN ITEMS
+----------
+- Clinician sign-off on engine assumptions A1-A6 (triage/engine.py).
+- Hand-check ~50 v2 texts for realism.
+- Update AI-use declaration (Claude Opus 5.5 generated v1/v2 text).
+- Decide compute source (university HPC / cloud / Kaggle) and budget.
+
+- E2 full dev (DONE 2026-11-04 05:15): the 4 finalists on all 1,482 dev
+  cases, same prompt and settings (k=0, 1,500-token cap, think off for Qwen3).
+  Table runs/sweep_dev_k0_nall.csv, log runs/sweep_dev_k0_full.log,
+  200-case reports kept in runs/e2_screen_200/.
+    model        valid  usable  F1     halluc  corr   triage  under  over   s/case
+    qwen3:4b     90.2%  99.9%   0.832  4.5%    14.0%  84.9%   7.9%   7.1%   43.8
+    qwen2.5:3b   57.2%  97.0%   0.667  10.4%   1.8%   74.2%   16.0%  9.5%   11.4
+    llama3.2:3b  79.5%  97.0%   0.653  4.7%    8.1%   70.1%   13.0%  14.0%  25.3
+    qwen3:1.7b   11.7%  99.7%   0.627  14.7%   0.0%   51.4%   3.2%   45.1%  7.4
+    (screen F1: 0.852 / 0.688 / 0.676 / 0.638; E0 regex 0.990, triage 95.3%)
+  Findings:
+  - Same ranking as the 200-case screen; full dev is 1-2 F1 points lower
+    for every model, so the screen was a fair sample.
+  - qwen3:4b is best on every measure except speed; balanced errors
+    (under 7.9%, over 7.1%). Still well below E0 (F1 0.83 vs 0.99).
+  - Error direction differs: qwen3:1.7b over-triages (invents findings),
+    qwen2.5:3b under-triages (misses them), llama3.2:3b in between.
+  - Spoken corrections are the weakest skill: 0-14% correct for all.
+  - Exact match <1% for all: almost every record has at least one error.
+  - Silent under-triage 0 for all four.
+  - Run history: started 2026-11-02; stopped 5 times by Claude Code when
+    the laptop was low on RAM and paused 3 times by the user; every
+    restart resumed from the last saved case (no case was run twice).
+    ~30 h of laptop time in total, ~16 h of it qwen3:4b (44 s/case).
+
+- E2 error analysis (DONE 2026-11-04): scripts/error_analysis.py (tests:
+  tests/test_error_analysis.py) -> runs/error_analysis/<run>/ (per_field,
+  under_triage, corrections CSVs, summary.json) and patterns_dev.csv
+  comparing the 4 finalists. Qwen3 4B, 1,482 dev cases:
+  - Nested object left null when only part was said: "GCS 15" alone
+    missed 48% (3% with components); "no LOC" missed 71%; crash speed
+    missed 75% (vehicle object null; always for pedestrian/cyclist);
+    "with burns" -> mechanism.type null 86%.
+  - Digit amputations recorded on hand/foot instead of finger/toe: 100%
+    -> L3-05 never fires; 35 of the 117 under-triaged cases.
+  - Systolic 110-119 ("one-fourteen") written as 140 etc.: 52%.
+  - Unsaid "normal" values: hemorrhage none 72%, airway patent 43%,
+    abdominal pain false 19% -> most of the 4.5% hallucination; they hide
+    unknowns from the engine (fewer questions asked).
+  - Empty (all-null) records: 30 cases (2%), 26 of them vitals-first calls.
+  - Corrections: value right 63%; the 14% correction accuracy is mostly
+    the retraction log written in words (122/285); retracted value kept in
+    79 (38% of the corrections that cross a threshold).
+  - Under-triage 117: empty record, amputation region, crash speed and LOC
+    explain 85 (73%); all 117 provisional (silent 0).
+  - Other finalists: LOC drop (71-99%), amputation region (43-100%) and
+    kept corrections are shared; others are model-specific (llama3.2:3b
+    never misreads 11x but misses speed 98%; qwen3:1.7b writes trend
+    "stable" 70% when unsaid).
+
+NEXT
+----
+1. E3 prompt ablations + few-shot on the finalists, aimed at the patterns:
+   conventions (digits -> finger/toe region; GCS total alone; "no LOC";
+   speed always in vehicle; burns -> mechanism.type; retraction values as
+   digits; leave hemorrhage/airway null unless said) and --fewshot 2 with
+   vitals-first and correction examples. Re-run error_analysis.py on each.
+2. Decide (with the user) whether a deterministic number-words -> digits
+   step for the retraction log joins postprocess.repair. It changes the
+   scoring rules, so apply to all models and report separately.
+
+Plans: docs/slm_plan.md (laptop-limited), docs/slm_plan_full.md (full).

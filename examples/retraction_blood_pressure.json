@@ -1,0 +1,79 @@
+{
+  "schema_version": "1.0",
+  "identification": {
+    "age_years": 35,
+    "sex": "male",
+    "pregnant": null,
+    "gestation_weeks": null,
+    "arrival_mode": "ems_scene",
+    "eta_minutes": null
+  },
+  "mechanism": {
+    "type": "assault_blunt",
+    "description": null,
+    "fall": null,
+    "vehicle": null,
+    "loss_of_consciousness": {
+      "occurred": true,
+      "duration_minutes": 2.0
+    }
+  },
+  "injuries": [
+    {
+      "type": "laceration",
+      "region": "head",
+      "side": null,
+      "suspected": null,
+      "bone": null,
+      "open_fracture": null,
+      "depressed": null,
+      "pelvis_unstable": null,
+      "digits_involved": null
+    }
+  ],
+  "burns": null,
+  "signs": {
+    "vitals": {
+      "systolic_bp_mmhg": 150,
+      "diastolic_bp_mmhg": 90,
+      "heart_rate_bpm": 96,
+      "resp_rate_per_min": null,
+      "spo2_percent": null,
+      "spo2_on_room_air": null
+    },
+    "gcs": {
+      "eye": null,
+      "verbal": null,
+      "motor": null,
+      "total": 14,
+      "before_intubation": null
+    },
+    "airway": null,
+    "flail_chest": null,
+    "pneumothorax_or_hemothorax": null,
+    "clinical_signs_of_shock": null,
+    "shock_signs": [],
+    "hemorrhage": null,
+    "paralysis": null,
+    "bilateral_sensory_loss": null,
+    "suspected_spinal_cord_injury": null,
+    "abdominal_pain": null,
+    "abdomen_firm_or_distended": null,
+    "trend": null
+  },
+  "treatment": {
+    "interventions": [],
+    "blood_transfusion_required_to_maintain_vitals": null
+  },
+  "allergies": null,
+  "medications": null,
+  "background": null,
+  "other": null,
+  "retractions": [
+    {
+      "field": "signs.vitals.systolic_bp_mmhg",
+      "retracted_value": "90",
+      "corrected_value": "150"
+    }
+  ]
+}

@@ -1,0 +1,160 @@
+{
+ "run": "llama3.2-3b_dev_k0",
+ "split": "dev",
+ "headline": {
+  "field_f1": 0.6531734132933533,
+  "hallucination_rate": 0.04663472753045881,
+  "correction_accuracy": 0.08070175438596491,
+  "triage_accuracy": 0.7010796221322537,
+  "under_triage_rate": 0.12955465587044535,
+  "silent_under_triage_rate": 0.0
+ },
+ "outcome_counts": {
+  "missed": 9097,
+  "correct": 15684,
+  "ok_null": 53132,
+  "wrong": 2480,
+  "hallucinated": 2599
+ },
+ "repairs": {
+  "fracture_fields_on_non_fracture": 118,
+  "loc_duration_without_loc": 60,
+  "bone_not_in_region": 28,
+  "gcs_components_mismatch": 21,
+  "room_air_without_spo2": 19,
+  "advanced_airway_status_conflict": 17,
+  "tourniquet_with_no_hemorrhage": 16,
+  "limb_injury_off_limb_dropped": 10,
+  "digits_not_amputation": 8,
+  "unstable_not_pelvis": 5,
+  "diastolic_above_systolic": 4,
+  "fall_details_wrong_mechanism": 3,
+  "depressed_not_skull": 3,
+  "vehicle_details_wrong_mechanism": 2,
+  "same_level_fall_height": 2
+ },
+ "patterns": {
+  "empty_record": {
+   "n": 1482,
+   "hits": 57,
+   "rate": 0.0385
+  },
+  "empty_record_vitals_first": {
+   "n": 57,
+   "hits": 32,
+   "rate": 0.5614
+  },
+  "gcs_total_only_missed": {
+   "n": 990,
+   "hits": 751,
+   "rate": 0.7586
+  },
+  "gcs_with_components_missed": {
+   "n": 426,
+   "hits": 116,
+   "rate": 0.2723
+  },
+  "no_loc_missed": {
+   "n": 564,
+   "hits": 522,
+   "rate": 0.9255
+  },
+  "impact_speed_missed": {
+   "n": 340,
+   "hits": 332,
+   "rate": 0.9765
+  },
+  "burn_mechanism_missed": {
+   "n": 105,
+   "hits": 97,
+   "rate": 0.9238
+  },
+  "amputation_region_hand_or_foot": {
+   "n": 40,
+   "hits": 31,
+   "rate": 0.775
+  },
+  "sbp_110_119_read_as_1x0": {
+   "n": 286,
+   "hits": 0,
+   "rate": 0.0
+  },
+  "hemorrhage_none_unsaid": {
+   "n": 922,
+   "hits": 139,
+   "rate": 0.1508
+  },
+  "airway_patent_unsaid": {
+   "n": 1016,
+   "hits": 19,
+   "rate": 0.0187
+  },
+  "abdominal_pain_false_unsaid": {
+   "n": 1130,
+   "hits": 0,
+   "rate": 0.0
+  },
+  "trend_stable_unsaid": {
+   "n": 772,
+   "hits": 2,
+   "rate": 0.0026
+  },
+  "corrections": {
+   "n": 285,
+   "value right, log in words": 103,
+   "kept the retracted value": 75,
+   "value left null": 67,
+   "fully right": 23,
+   "no usable output": 8,
+   "other wrong value": 5,
+   "value right, log entry wrong": 4
+  },
+  "correction_value_right": {
+   "n": 285,
+   "hits": 130,
+   "rate": 0.4561
+  },
+  "kept_retracted_when_crosses_threshold": {
+   "n": 144,
+   "hits": 42,
+   "rate": 0.2917
+  },
+  "under_triage": {
+   "n": 192,
+   "from_empty_record": 42,
+   "criteria_lost": {
+    "L3-01": 36,
+    "L2-04": 30,
+    "L3-02": 29,
+    "L3-05": 19,
+    "L1-15": 16,
+    "L2-06": 14,
+    "L2-01": 12,
+    "L1-13": 11,
+    "L1-11": 10,
+    "L2-03": 6,
+    "L3-04": 6,
+    "L2-05": 5,
+    "L2-13": 5,
+    "L1-05": 5,
+    "L1-14": 4,
+    "L1-01": 4,
+    "L1-06": 4,
+    "L1-02": 4,
+    "L1-10": 3,
+    "L1-12": 3,
+    "L1-03": 3,
+    "L3-08": 3,
+    "L3-07": 3,
+    "L1-04": 3,
+    "L1-07": 2,
+    "L2-07": 2,
+    "L3-03": 2,
+    "L2-02": 2,
+    "L2-11": 1,
+    "L1-08": 1,
+    "L1-09": 1
+   }
+  }
+ }
+}

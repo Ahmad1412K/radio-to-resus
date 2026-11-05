@@ -1,0 +1,25 @@
+# Python
+.venv/
+__pycache__/
+*.pyc
+.pytest_cache/
+.ipynb_checkpoints/
+
+# Secrets
+.env
+.env.*
+
+# Real ambulance radio recordings and their transcripts: not redistributed,
+# part of the frozen test set (hashes are kept in examples/splits/test_freeze.json)
+examples/*.flac
+examples/*.m4a
+examples/*.mp4
+examples/*.wav
+examples/*.mp3
+examples/transcripts/
+
+# OS / editor
+.DS_Store
+Thumbs.db
+.vscode/
+.idea/

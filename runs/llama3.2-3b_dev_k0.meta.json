@@ -1,0 +1,13 @@
+{
+ "model": "llama3.2:3b",
+ "backend": "ollama",
+ "split": "dev",
+ "fewshot": 0,
+ "constrained": true,
+ "num_ctx": 8192,
+ "think": null,
+ "max_tokens": 1500,
+ "gold": "C:\\Users\\a.ali\\radio-to-resus\\examples\\synthetic_handovers_v2.csv",
+ "prompt_sha256": "191dfdd6495128b23991d2f840892bde644da5eb5fdffb8d75defd9819b453f1",
+ "started": "2026-11-03T07:46:22"
+}

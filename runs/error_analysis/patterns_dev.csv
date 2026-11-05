@@ -1,0 +1,5 @@
+run,empty_record,empty_record_vitals_first,gcs_total_only_missed,gcs_with_components_missed,no_loc_missed,impact_speed_missed,burn_mechanism_missed,amputation_region_hand_or_foot,sbp_110_119_read_as_1x0,hemorrhage_none_unsaid,airway_patent_unsaid,abdominal_pain_false_unsaid,trend_stable_unsaid,correction_value_right,kept_retracted_when_crosses_threshold,under_triage_n,under_from_empty_record
+qwen3-4b_dev_k0,0.0202,0.8667,0.4778,0.0329,0.7128,0.7529,0.8571,1.0,0.5245,0.7234,0.4301,0.1912,0.0777,0.6281,0.375,117,22
+qwen2.5-3b_dev_k0,0.0304,0.3111,0.9283,0.6526,0.9911,0.2147,0.0857,0.875,0.3601,0.1594,0.8376,0.0,0.0207,0.6421,0.4722,237,40
+llama3.2-3b_dev_k0,0.0385,0.5614,0.7586,0.2723,0.9255,0.9765,0.9238,0.775,0.0,0.1508,0.0187,0.0,0.0026,0.4561,0.2917,192,42
+qwen3-1.7b_dev_k0,0.0034,0.2,0.0152,0.0023,0.8777,0.1618,0.0,0.425,0.465,0.0586,0.624,0.0,0.7008,0.2386,0.8819,48,5

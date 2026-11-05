@@ -1,0 +1,2596 @@
+{
+  "@context": {
+    "r2r": "https://w3id.org/radio-to-resus/vocab#",
+    "loinc": "https://loinc.org/",
+    "snomed": "http://snomed.info/id/",
+    "ucum": "http://unitsofmeasure.org/",
+    "rdf": "http://www.w3.org/1999/02/22-rdf-syntax-ns#",
+    "rdfs": "http://www.w3.org/2000/01/rdf-schema#",
+    "skos": "http://www.w3.org/2004/02/skos/core#",
+    "xsd": "http://www.w3.org/2001/XMLSchema#"
+  },
+  "@graph": [
+    {
+      "@id": "r2r:HandoverRecord",
+      "@type": "rdfs:Class",
+      "rdfs:label": "HandoverRecord",
+      "rdfs:comment": "HandoverRecord"
+    },
+    {
+      "@id": "r2r:HandoverRecord.schema_version",
+      "@type": "rdf:Property",
+      "rdfs:label": "schema version",
+      "rdfs:domain": {
+        "@id": "r2r:HandoverRecord"
+      },
+      "rdfs:range": {
+        "@id": "xsd:string"
+      }
+    },
+    {
+      "@id": "r2r:HandoverRecord.identification",
+      "@type": "rdf:Property",
+      "rdfs:label": "identification",
+      "rdfs:domain": {
+        "@id": "r2r:HandoverRecord"
+      },
+      "rdfs:range": {
+        "@id": "r2r:Identification"
+      }
+    },
+    {
+      "@id": "r2r:HandoverRecord.mechanism",
+      "@type": "rdf:Property",
+      "rdfs:label": "mechanism",
+      "rdfs:domain": {
+        "@id": "r2r:HandoverRecord"
+      },
+      "rdfs:range": {
+        "@id": "r2r:Mechanism"
+      }
+    },
+    {
+      "@id": "r2r:HandoverRecord.injuries",
+      "@type": "rdf:Property",
+      "rdfs:label": "injuries",
+      "rdfs:domain": {
+        "@id": "r2r:HandoverRecord"
+      },
+      "rdfs:range": {
+        "@id": "r2r:Injury"
+      }
+    },
+    {
+      "@id": "r2r:HandoverRecord.burns",
+      "@type": "rdf:Property",
+      "rdfs:label": "burns",
+      "rdfs:domain": {
+        "@id": "r2r:HandoverRecord"
+      },
+      "rdfs:range": {
+        "@id": "r2r:Burns"
+      }
+    },
+    {
+      "@id": "r2r:HandoverRecord.signs",
+      "@type": "rdf:Property",
+      "rdfs:label": "signs",
+      "rdfs:domain": {
+        "@id": "r2r:HandoverRecord"
+      },
+      "rdfs:range": {
+        "@id": "r2r:Signs"
+      }
+    },
+    {
+      "@id": "r2r:HandoverRecord.treatment",
+      "@type": "rdf:Property",
+      "rdfs:label": "treatment",
+      "rdfs:domain": {
+        "@id": "r2r:HandoverRecord"
+      },
+      "rdfs:range": {
+        "@id": "r2r:Treatment"
+      }
+    },
+    {
+      "@id": "r2r:HandoverRecord.allergies",
+      "@type": "rdf:Property",
+      "rdfs:label": "allergies",
+      "rdfs:domain": {
+        "@id": "r2r:HandoverRecord"
+      },
+      "rdfs:range": {
+        "@id": "xsd:string"
+      }
+    },
+    {
+      "@id": "r2r:HandoverRecord.medications",
+      "@type": "rdf:Property",
+      "rdfs:label": "medications",
+      "rdfs:domain": {
+        "@id": "r2r:HandoverRecord"
+      },
+      "rdfs:range": {
+        "@id": "xsd:string"
+      }
+    },
+    {
+      "@id": "r2r:HandoverRecord.background",
+      "@type": "rdf:Property",
+      "rdfs:label": "background",
+      "rdfs:domain": {
+        "@id": "r2r:HandoverRecord"
+      },
+      "rdfs:range": {
+        "@id": "xsd:string"
+      }
+    },
+    {
+      "@id": "r2r:HandoverRecord.other",
+      "@type": "rdf:Property",
+      "rdfs:label": "other",
+      "rdfs:domain": {
+        "@id": "r2r:HandoverRecord"
+      },
+      "rdfs:range": {
+        "@id": "xsd:string"
+      }
+    },
+    {
+      "@id": "r2r:HandoverRecord.retractions",
+      "@type": "rdf:Property",
+      "rdfs:label": "retractions",
+      "rdfs:domain": {
+        "@id": "r2r:HandoverRecord"
+      },
+      "rdfs:range": {
+        "@id": "r2r:Retraction"
+      }
+    },
+    {
+      "@id": "r2r:Retraction",
+      "@type": "rdfs:Class",
+      "rdfs:label": "Retraction",
+      "rdfs:comment": "A value the speaker said and then corrected (\"BP ninety - sorry, one fifty\")."
+    },
+    {
+      "@id": "r2r:Retraction.field",
+      "@type": "rdf:Property",
+      "rdfs:label": "field",
+      "rdfs:domain": {
+        "@id": "r2r:Retraction"
+      },
+      "rdfs:range": {
+        "@id": "xsd:string"
+      },
+      "rdfs:comment": "dot path, e.g. signs.vitals.systolic_bp_mmhg"
+    },
+    {
+      "@id": "r2r:Retraction.retracted_value",
+      "@type": "rdf:Property",
+      "rdfs:label": "retracted value",
+      "rdfs:domain": {
+        "@id": "r2r:Retraction"
+      },
+      "rdfs:range": {
+        "@id": "xsd:string"
+      }
+    },
+    {
+      "@id": "r2r:Retraction.corrected_value",
+      "@type": "rdf:Property",
+      "rdfs:label": "corrected value",
+      "rdfs:domain": {
+        "@id": "r2r:Retraction"
+      },
+      "rdfs:range": {
+        "@id": "xsd:string"
+      }
+    },
+    {
+      "@id": "r2r:Treatment",
+      "@type": "rdfs:Class",
+      "rdfs:label": "Treatment",
+      "rdfs:comment": "Treatment"
+    },
+    {
+      "@id": "r2r:Treatment.interventions",
+      "@type": "rdf:Property",
+      "rdfs:label": "interventions",
+      "rdfs:domain": {
+        "@id": "r2r:Treatment"
+      },
+      "rdfs:range": {
+        "@id": "r2r:Intervention"
+      }
+    },
+    {
+      "@id": "r2r:Treatment.blood_transfusion_required_to_maintain_vitals",
+      "@type": "rdf:Property",
+      "rdfs:label": "blood transfusion required to maintain vitals",
+      "rdfs:domain": {
+        "@id": "r2r:Treatment"
+      },
+      "rdfs:range": {
+        "@id": "xsd:boolean"
+      }
+    },
+    {
+      "@id": "r2r:Signs",
+      "@type": "rdfs:Class",
+      "rdfs:label": "Signs",
+      "rdfs:comment": "Signs"
+    },
+    {
+      "@id": "r2r:Signs.vitals",
+      "@type": "rdf:Property",
+      "rdfs:label": "vitals",
+      "rdfs:domain": {
+        "@id": "r2r:Signs"
+      },
+      "rdfs:range": {
+        "@id": "r2r:Vitals"
+      }
+    },
+    {
+      "@id": "r2r:Signs.gcs",
+      "@type": "rdf:Property",
+      "rdfs:label": "gcs",
+      "rdfs:domain": {
+        "@id": "r2r:Signs"
+      },
+      "rdfs:range": {
+        "@id": "r2r:GCS"
+      }
+    },
+    {
+      "@id": "r2r:Signs.airway",
+      "@type": "rdf:Property",
+      "rdfs:label": "airway",
+      "rdfs:domain": {
+        "@id": "r2r:Signs"
+      },
+      "rdfs:range": {
+        "@id": "r2r:AirwayStatus"
+      }
+    },
+    {
+      "@id": "r2r:Signs.flail_chest",
+      "@type": "rdf:Property",
+      "rdfs:label": "flail chest",
+      "rdfs:domain": {
+        "@id": "r2r:Signs"
+      },
+      "rdfs:range": {
+        "@id": "xsd:boolean"
+      }
+    },
+    {
+      "@id": "r2r:Signs.pneumothorax_or_hemothorax",
+      "@type": "rdf:Property",
+      "rdfs:label": "pneumothorax or hemothorax",
+      "rdfs:domain": {
+        "@id": "r2r:Signs"
+      },
+      "rdfs:range": {
+        "@id": "xsd:boolean"
+      }
+    },
+    {
+      "@id": "r2r:Signs.clinical_signs_of_shock",
+      "@type": "rdf:Property",
+      "rdfs:label": "clinical signs of shock",
+      "rdfs:domain": {
+        "@id": "r2r:Signs"
+      },
+      "rdfs:range": {
+        "@id": "xsd:boolean"
+      }
+    },
+    {
+      "@id": "r2r:Signs.shock_signs",
+      "@type": "rdf:Property",
+      "rdfs:label": "shock signs",
+      "rdfs:domain": {
+        "@id": "r2r:Signs"
+      },
+      "rdfs:range": {
+        "@id": "r2r:ShockSign"
+      }
+    },
+    {
+      "@id": "r2r:Signs.hemorrhage",
+      "@type": "rdf:Property",
+      "rdfs:label": "hemorrhage",
+      "rdfs:domain": {
+        "@id": "r2r:Signs"
+      },
+      "rdfs:range": {
+        "@id": "r2r:Hemorrhage"
+      }
+    },
+    {
+      "@id": "r2r:Signs.paralysis",
+      "@type": "rdf:Property",
+      "rdfs:label": "paralysis",
+      "rdfs:domain": {
+        "@id": "r2r:Signs"
+      },
+      "rdfs:range": {
+        "@id": "xsd:boolean"
+      }
+    },
+    {
+      "@id": "r2r:Signs.bilateral_sensory_loss",
+      "@type": "rdf:Property",
+      "rdfs:label": "bilateral sensory loss",
+      "rdfs:domain": {
+        "@id": "r2r:Signs"
+      },
+      "rdfs:range": {
+        "@id": "xsd:boolean"
+      }
+    },
+    {
+      "@id": "r2r:Signs.suspected_spinal_cord_injury",
+      "@type": "rdf:Property",
+      "rdfs:label": "suspected spinal cord injury",
+      "rdfs:domain": {
+        "@id": "r2r:Signs"
+      },
+      "rdfs:range": {
+        "@id": "xsd:boolean"
+      }
+    },
+    {
+      "@id": "r2r:Signs.abdominal_pain",
+      "@type": "rdf:Property",
+      "rdfs:label": "abdominal pain",
+      "rdfs:domain": {
+        "@id": "r2r:Signs"
+      },
+      "rdfs:range": {
+        "@id": "xsd:boolean"
+      }
+    },
+    {
+      "@id": "r2r:Signs.abdomen_firm_or_distended",
+      "@type": "rdf:Property",
+      "rdfs:label": "abdomen firm or distended",
+      "rdfs:domain": {
+        "@id": "r2r:Signs"
+      },
+      "rdfs:range": {
+        "@id": "xsd:boolean"
+      }
+    },
+    {
+      "@id": "r2r:Signs.trend",
+      "@type": "rdf:Property",
+      "rdfs:label": "trend",
+      "rdfs:domain": {
+        "@id": "r2r:Signs"
+      },
+      "rdfs:range": {
+        "@id": "r2r:Trend"
+      }
+    },
+    {
+      "@id": "r2r:GCS",
+      "@type": "rdfs:Class",
+      "rdfs:label": "GCS",
+      "rdfs:comment": "GCS"
+    },
+    {
+      "@id": "r2r:GCS.eye",
+      "@type": "rdf:Property",
+      "rdfs:label": "eye",
+      "rdfs:domain": {
+        "@id": "r2r:GCS"
+      },
+      "rdfs:range": {
+        "@id": "xsd:integer"
+      },
+      "skos:exactMatch": {
+        "@id": "loinc:9267-6/"
+      },
+      "r2r:loincName": "Glasgow coma score eye opening"
+    },
+    {
+      "@id": "r2r:GCS.verbal",
+      "@type": "rdf:Property",
+      "rdfs:label": "verbal",
+      "rdfs:domain": {
+        "@id": "r2r:GCS"
+      },
+      "rdfs:range": {
+        "@id": "xsd:integer"
+      },
+      "skos:exactMatch": {
+        "@id": "loinc:9270-0/"
+      },
+      "r2r:loincName": "Glasgow coma score verbal"
+    },
+    {
+      "@id": "r2r:GCS.motor",
+      "@type": "rdf:Property",
+      "rdfs:label": "motor",
+      "rdfs:domain": {
+        "@id": "r2r:GCS"
+      },
+      "rdfs:range": {
+        "@id": "xsd:integer"
+      },
+      "skos:exactMatch": {
+        "@id": "loinc:9268-4/"
+      },
+      "r2r:loincName": "Glasgow coma score motor"
+    },
+    {
+      "@id": "r2r:GCS.total",
+      "@type": "rdf:Property",
+      "rdfs:label": "total",
+      "rdfs:domain": {
+        "@id": "r2r:GCS"
+      },
+      "rdfs:range": {
+        "@id": "xsd:integer"
+      },
+      "skos:exactMatch": {
+        "@id": "loinc:9269-2/"
+      },
+      "r2r:loincName": "Glasgow coma score total"
+    },
+    {
+      "@id": "r2r:GCS.before_intubation",
+      "@type": "rdf:Property",
+      "rdfs:label": "before intubation",
+      "rdfs:domain": {
+        "@id": "r2r:GCS"
+      },
+      "rdfs:range": {
+        "@id": "xsd:boolean"
+      }
+    },
+    {
+      "@id": "r2r:Vitals",
+      "@type": "rdfs:Class",
+      "rdfs:label": "Vitals",
+      "rdfs:comment": "Vitals"
+    },
+    {
+      "@id": "r2r:Vitals.systolic_bp_mmhg",
+      "@type": "rdf:Property",
+      "rdfs:label": "systolic bp mmhg",
+      "rdfs:domain": {
+        "@id": "r2r:Vitals"
+      },
+      "rdfs:range": {
+        "@id": "xsd:integer"
+      },
+      "skos:exactMatch": {
+        "@id": "loinc:8480-6/"
+      },
+      "r2r:loincName": "Systolic blood pressure",
+      "r2r:ucumUnit": "mm[Hg]"
+    },
+    {
+      "@id": "r2r:Vitals.diastolic_bp_mmhg",
+      "@type": "rdf:Property",
+      "rdfs:label": "diastolic bp mmhg",
+      "rdfs:domain": {
+        "@id": "r2r:Vitals"
+      },
+      "rdfs:range": {
+        "@id": "xsd:integer"
+      },
+      "skos:exactMatch": {
+        "@id": "loinc:8462-4/"
+      },
+      "r2r:loincName": "Diastolic blood pressure",
+      "r2r:ucumUnit": "mm[Hg]"
+    },
+    {
+      "@id": "r2r:Vitals.heart_rate_bpm",
+      "@type": "rdf:Property",
+      "rdfs:label": "heart rate bpm",
+      "rdfs:domain": {
+        "@id": "r2r:Vitals"
+      },
+      "rdfs:range": {
+        "@id": "xsd:integer"
+      },
+      "skos:exactMatch": {
+        "@id": "loinc:8867-4/"
+      },
+      "r2r:loincName": "Heart rate",
+      "r2r:ucumUnit": "/min"
+    },
+    {
+      "@id": "r2r:Vitals.resp_rate_per_min",
+      "@type": "rdf:Property",
+      "rdfs:label": "resp rate per min",
+      "rdfs:domain": {
+        "@id": "r2r:Vitals"
+      },
+      "rdfs:range": {
+        "@id": "xsd:integer"
+      },
+      "skos:exactMatch": {
+        "@id": "loinc:9279-1/"
+      },
+      "r2r:loincName": "Respiratory rate",
+      "r2r:ucumUnit": "/min"
+    },
+    {
+      "@id": "r2r:Vitals.spo2_percent",
+      "@type": "rdf:Property",
+      "rdfs:label": "spo2 percent",
+      "rdfs:domain": {
+        "@id": "r2r:Vitals"
+      },
+      "rdfs:range": {
+        "@id": "xsd:integer"
+      },
+      "skos:exactMatch": {
+        "@id": "loinc:59408-5/"
+      },
+      "r2r:loincName": "Oxygen saturation in Arterial blood by Pulse oximetry",
+      "r2r:ucumUnit": "%"
+    },
+    {
+      "@id": "r2r:Vitals.spo2_on_room_air",
+      "@type": "rdf:Property",
+      "rdfs:label": "spo2 on room air",
+      "rdfs:domain": {
+        "@id": "r2r:Vitals"
+      },
+      "rdfs:range": {
+        "@id": "xsd:boolean"
+      }
+    },
+    {
+      "@id": "r2r:Burns",
+      "@type": "rdfs:Class",
+      "rdfs:label": "Burns",
+      "rdfs:comment": "Burns"
+    },
+    {
+      "@id": "r2r:Burns.tbsa_percent",
+      "@type": "rdf:Property",
+      "rdfs:label": "tbsa percent",
+      "rdfs:domain": {
+        "@id": "r2r:Burns"
+      },
+      "rdfs:range": {
+        "@id": "xsd:decimal"
+      },
+      "r2r:ucumUnit": "%"
+    },
+    {
+      "@id": "r2r:Burns.inhalation_injury",
+      "@type": "rdf:Property",
+      "rdfs:label": "inhalation injury",
+      "rdfs:domain": {
+        "@id": "r2r:Burns"
+      },
+      "rdfs:range": {
+        "@id": "xsd:boolean"
+      }
+    },
+    {
+      "@id": "r2r:Burns.electrical",
+      "@type": "rdf:Property",
+      "rdfs:label": "electrical",
+      "rdfs:domain": {
+        "@id": "r2r:Burns"
+      },
+      "rdfs:range": {
+        "@id": "xsd:boolean"
+      }
+    },
+    {
+      "@id": "r2r:Injury",
+      "@type": "rdfs:Class",
+      "rdfs:label": "Injury",
+      "rdfs:comment": "Injury"
+    },
+    {
+      "@id": "r2r:Injury.type",
+      "@type": "rdf:Property",
+      "rdfs:label": "type",
+      "rdfs:domain": {
+        "@id": "r2r:Injury"
+      },
+      "rdfs:range": {
+        "@id": "r2r:InjuryType"
+      }
+    },
+    {
+      "@id": "r2r:Injury.region",
+      "@type": "rdf:Property",
+      "rdfs:label": "region",
+      "rdfs:domain": {
+        "@id": "r2r:Injury"
+      },
+      "rdfs:range": {
+        "@id": "r2r:BodyRegion"
+      }
+    },
+    {
+      "@id": "r2r:Injury.side",
+      "@type": "rdf:Property",
+      "rdfs:label": "side",
+      "rdfs:domain": {
+        "@id": "r2r:Injury"
+      },
+      "rdfs:range": {
+        "@id": "r2r:Side"
+      }
+    },
+    {
+      "@id": "r2r:Injury.suspected",
+      "@type": "rdf:Property",
+      "rdfs:label": "suspected",
+      "rdfs:domain": {
+        "@id": "r2r:Injury"
+      },
+      "rdfs:range": {
+        "@id": "xsd:boolean"
+      }
+    },
+    {
+      "@id": "r2r:Injury.bone",
+      "@type": "rdf:Property",
+      "rdfs:label": "bone",
+      "rdfs:domain": {
+        "@id": "r2r:Injury"
+      },
+      "rdfs:range": {
+        "@id": "r2r:Bone"
+      }
+    },
+    {
+      "@id": "r2r:Injury.open_fracture",
+      "@type": "rdf:Property",
+      "rdfs:label": "open fracture",
+      "rdfs:domain": {
+        "@id": "r2r:Injury"
+      },
+      "rdfs:range": {
+        "@id": "xsd:boolean"
+      }
+    },
+    {
+      "@id": "r2r:Injury.depressed",
+      "@type": "rdf:Property",
+      "rdfs:label": "depressed",
+      "rdfs:domain": {
+        "@id": "r2r:Injury"
+      },
+      "rdfs:range": {
+        "@id": "xsd:boolean"
+      }
+    },
+    {
+      "@id": "r2r:Injury.pelvis_unstable",
+      "@type": "rdf:Property",
+      "rdfs:label": "pelvis unstable",
+      "rdfs:domain": {
+        "@id": "r2r:Injury"
+      },
+      "rdfs:range": {
+        "@id": "xsd:boolean"
+      }
+    },
+    {
+      "@id": "r2r:Injury.digits_involved",
+      "@type": "rdf:Property",
+      "rdfs:label": "digits involved",
+      "rdfs:domain": {
+        "@id": "r2r:Injury"
+      },
+      "rdfs:range": {
+        "@id": "xsd:integer"
+      }
+    },
+    {
+      "@id": "r2r:Mechanism",
+      "@type": "rdfs:Class",
+      "rdfs:label": "Mechanism",
+      "rdfs:comment": "Mechanism"
+    },
+    {
+      "@id": "r2r:Mechanism.type",
+      "@type": "rdf:Property",
+      "rdfs:label": "type",
+      "rdfs:domain": {
+        "@id": "r2r:Mechanism"
+      },
+      "rdfs:range": {
+        "@id": "r2r:MechanismType"
+      }
+    },
+    {
+      "@id": "r2r:Mechanism.description",
+      "@type": "rdf:Property",
+      "rdfs:label": "description",
+      "rdfs:domain": {
+        "@id": "r2r:Mechanism"
+      },
+      "rdfs:range": {
+        "@id": "xsd:string"
+      }
+    },
+    {
+      "@id": "r2r:Mechanism.fall",
+      "@type": "rdf:Property",
+      "rdfs:label": "fall",
+      "rdfs:domain": {
+        "@id": "r2r:Mechanism"
+      },
+      "rdfs:range": {
+        "@id": "r2r:FallDetails"
+      }
+    },
+    {
+      "@id": "r2r:Mechanism.vehicle",
+      "@type": "rdf:Property",
+      "rdfs:label": "vehicle",
+      "rdfs:domain": {
+        "@id": "r2r:Mechanism"
+      },
+      "rdfs:range": {
+        "@id": "r2r:VehicleCrashDetails"
+      }
+    },
+    {
+      "@id": "r2r:Mechanism.loss_of_consciousness",
+      "@type": "rdf:Property",
+      "rdfs:label": "loss of consciousness",
+      "rdfs:domain": {
+        "@id": "r2r:Mechanism"
+      },
+      "rdfs:range": {
+        "@id": "r2r:LossOfConsciousness"
+      }
+    },
+    {
+      "@id": "r2r:LossOfConsciousness",
+      "@type": "rdfs:Class",
+      "rdfs:label": "LossOfConsciousness",
+      "rdfs:comment": "LossOfConsciousness"
+    },
+    {
+      "@id": "r2r:LossOfConsciousness.occurred",
+      "@type": "rdf:Property",
+      "rdfs:label": "occurred",
+      "rdfs:domain": {
+        "@id": "r2r:LossOfConsciousness"
+      },
+      "rdfs:range": {
+        "@id": "xsd:boolean"
+      }
+    },
+    {
+      "@id": "r2r:LossOfConsciousness.duration_minutes",
+      "@type": "rdf:Property",
+      "rdfs:label": "duration minutes",
+      "rdfs:domain": {
+        "@id": "r2r:LossOfConsciousness"
+      },
+      "rdfs:range": {
+        "@id": "xsd:decimal"
+      },
+      "r2r:ucumUnit": "min"
+    },
+    {
+      "@id": "r2r:VehicleCrashDetails",
+      "@type": "rdfs:Class",
+      "rdfs:label": "VehicleCrashDetails",
+      "rdfs:comment": "VehicleCrashDetails"
+    },
+    {
+      "@id": "r2r:VehicleCrashDetails.impact_speed_mph",
+      "@type": "rdf:Property",
+      "rdfs:label": "impact speed mph",
+      "rdfs:domain": {
+        "@id": "r2r:VehicleCrashDetails"
+      },
+      "rdfs:range": {
+        "@id": "xsd:decimal"
+      },
+      "r2r:ucumUnit": "[mi_i]/h"
+    },
+    {
+      "@id": "r2r:VehicleCrashDetails.extrication_minutes",
+      "@type": "rdf:Property",
+      "rdfs:label": "extrication minutes",
+      "rdfs:domain": {
+        "@id": "r2r:VehicleCrashDetails"
+      },
+      "rdfs:range": {
+        "@id": "xsd:decimal"
+      },
+      "r2r:ucumUnit": "min"
+    },
+    {
+      "@id": "r2r:VehicleCrashDetails.intrusion_occupant_site_in",
+      "@type": "rdf:Property",
+      "rdfs:label": "intrusion occupant site in",
+      "rdfs:domain": {
+        "@id": "r2r:VehicleCrashDetails"
+      },
+      "rdfs:range": {
+        "@id": "xsd:decimal"
+      },
+      "r2r:ucumUnit": "[in_i]"
+    },
+    {
+      "@id": "r2r:VehicleCrashDetails.intrusion_any_site_in",
+      "@type": "rdf:Property",
+      "rdfs:label": "intrusion any site in",
+      "rdfs:domain": {
+        "@id": "r2r:VehicleCrashDetails"
+      },
+      "rdfs:range": {
+        "@id": "xsd:decimal"
+      },
+      "r2r:ucumUnit": "[in_i]"
+    },
+    {
+      "@id": "r2r:VehicleCrashDetails.ejection",
+      "@type": "rdf:Property",
+      "rdfs:label": "ejection",
+      "rdfs:domain": {
+        "@id": "r2r:VehicleCrashDetails"
+      },
+      "rdfs:range": {
+        "@id": "r2r:Ejection"
+      }
+    },
+    {
+      "@id": "r2r:VehicleCrashDetails.death_same_compartment",
+      "@type": "rdf:Property",
+      "rdfs:label": "death same compartment",
+      "rdfs:domain": {
+        "@id": "r2r:VehicleCrashDetails"
+      },
+      "rdfs:range": {
+        "@id": "xsd:boolean"
+      }
+    },
+    {
+      "@id": "r2r:VehicleCrashDetails.patient_thrown",
+      "@type": "rdf:Property",
+      "rdfs:label": "patient thrown",
+      "rdfs:domain": {
+        "@id": "r2r:VehicleCrashDetails"
+      },
+      "rdfs:range": {
+        "@id": "xsd:boolean"
+      }
+    },
+    {
+      "@id": "r2r:VehicleCrashDetails.run_over",
+      "@type": "rdf:Property",
+      "rdfs:label": "run over",
+      "rdfs:domain": {
+        "@id": "r2r:VehicleCrashDetails"
+      },
+      "rdfs:range": {
+        "@id": "xsd:boolean"
+      }
+    },
+    {
+      "@id": "r2r:VehicleCrashDetails.rider_separated",
+      "@type": "rdf:Property",
+      "rdfs:label": "rider separated",
+      "rdfs:domain": {
+        "@id": "r2r:VehicleCrashDetails"
+      },
+      "rdfs:range": {
+        "@id": "xsd:boolean"
+      }
+    },
+    {
+      "@id": "r2r:VehicleCrashDetails.rollover",
+      "@type": "rdf:Property",
+      "rdfs:label": "rollover",
+      "rdfs:domain": {
+        "@id": "r2r:VehicleCrashDetails"
+      },
+      "rdfs:range": {
+        "@id": "xsd:boolean"
+      }
+    },
+    {
+      "@id": "r2r:FallDetails",
+      "@type": "rdfs:Class",
+      "rdfs:label": "FallDetails",
+      "rdfs:comment": "FallDetails"
+    },
+    {
+      "@id": "r2r:FallDetails.fall_type",
+      "@type": "rdf:Property",
+      "rdfs:label": "fall type",
+      "rdfs:domain": {
+        "@id": "r2r:FallDetails"
+      },
+      "rdfs:range": {
+        "@id": "r2r:FallType"
+      }
+    },
+    {
+      "@id": "r2r:FallDetails.height_ft",
+      "@type": "rdf:Property",
+      "rdfs:label": "height ft",
+      "rdfs:domain": {
+        "@id": "r2r:FallDetails"
+      },
+      "rdfs:range": {
+        "@id": "xsd:decimal"
+      },
+      "r2r:ucumUnit": "[ft_i]"
+    },
+    {
+      "@id": "r2r:Identification",
+      "@type": "rdfs:Class",
+      "rdfs:label": "Identification",
+      "rdfs:comment": "Identification"
+    },
+    {
+      "@id": "r2r:Identification.age_years",
+      "@type": "rdf:Property",
+      "rdfs:label": "age years",
+      "rdfs:domain": {
+        "@id": "r2r:Identification"
+      },
+      "rdfs:range": {
+        "@id": "xsd:integer"
+      },
+      "skos:exactMatch": {
+        "@id": "loinc:30525-0/"
+      },
+      "r2r:loincName": "Age",
+      "r2r:ucumUnit": "a"
+    },
+    {
+      "@id": "r2r:Identification.sex",
+      "@type": "rdf:Property",
+      "rdfs:label": "sex",
+      "rdfs:domain": {
+        "@id": "r2r:Identification"
+      },
+      "rdfs:range": {
+        "@id": "r2r:Sex"
+      },
+      "skos:exactMatch": {
+        "@id": "loinc:46098-0/"
+      },
+      "r2r:loincName": "Sex"
+    },
+    {
+      "@id": "r2r:Identification.pregnant",
+      "@type": "rdf:Property",
+      "rdfs:label": "pregnant",
+      "rdfs:domain": {
+        "@id": "r2r:Identification"
+      },
+      "rdfs:range": {
+        "@id": "xsd:boolean"
+      }
+    },
+    {
+      "@id": "r2r:Identification.gestation_weeks",
+      "@type": "rdf:Property",
+      "rdfs:label": "gestation weeks",
+      "rdfs:domain": {
+        "@id": "r2r:Identification"
+      },
+      "rdfs:range": {
+        "@id": "xsd:integer"
+      },
+      "r2r:ucumUnit": "wk"
+    },
+    {
+      "@id": "r2r:Identification.arrival_mode",
+      "@type": "rdf:Property",
+      "rdfs:label": "arrival mode",
+      "rdfs:domain": {
+        "@id": "r2r:Identification"
+      },
+      "rdfs:range": {
+        "@id": "r2r:ArrivalMode"
+      }
+    },
+    {
+      "@id": "r2r:Identification.eta_minutes",
+      "@type": "rdf:Property",
+      "rdfs:label": "eta minutes",
+      "rdfs:domain": {
+        "@id": "r2r:Identification"
+      },
+      "rdfs:range": {
+        "@id": "xsd:integer"
+      },
+      "r2r:ucumUnit": "min"
+    },
+    {
+      "@id": "r2r:HandoverRecord.injuriesStated",
+      "@type": "rdf:Property",
+      "rdfs:label": "injuries stated",
+      "rdfs:comment": "True when the handover addressed injuries, even if the list is empty.",
+      "rdfs:domain": {
+        "@id": "r2r:HandoverRecord"
+      },
+      "rdfs:range": {
+        "@id": "xsd:boolean"
+      }
+    },
+    {
+      "@id": "r2r:HandoverRecord.allergiesStated",
+      "@type": "rdf:Property",
+      "rdfs:label": "allergies stated",
+      "rdfs:comment": "True when the handover addressed allergies, even if the list is empty.",
+      "rdfs:domain": {
+        "@id": "r2r:HandoverRecord"
+      },
+      "rdfs:range": {
+        "@id": "xsd:boolean"
+      }
+    },
+    {
+      "@id": "r2r:HandoverRecord.medicationsStated",
+      "@type": "rdf:Property",
+      "rdfs:label": "medications stated",
+      "rdfs:comment": "True when the handover addressed medications, even if the list is empty.",
+      "rdfs:domain": {
+        "@id": "r2r:HandoverRecord"
+      },
+      "rdfs:range": {
+        "@id": "xsd:boolean"
+      }
+    },
+    {
+      "@id": "r2r:HandoverRecord.backgroundStated",
+      "@type": "rdf:Property",
+      "rdfs:label": "background stated",
+      "rdfs:comment": "True when the handover addressed background, even if the list is empty.",
+      "rdfs:domain": {
+        "@id": "r2r:HandoverRecord"
+      },
+      "rdfs:range": {
+        "@id": "xsd:boolean"
+      }
+    },
+    {
+      "@id": "r2r:Intervention",
+      "@type": [
+        "rdfs:Class",
+        "skos:ConceptScheme"
+      ],
+      "rdfs:label": "Intervention",
+      "r2r:snomedBinding": "pending UMLS licence"
+    },
+    {
+      "@id": "r2r:Intervention.endotracheal_intubation",
+      "@type": [
+        "skos:Concept",
+        "r2r:Intervention"
+      ],
+      "skos:prefLabel": "endotracheal intubation",
+      "skos:inScheme": {
+        "@id": "r2r:Intervention"
+      }
+    },
+    {
+      "@id": "r2r:Intervention.supraglottic_airway",
+      "@type": [
+        "skos:Concept",
+        "r2r:Intervention"
+      ],
+      "skos:prefLabel": "supraglottic airway",
+      "skos:inScheme": {
+        "@id": "r2r:Intervention"
+      }
+    },
+    {
+      "@id": "r2r:Intervention.surgical_airway",
+      "@type": [
+        "skos:Concept",
+        "r2r:Intervention"
+      ],
+      "skos:prefLabel": "surgical airway",
+      "skos:inScheme": {
+        "@id": "r2r:Intervention"
+      }
+    },
+    {
+      "@id": "r2r:Intervention.bag_valve_mask",
+      "@type": [
+        "skos:Concept",
+        "r2r:Intervention"
+      ],
+      "skos:prefLabel": "bag valve mask",
+      "skos:inScheme": {
+        "@id": "r2r:Intervention"
+      }
+    },
+    {
+      "@id": "r2r:Intervention.supplemental_oxygen",
+      "@type": [
+        "skos:Concept",
+        "r2r:Intervention"
+      ],
+      "skos:prefLabel": "supplemental oxygen",
+      "skos:inScheme": {
+        "@id": "r2r:Intervention"
+      }
+    },
+    {
+      "@id": "r2r:Intervention.needle_decompression",
+      "@type": [
+        "skos:Concept",
+        "r2r:Intervention"
+      ],
+      "skos:prefLabel": "needle decompression",
+      "skos:inScheme": {
+        "@id": "r2r:Intervention"
+      }
+    },
+    {
+      "@id": "r2r:Intervention.tourniquet",
+      "@type": [
+        "skos:Concept",
+        "r2r:Intervention"
+      ],
+      "skos:prefLabel": "tourniquet",
+      "skos:inScheme": {
+        "@id": "r2r:Intervention"
+      }
+    },
+    {
+      "@id": "r2r:Intervention.wound_packing",
+      "@type": [
+        "skos:Concept",
+        "r2r:Intervention"
+      ],
+      "skos:prefLabel": "wound packing",
+      "skos:inScheme": {
+        "@id": "r2r:Intervention"
+      }
+    },
+    {
+      "@id": "r2r:Intervention.pelvic_binder",
+      "@type": [
+        "skos:Concept",
+        "r2r:Intervention"
+      ],
+      "skos:prefLabel": "pelvic binder",
+      "skos:inScheme": {
+        "@id": "r2r:Intervention"
+      }
+    },
+    {
+      "@id": "r2r:Intervention.blood_transfusion",
+      "@type": [
+        "skos:Concept",
+        "r2r:Intervention"
+      ],
+      "skos:prefLabel": "blood transfusion",
+      "skos:inScheme": {
+        "@id": "r2r:Intervention"
+      }
+    },
+    {
+      "@id": "r2r:Intervention.iv_fluids",
+      "@type": [
+        "skos:Concept",
+        "r2r:Intervention"
+      ],
+      "skos:prefLabel": "iv fluids",
+      "skos:inScheme": {
+        "@id": "r2r:Intervention"
+      }
+    },
+    {
+      "@id": "r2r:Intervention.spinal_motion_restriction",
+      "@type": [
+        "skos:Concept",
+        "r2r:Intervention"
+      ],
+      "skos:prefLabel": "spinal motion restriction",
+      "skos:inScheme": {
+        "@id": "r2r:Intervention"
+      }
+    },
+    {
+      "@id": "r2r:Intervention.splint",
+      "@type": [
+        "skos:Concept",
+        "r2r:Intervention"
+      ],
+      "skos:prefLabel": "splint",
+      "skos:inScheme": {
+        "@id": "r2r:Intervention"
+      }
+    },
+    {
+      "@id": "r2r:Intervention.analgesia",
+      "@type": [
+        "skos:Concept",
+        "r2r:Intervention"
+      ],
+      "skos:prefLabel": "analgesia",
+      "skos:inScheme": {
+        "@id": "r2r:Intervention"
+      }
+    },
+    {
+      "@id": "r2r:Intervention.other",
+      "@type": [
+        "skos:Concept",
+        "r2r:Intervention"
+      ],
+      "skos:prefLabel": "other",
+      "skos:inScheme": {
+        "@id": "r2r:Intervention"
+      }
+    },
+    {
+      "@id": "r2r:AirwayStatus",
+      "@type": [
+        "rdfs:Class",
+        "skos:ConceptScheme"
+      ],
+      "rdfs:label": "AirwayStatus",
+      "r2r:snomedBinding": "pending UMLS licence"
+    },
+    {
+      "@id": "r2r:AirwayStatus.patent",
+      "@type": [
+        "skos:Concept",
+        "r2r:AirwayStatus"
+      ],
+      "skos:prefLabel": "patent",
+      "skos:inScheme": {
+        "@id": "r2r:AirwayStatus"
+      }
+    },
+    {
+      "@id": "r2r:AirwayStatus.compromised",
+      "@type": [
+        "skos:Concept",
+        "r2r:AirwayStatus"
+      ],
+      "skos:prefLabel": "compromised",
+      "skos:inScheme": {
+        "@id": "r2r:AirwayStatus"
+      }
+    },
+    {
+      "@id": "r2r:AirwayStatus.advanced_airway",
+      "@type": [
+        "skos:Concept",
+        "r2r:AirwayStatus"
+      ],
+      "skos:prefLabel": "advanced airway",
+      "skos:inScheme": {
+        "@id": "r2r:AirwayStatus"
+      }
+    },
+    {
+      "@id": "r2r:ShockSign",
+      "@type": [
+        "rdfs:Class",
+        "skos:ConceptScheme"
+      ],
+      "rdfs:label": "ShockSign",
+      "r2r:snomedBinding": "pending UMLS licence"
+    },
+    {
+      "@id": "r2r:ShockSign.pale",
+      "@type": [
+        "skos:Concept",
+        "r2r:ShockSign"
+      ],
+      "skos:prefLabel": "pale",
+      "skos:inScheme": {
+        "@id": "r2r:ShockSign"
+      }
+    },
+    {
+      "@id": "r2r:ShockSign.cool_clammy",
+      "@type": [
+        "skos:Concept",
+        "r2r:ShockSign"
+      ],
+      "skos:prefLabel": "cool clammy",
+      "skos:inScheme": {
+        "@id": "r2r:ShockSign"
+      }
+    },
+    {
+      "@id": "r2r:ShockSign.diaphoretic",
+      "@type": [
+        "skos:Concept",
+        "r2r:ShockSign"
+      ],
+      "skos:prefLabel": "diaphoretic",
+      "skos:inScheme": {
+        "@id": "r2r:ShockSign"
+      }
+    },
+    {
+      "@id": "r2r:ShockSign.delayed_cap_refill",
+      "@type": [
+        "skos:Concept",
+        "r2r:ShockSign"
+      ],
+      "skos:prefLabel": "delayed cap refill",
+      "skos:inScheme": {
+        "@id": "r2r:ShockSign"
+      }
+    },
+    {
+      "@id": "r2r:ShockSign.weak_thready_pulse",
+      "@type": [
+        "skos:Concept",
+        "r2r:ShockSign"
+      ],
+      "skos:prefLabel": "weak thready pulse",
+      "skos:inScheme": {
+        "@id": "r2r:ShockSign"
+      }
+    },
+    {
+      "@id": "r2r:ShockSign.altered_mentation",
+      "@type": [
+        "skos:Concept",
+        "r2r:ShockSign"
+      ],
+      "skos:prefLabel": "altered mentation",
+      "skos:inScheme": {
+        "@id": "r2r:ShockSign"
+      }
+    },
+    {
+      "@id": "r2r:Hemorrhage",
+      "@type": [
+        "rdfs:Class",
+        "skos:ConceptScheme"
+      ],
+      "rdfs:label": "Hemorrhage",
+      "r2r:snomedBinding": "pending UMLS licence"
+    },
+    {
+      "@id": "r2r:Hemorrhage.none",
+      "@type": [
+        "skos:Concept",
+        "r2r:Hemorrhage"
+      ],
+      "skos:prefLabel": "none",
+      "skos:inScheme": {
+        "@id": "r2r:Hemorrhage"
+      }
+    },
+    {
+      "@id": "r2r:Hemorrhage.controlled",
+      "@type": [
+        "skos:Concept",
+        "r2r:Hemorrhage"
+      ],
+      "skos:prefLabel": "controlled",
+      "skos:inScheme": {
+        "@id": "r2r:Hemorrhage"
+      }
+    },
+    {
+      "@id": "r2r:Hemorrhage.active_uncontrolled",
+      "@type": [
+        "skos:Concept",
+        "r2r:Hemorrhage"
+      ],
+      "skos:prefLabel": "active uncontrolled",
+      "skos:inScheme": {
+        "@id": "r2r:Hemorrhage"
+      }
+    },
+    {
+      "@id": "r2r:Trend",
+      "@type": [
+        "rdfs:Class",
+        "skos:ConceptScheme"
+      ],
+      "rdfs:label": "Trend"
+    },
+    {
+      "@id": "r2r:Trend.improving",
+      "@type": [
+        "skos:Concept",
+        "r2r:Trend"
+      ],
+      "skos:prefLabel": "improving",
+      "skos:inScheme": {
+        "@id": "r2r:Trend"
+      }
+    },
+    {
+      "@id": "r2r:Trend.stable",
+      "@type": [
+        "skos:Concept",
+        "r2r:Trend"
+      ],
+      "skos:prefLabel": "stable",
+      "skos:inScheme": {
+        "@id": "r2r:Trend"
+      }
+    },
+    {
+      "@id": "r2r:Trend.deteriorating",
+      "@type": [
+        "skos:Concept",
+        "r2r:Trend"
+      ],
+      "skos:prefLabel": "deteriorating",
+      "skos:inScheme": {
+        "@id": "r2r:Trend"
+      }
+    },
+    {
+      "@id": "r2r:InjuryType",
+      "@type": [
+        "rdfs:Class",
+        "skos:ConceptScheme"
+      ],
+      "rdfs:label": "InjuryType",
+      "r2r:snomedBinding": "pending UMLS licence"
+    },
+    {
+      "@id": "r2r:InjuryType.fracture",
+      "@type": [
+        "skos:Concept",
+        "r2r:InjuryType"
+      ],
+      "skos:prefLabel": "fracture",
+      "skos:inScheme": {
+        "@id": "r2r:InjuryType"
+      }
+    },
+    {
+      "@id": "r2r:InjuryType.penetrating_wound",
+      "@type": [
+        "skos:Concept",
+        "r2r:InjuryType"
+      ],
+      "skos:prefLabel": "penetrating wound",
+      "skos:inScheme": {
+        "@id": "r2r:InjuryType"
+      }
+    },
+    {
+      "@id": "r2r:InjuryType.amputation",
+      "@type": [
+        "skos:Concept",
+        "r2r:InjuryType"
+      ],
+      "skos:prefLabel": "amputation",
+      "skos:inScheme": {
+        "@id": "r2r:InjuryType"
+      }
+    },
+    {
+      "@id": "r2r:InjuryType.degloving",
+      "@type": [
+        "skos:Concept",
+        "r2r:InjuryType"
+      ],
+      "skos:prefLabel": "degloving",
+      "skos:inScheme": {
+        "@id": "r2r:InjuryType"
+      }
+    },
+    {
+      "@id": "r2r:InjuryType.crush",
+      "@type": [
+        "skos:Concept",
+        "r2r:InjuryType"
+      ],
+      "skos:prefLabel": "crush",
+      "skos:inScheme": {
+        "@id": "r2r:InjuryType"
+      }
+    },
+    {
+      "@id": "r2r:InjuryType.mangled_extremity",
+      "@type": [
+        "skos:Concept",
+        "r2r:InjuryType"
+      ],
+      "skos:prefLabel": "mangled extremity",
+      "skos:inScheme": {
+        "@id": "r2r:InjuryType"
+      }
+    },
+    {
+      "@id": "r2r:InjuryType.pulseless_extremity",
+      "@type": [
+        "skos:Concept",
+        "r2r:InjuryType"
+      ],
+      "skos:prefLabel": "pulseless extremity",
+      "skos:inScheme": {
+        "@id": "r2r:InjuryType"
+      }
+    },
+    {
+      "@id": "r2r:InjuryType.seatbelt_sign",
+      "@type": [
+        "skos:Concept",
+        "r2r:InjuryType"
+      ],
+      "skos:prefLabel": "seatbelt sign",
+      "skos:inScheme": {
+        "@id": "r2r:InjuryType"
+      }
+    },
+    {
+      "@id": "r2r:InjuryType.laceration",
+      "@type": [
+        "skos:Concept",
+        "r2r:InjuryType"
+      ],
+      "skos:prefLabel": "laceration",
+      "skos:inScheme": {
+        "@id": "r2r:InjuryType"
+      }
+    },
+    {
+      "@id": "r2r:InjuryType.contusion",
+      "@type": [
+        "skos:Concept",
+        "r2r:InjuryType"
+      ],
+      "skos:prefLabel": "contusion",
+      "skos:inScheme": {
+        "@id": "r2r:InjuryType"
+      }
+    },
+    {
+      "@id": "r2r:InjuryType.abrasion",
+      "@type": [
+        "skos:Concept",
+        "r2r:InjuryType"
+      ],
+      "skos:prefLabel": "abrasion",
+      "skos:inScheme": {
+        "@id": "r2r:InjuryType"
+      }
+    },
+    {
+      "@id": "r2r:InjuryType.other",
+      "@type": [
+        "skos:Concept",
+        "r2r:InjuryType"
+      ],
+      "skos:prefLabel": "other",
+      "skos:inScheme": {
+        "@id": "r2r:InjuryType"
+      }
+    },
+    {
+      "@id": "r2r:BodyRegion",
+      "@type": [
+        "rdfs:Class",
+        "skos:ConceptScheme"
+      ],
+      "rdfs:label": "BodyRegion",
+      "r2r:snomedBinding": "pending UMLS licence"
+    },
+    {
+      "@id": "r2r:BodyRegion.head",
+      "@type": [
+        "skos:Concept",
+        "r2r:BodyRegion"
+      ],
+      "skos:prefLabel": "head",
+      "skos:inScheme": {
+        "@id": "r2r:BodyRegion"
+      },
+      "r2r:anatomicZone": {
+        "@id": "r2r:AnatomicZone.head"
+      }
+    },
+    {
+      "@id": "r2r:BodyRegion.face",
+      "@type": [
+        "skos:Concept",
+        "r2r:BodyRegion"
+      ],
+      "skos:prefLabel": "face",
+      "skos:inScheme": {
+        "@id": "r2r:BodyRegion"
+      },
+      "r2r:anatomicZone": {
+        "@id": "r2r:AnatomicZone.head"
+      }
+    },
+    {
+      "@id": "r2r:BodyRegion.neck",
+      "@type": [
+        "skos:Concept",
+        "r2r:BodyRegion"
+      ],
+      "skos:prefLabel": "neck",
+      "skos:inScheme": {
+        "@id": "r2r:BodyRegion"
+      },
+      "r2r:anatomicZone": {
+        "@id": "r2r:AnatomicZone.neck"
+      }
+    },
+    {
+      "@id": "r2r:BodyRegion.shoulder_axilla",
+      "@type": [
+        "skos:Concept",
+        "r2r:BodyRegion"
+      ],
+      "skos:prefLabel": "shoulder axilla",
+      "skos:inScheme": {
+        "@id": "r2r:BodyRegion"
+      },
+      "r2r:anatomicZone": {
+        "@id": "r2r:AnatomicZone.tshirt_boxer"
+      }
+    },
+    {
+      "@id": "r2r:BodyRegion.chest",
+      "@type": [
+        "skos:Concept",
+        "r2r:BodyRegion"
+      ],
+      "skos:prefLabel": "chest",
+      "skos:inScheme": {
+        "@id": "r2r:BodyRegion"
+      },
+      "r2r:anatomicZone": {
+        "@id": "r2r:AnatomicZone.tshirt_boxer"
+      }
+    },
+    {
+      "@id": "r2r:BodyRegion.abdomen",
+      "@type": [
+        "skos:Concept",
+        "r2r:BodyRegion"
+      ],
+      "skos:prefLabel": "abdomen",
+      "skos:inScheme": {
+        "@id": "r2r:BodyRegion"
+      },
+      "r2r:anatomicZone": {
+        "@id": "r2r:AnatomicZone.tshirt_boxer"
+      }
+    },
+    {
+      "@id": "r2r:BodyRegion.flank",
+      "@type": [
+        "skos:Concept",
+        "r2r:BodyRegion"
+      ],
+      "skos:prefLabel": "flank",
+      "skos:inScheme": {
+        "@id": "r2r:BodyRegion"
+      },
+      "r2r:anatomicZone": {
+        "@id": "r2r:AnatomicZone.tshirt_boxer"
+      }
+    },
+    {
+      "@id": "r2r:BodyRegion.back",
+      "@type": [
+        "skos:Concept",
+        "r2r:BodyRegion"
+      ],
+      "skos:prefLabel": "back",
+      "skos:inScheme": {
+        "@id": "r2r:BodyRegion"
+      },
+      "r2r:anatomicZone": {
+        "@id": "r2r:AnatomicZone.tshirt_boxer"
+      }
+    },
+    {
+      "@id": "r2r:BodyRegion.pelvis",
+      "@type": [
+        "skos:Concept",
+        "r2r:BodyRegion"
+      ],
+      "skos:prefLabel": "pelvis",
+      "skos:inScheme": {
+        "@id": "r2r:BodyRegion"
+      },
+      "r2r:anatomicZone": {
+        "@id": "r2r:AnatomicZone.tshirt_boxer"
+      }
+    },
+    {
+      "@id": "r2r:BodyRegion.groin_perineum",
+      "@type": [
+        "skos:Concept",
+        "r2r:BodyRegion"
+      ],
+      "skos:prefLabel": "groin perineum",
+      "skos:inScheme": {
+        "@id": "r2r:BodyRegion"
+      },
+      "r2r:anatomicZone": {
+        "@id": "r2r:AnatomicZone.tshirt_boxer"
+      }
+    },
+    {
+      "@id": "r2r:BodyRegion.buttock",
+      "@type": [
+        "skos:Concept",
+        "r2r:BodyRegion"
+      ],
+      "skos:prefLabel": "buttock",
+      "skos:inScheme": {
+        "@id": "r2r:BodyRegion"
+      },
+      "r2r:anatomicZone": {
+        "@id": "r2r:AnatomicZone.tshirt_boxer"
+      }
+    },
+    {
+      "@id": "r2r:BodyRegion.upper_arm",
+      "@type": [
+        "skos:Concept",
+        "r2r:BodyRegion"
+      ],
+      "skos:prefLabel": "upper arm",
+      "skos:inScheme": {
+        "@id": "r2r:BodyRegion"
+      },
+      "r2r:anatomicZone": {
+        "@id": "r2r:AnatomicZone.proximal_limb"
+      }
+    },
+    {
+      "@id": "r2r:BodyRegion.elbow",
+      "@type": [
+        "skos:Concept",
+        "r2r:BodyRegion"
+      ],
+      "skos:prefLabel": "elbow",
+      "skos:inScheme": {
+        "@id": "r2r:BodyRegion"
+      },
+      "r2r:anatomicZone": {
+        "@id": "r2r:AnatomicZone.proximal_limb"
+      }
+    },
+    {
+      "@id": "r2r:BodyRegion.forearm",
+      "@type": [
+        "skos:Concept",
+        "r2r:BodyRegion"
+      ],
+      "skos:prefLabel": "forearm",
+      "skos:inScheme": {
+        "@id": "r2r:BodyRegion"
+      },
+      "r2r:anatomicZone": {
+        "@id": "r2r:AnatomicZone.proximal_limb"
+      }
+    },
+    {
+      "@id": "r2r:BodyRegion.wrist",
+      "@type": [
+        "skos:Concept",
+        "r2r:BodyRegion"
+      ],
+      "skos:prefLabel": "wrist",
+      "skos:inScheme": {
+        "@id": "r2r:BodyRegion"
+      },
+      "r2r:anatomicZone": {
+        "@id": "r2r:AnatomicZone.distal_limb"
+      }
+    },
+    {
+      "@id": "r2r:BodyRegion.hand",
+      "@type": [
+        "skos:Concept",
+        "r2r:BodyRegion"
+      ],
+      "skos:prefLabel": "hand",
+      "skos:inScheme": {
+        "@id": "r2r:BodyRegion"
+      },
+      "r2r:anatomicZone": {
+        "@id": "r2r:AnatomicZone.distal_limb"
+      }
+    },
+    {
+      "@id": "r2r:BodyRegion.finger",
+      "@type": [
+        "skos:Concept",
+        "r2r:BodyRegion"
+      ],
+      "skos:prefLabel": "finger",
+      "skos:inScheme": {
+        "@id": "r2r:BodyRegion"
+      },
+      "r2r:anatomicZone": {
+        "@id": "r2r:AnatomicZone.distal_limb"
+      }
+    },
+    {
+      "@id": "r2r:BodyRegion.thigh",
+      "@type": [
+        "skos:Concept",
+        "r2r:BodyRegion"
+      ],
+      "skos:prefLabel": "thigh",
+      "skos:inScheme": {
+        "@id": "r2r:BodyRegion"
+      },
+      "r2r:anatomicZone": {
+        "@id": "r2r:AnatomicZone.proximal_limb"
+      }
+    },
+    {
+      "@id": "r2r:BodyRegion.knee",
+      "@type": [
+        "skos:Concept",
+        "r2r:BodyRegion"
+      ],
+      "skos:prefLabel": "knee",
+      "skos:inScheme": {
+        "@id": "r2r:BodyRegion"
+      },
+      "r2r:anatomicZone": {
+        "@id": "r2r:AnatomicZone.proximal_limb"
+      }
+    },
+    {
+      "@id": "r2r:BodyRegion.lower_leg",
+      "@type": [
+        "skos:Concept",
+        "r2r:BodyRegion"
+      ],
+      "skos:prefLabel": "lower leg",
+      "skos:inScheme": {
+        "@id": "r2r:BodyRegion"
+      },
+      "r2r:anatomicZone": {
+        "@id": "r2r:AnatomicZone.proximal_limb"
+      }
+    },
+    {
+      "@id": "r2r:BodyRegion.ankle",
+      "@type": [
+        "skos:Concept",
+        "r2r:BodyRegion"
+      ],
+      "skos:prefLabel": "ankle",
+      "skos:inScheme": {
+        "@id": "r2r:BodyRegion"
+      },
+      "r2r:anatomicZone": {
+        "@id": "r2r:AnatomicZone.distal_limb"
+      }
+    },
+    {
+      "@id": "r2r:BodyRegion.foot",
+      "@type": [
+        "skos:Concept",
+        "r2r:BodyRegion"
+      ],
+      "skos:prefLabel": "foot",
+      "skos:inScheme": {
+        "@id": "r2r:BodyRegion"
+      },
+      "r2r:anatomicZone": {
+        "@id": "r2r:AnatomicZone.distal_limb"
+      }
+    },
+    {
+      "@id": "r2r:BodyRegion.toe",
+      "@type": [
+        "skos:Concept",
+        "r2r:BodyRegion"
+      ],
+      "skos:prefLabel": "toe",
+      "skos:inScheme": {
+        "@id": "r2r:BodyRegion"
+      },
+      "r2r:anatomicZone": {
+        "@id": "r2r:AnatomicZone.distal_limb"
+      }
+    },
+    {
+      "@id": "r2r:Side",
+      "@type": [
+        "rdfs:Class",
+        "skos:ConceptScheme"
+      ],
+      "rdfs:label": "Side"
+    },
+    {
+      "@id": "r2r:Side.left",
+      "@type": [
+        "skos:Concept",
+        "r2r:Side"
+      ],
+      "skos:prefLabel": "left",
+      "skos:inScheme": {
+        "@id": "r2r:Side"
+      }
+    },
+    {
+      "@id": "r2r:Side.right",
+      "@type": [
+        "skos:Concept",
+        "r2r:Side"
+      ],
+      "skos:prefLabel": "right",
+      "skos:inScheme": {
+        "@id": "r2r:Side"
+      }
+    },
+    {
+      "@id": "r2r:Side.bilateral",
+      "@type": [
+        "skos:Concept",
+        "r2r:Side"
+      ],
+      "skos:prefLabel": "bilateral",
+      "skos:inScheme": {
+        "@id": "r2r:Side"
+      }
+    },
+    {
+      "@id": "r2r:Side.midline",
+      "@type": [
+        "skos:Concept",
+        "r2r:Side"
+      ],
+      "skos:prefLabel": "midline",
+      "skos:inScheme": {
+        "@id": "r2r:Side"
+      }
+    },
+    {
+      "@id": "r2r:Bone",
+      "@type": [
+        "rdfs:Class",
+        "skos:ConceptScheme"
+      ],
+      "rdfs:label": "Bone",
+      "r2r:snomedBinding": "pending UMLS licence"
+    },
+    {
+      "@id": "r2r:Bone.skull",
+      "@type": [
+        "skos:Concept",
+        "r2r:Bone"
+      ],
+      "skos:prefLabel": "skull",
+      "skos:inScheme": {
+        "@id": "r2r:Bone"
+      },
+      "r2r:countsAsLongBone": false
+    },
+    {
+      "@id": "r2r:Bone.vertebra",
+      "@type": [
+        "skos:Concept",
+        "r2r:Bone"
+      ],
+      "skos:prefLabel": "vertebra",
+      "skos:inScheme": {
+        "@id": "r2r:Bone"
+      },
+      "r2r:countsAsLongBone": false
+    },
+    {
+      "@id": "r2r:Bone.clavicle",
+      "@type": [
+        "skos:Concept",
+        "r2r:Bone"
+      ],
+      "skos:prefLabel": "clavicle",
+      "skos:inScheme": {
+        "@id": "r2r:Bone"
+      },
+      "r2r:countsAsLongBone": false
+    },
+    {
+      "@id": "r2r:Bone.rib",
+      "@type": [
+        "skos:Concept",
+        "r2r:Bone"
+      ],
+      "skos:prefLabel": "rib",
+      "skos:inScheme": {
+        "@id": "r2r:Bone"
+      },
+      "r2r:countsAsLongBone": false
+    },
+    {
+      "@id": "r2r:Bone.sternum",
+      "@type": [
+        "skos:Concept",
+        "r2r:Bone"
+      ],
+      "skos:prefLabel": "sternum",
+      "skos:inScheme": {
+        "@id": "r2r:Bone"
+      },
+      "r2r:countsAsLongBone": false
+    },
+    {
+      "@id": "r2r:Bone.humerus",
+      "@type": [
+        "skos:Concept",
+        "r2r:Bone"
+      ],
+      "skos:prefLabel": "humerus",
+      "skos:inScheme": {
+        "@id": "r2r:Bone"
+      },
+      "r2r:countsAsLongBone": true
+    },
+    {
+      "@id": "r2r:Bone.radius",
+      "@type": [
+        "skos:Concept",
+        "r2r:Bone"
+      ],
+      "skos:prefLabel": "radius",
+      "skos:inScheme": {
+        "@id": "r2r:Bone"
+      },
+      "r2r:countsAsLongBone": false
+    },
+    {
+      "@id": "r2r:Bone.ulna",
+      "@type": [
+        "skos:Concept",
+        "r2r:Bone"
+      ],
+      "skos:prefLabel": "ulna",
+      "skos:inScheme": {
+        "@id": "r2r:Bone"
+      },
+      "r2r:countsAsLongBone": false
+    },
+    {
+      "@id": "r2r:Bone.hand_bones",
+      "@type": [
+        "skos:Concept",
+        "r2r:Bone"
+      ],
+      "skos:prefLabel": "hand bones",
+      "skos:inScheme": {
+        "@id": "r2r:Bone"
+      },
+      "r2r:countsAsLongBone": false
+    },
+    {
+      "@id": "r2r:Bone.pelvis",
+      "@type": [
+        "skos:Concept",
+        "r2r:Bone"
+      ],
+      "skos:prefLabel": "pelvis",
+      "skos:inScheme": {
+        "@id": "r2r:Bone"
+      },
+      "r2r:countsAsLongBone": false
+    },
+    {
+      "@id": "r2r:Bone.femur",
+      "@type": [
+        "skos:Concept",
+        "r2r:Bone"
+      ],
+      "skos:prefLabel": "femur",
+      "skos:inScheme": {
+        "@id": "r2r:Bone"
+      },
+      "r2r:countsAsLongBone": true
+    },
+    {
+      "@id": "r2r:Bone.patella",
+      "@type": [
+        "skos:Concept",
+        "r2r:Bone"
+      ],
+      "skos:prefLabel": "patella",
+      "skos:inScheme": {
+        "@id": "r2r:Bone"
+      },
+      "r2r:countsAsLongBone": false
+    },
+    {
+      "@id": "r2r:Bone.tibia",
+      "@type": [
+        "skos:Concept",
+        "r2r:Bone"
+      ],
+      "skos:prefLabel": "tibia",
+      "skos:inScheme": {
+        "@id": "r2r:Bone"
+      },
+      "r2r:countsAsLongBone": false
+    },
+    {
+      "@id": "r2r:Bone.fibula",
+      "@type": [
+        "skos:Concept",
+        "r2r:Bone"
+      ],
+      "skos:prefLabel": "fibula",
+      "skos:inScheme": {
+        "@id": "r2r:Bone"
+      },
+      "r2r:countsAsLongBone": false
+    },
+    {
+      "@id": "r2r:Bone.foot_bones",
+      "@type": [
+        "skos:Concept",
+        "r2r:Bone"
+      ],
+      "skos:prefLabel": "foot bones",
+      "skos:inScheme": {
+        "@id": "r2r:Bone"
+      },
+      "r2r:countsAsLongBone": false
+    },
+    {
+      "@id": "r2r:Bone.other",
+      "@type": [
+        "skos:Concept",
+        "r2r:Bone"
+      ],
+      "skos:prefLabel": "other",
+      "skos:inScheme": {
+        "@id": "r2r:Bone"
+      },
+      "r2r:countsAsLongBone": false
+    },
+    {
+      "@id": "r2r:MechanismType",
+      "@type": [
+        "rdfs:Class",
+        "skos:ConceptScheme"
+      ],
+      "rdfs:label": "MechanismType",
+      "r2r:snomedBinding": "pending UMLS licence"
+    },
+    {
+      "@id": "r2r:MechanismType.fall",
+      "@type": [
+        "skos:Concept",
+        "r2r:MechanismType"
+      ],
+      "skos:prefLabel": "fall",
+      "skos:inScheme": {
+        "@id": "r2r:MechanismType"
+      }
+    },
+    {
+      "@id": "r2r:MechanismType.motor_vehicle_crash",
+      "@type": [
+        "skos:Concept",
+        "r2r:MechanismType"
+      ],
+      "skos:prefLabel": "motor vehicle crash",
+      "skos:inScheme": {
+        "@id": "r2r:MechanismType"
+      }
+    },
+    {
+      "@id": "r2r:MechanismType.pedestrian_struck",
+      "@type": [
+        "skos:Concept",
+        "r2r:MechanismType"
+      ],
+      "skos:prefLabel": "pedestrian struck",
+      "skos:inScheme": {
+        "@id": "r2r:MechanismType"
+      }
+    },
+    {
+      "@id": "r2r:MechanismType.bicyclist_struck",
+      "@type": [
+        "skos:Concept",
+        "r2r:MechanismType"
+      ],
+      "skos:prefLabel": "bicyclist struck",
+      "skos:inScheme": {
+        "@id": "r2r:MechanismType"
+      }
+    },
+    {
+      "@id": "r2r:MechanismType.motorcycle_crash",
+      "@type": [
+        "skos:Concept",
+        "r2r:MechanismType"
+      ],
+      "skos:prefLabel": "motorcycle crash",
+      "skos:inScheme": {
+        "@id": "r2r:MechanismType"
+      }
+    },
+    {
+      "@id": "r2r:MechanismType.atv_crash",
+      "@type": [
+        "skos:Concept",
+        "r2r:MechanismType"
+      ],
+      "skos:prefLabel": "atv crash",
+      "skos:inScheme": {
+        "@id": "r2r:MechanismType"
+      }
+    },
+    {
+      "@id": "r2r:MechanismType.assault_blunt",
+      "@type": [
+        "skos:Concept",
+        "r2r:MechanismType"
+      ],
+      "skos:prefLabel": "assault blunt",
+      "skos:inScheme": {
+        "@id": "r2r:MechanismType"
+      }
+    },
+    {
+      "@id": "r2r:MechanismType.other_blunt",
+      "@type": [
+        "skos:Concept",
+        "r2r:MechanismType"
+      ],
+      "skos:prefLabel": "other blunt",
+      "skos:inScheme": {
+        "@id": "r2r:MechanismType"
+      }
+    },
+    {
+      "@id": "r2r:MechanismType.stab",
+      "@type": [
+        "skos:Concept",
+        "r2r:MechanismType"
+      ],
+      "skos:prefLabel": "stab",
+      "skos:inScheme": {
+        "@id": "r2r:MechanismType"
+      }
+    },
+    {
+      "@id": "r2r:MechanismType.gunshot",
+      "@type": [
+        "skos:Concept",
+        "r2r:MechanismType"
+      ],
+      "skos:prefLabel": "gunshot",
+      "skos:inScheme": {
+        "@id": "r2r:MechanismType"
+      }
+    },
+    {
+      "@id": "r2r:MechanismType.other_penetrating",
+      "@type": [
+        "skos:Concept",
+        "r2r:MechanismType"
+      ],
+      "skos:prefLabel": "other penetrating",
+      "skos:inScheme": {
+        "@id": "r2r:MechanismType"
+      }
+    },
+    {
+      "@id": "r2r:MechanismType.burn",
+      "@type": [
+        "skos:Concept",
+        "r2r:MechanismType"
+      ],
+      "skos:prefLabel": "burn",
+      "skos:inScheme": {
+        "@id": "r2r:MechanismType"
+      }
+    },
+    {
+      "@id": "r2r:MechanismType.electrical",
+      "@type": [
+        "skos:Concept",
+        "r2r:MechanismType"
+      ],
+      "skos:prefLabel": "electrical",
+      "skos:inScheme": {
+        "@id": "r2r:MechanismType"
+      }
+    },
+    {
+      "@id": "r2r:MechanismType.crush",
+      "@type": [
+        "skos:Concept",
+        "r2r:MechanismType"
+      ],
+      "skos:prefLabel": "crush",
+      "skos:inScheme": {
+        "@id": "r2r:MechanismType"
+      }
+    },
+    {
+      "@id": "r2r:MechanismType.near_drowning",
+      "@type": [
+        "skos:Concept",
+        "r2r:MechanismType"
+      ],
+      "skos:prefLabel": "near drowning",
+      "skos:inScheme": {
+        "@id": "r2r:MechanismType"
+      }
+    },
+    {
+      "@id": "r2r:MechanismType.near_hanging",
+      "@type": [
+        "skos:Concept",
+        "r2r:MechanismType"
+      ],
+      "skos:prefLabel": "near hanging",
+      "skos:inScheme": {
+        "@id": "r2r:MechanismType"
+      }
+    },
+    {
+      "@id": "r2r:Ejection",
+      "@type": [
+        "rdfs:Class",
+        "skos:ConceptScheme"
+      ],
+      "rdfs:label": "Ejection"
+    },
+    {
+      "@id": "r2r:Ejection.none",
+      "@type": [
+        "skos:Concept",
+        "r2r:Ejection"
+      ],
+      "skos:prefLabel": "none",
+      "skos:inScheme": {
+        "@id": "r2r:Ejection"
+      }
+    },
+    {
+      "@id": "r2r:Ejection.partial",
+      "@type": [
+        "skos:Concept",
+        "r2r:Ejection"
+      ],
+      "skos:prefLabel": "partial",
+      "skos:inScheme": {
+        "@id": "r2r:Ejection"
+      }
+    },
+    {
+      "@id": "r2r:Ejection.complete",
+      "@type": [
+        "skos:Concept",
+        "r2r:Ejection"
+      ],
+      "skos:prefLabel": "complete",
+      "skos:inScheme": {
+        "@id": "r2r:Ejection"
+      }
+    },
+    {
+      "@id": "r2r:FallType",
+      "@type": [
+        "rdfs:Class",
+        "skos:ConceptScheme"
+      ],
+      "rdfs:label": "FallType"
+    },
+    {
+      "@id": "r2r:FallType.same_level",
+      "@type": [
+        "skos:Concept",
+        "r2r:FallType"
+      ],
+      "skos:prefLabel": "same level",
+      "skos:inScheme": {
+        "@id": "r2r:FallType"
+      }
+    },
+    {
+      "@id": "r2r:FallType.from_height",
+      "@type": [
+        "skos:Concept",
+        "r2r:FallType"
+      ],
+      "skos:prefLabel": "from height",
+      "skos:inScheme": {
+        "@id": "r2r:FallType"
+      }
+    },
+    {
+      "@id": "r2r:Sex",
+      "@type": [
+        "rdfs:Class",
+        "skos:ConceptScheme"
+      ],
+      "rdfs:label": "Sex"
+    },
+    {
+      "@id": "r2r:Sex.male",
+      "@type": [
+        "skos:Concept",
+        "r2r:Sex"
+      ],
+      "skos:prefLabel": "male",
+      "skos:inScheme": {
+        "@id": "r2r:Sex"
+      }
+    },
+    {
+      "@id": "r2r:Sex.female",
+      "@type": [
+        "skos:Concept",
+        "r2r:Sex"
+      ],
+      "skos:prefLabel": "female",
+      "skos:inScheme": {
+        "@id": "r2r:Sex"
+      }
+    },
+    {
+      "@id": "r2r:ArrivalMode",
+      "@type": [
+        "rdfs:Class",
+        "skos:ConceptScheme"
+      ],
+      "rdfs:label": "ArrivalMode"
+    },
+    {
+      "@id": "r2r:ArrivalMode.ems_scene",
+      "@type": [
+        "skos:Concept",
+        "r2r:ArrivalMode"
+      ],
+      "skos:prefLabel": "ems scene",
+      "skos:inScheme": {
+        "@id": "r2r:ArrivalMode"
+      }
+    },
+    {
+      "@id": "r2r:ArrivalMode.ems_interfacility",
+      "@type": [
+        "skos:Concept",
+        "r2r:ArrivalMode"
+      ],
+      "skos:prefLabel": "ems interfacility",
+      "skos:inScheme": {
+        "@id": "r2r:ArrivalMode"
+      }
+    },
+    {
+      "@id": "r2r:ArrivalMode.walk_in",
+      "@type": [
+        "skos:Concept",
+        "r2r:ArrivalMode"
+      ],
+      "skos:prefLabel": "walk in",
+      "skos:inScheme": {
+        "@id": "r2r:ArrivalMode"
+      }
+    },
+    {
+      "@id": "r2r:AnatomicZone",
+      "@type": [
+        "rdfs:Class",
+        "skos:ConceptScheme"
+      ],
+      "rdfs:label": "AnatomicZone",
+      "rdfs:comment": "Landmarks used by the activation criteria (t-shirt/boxer area, wrist/ankle)."
+    },
+    {
+      "@id": "r2r:AnatomicZone.head",
+      "@type": [
+        "skos:Concept",
+        "r2r:AnatomicZone"
+      ],
+      "skos:prefLabel": "head",
+      "skos:inScheme": {
+        "@id": "r2r:AnatomicZone"
+      }
+    },
+    {
+      "@id": "r2r:AnatomicZone.neck",
+      "@type": [
+        "skos:Concept",
+        "r2r:AnatomicZone"
+      ],
+      "skos:prefLabel": "neck",
+      "skos:inScheme": {
+        "@id": "r2r:AnatomicZone"
+      }
+    },
+    {
+      "@id": "r2r:AnatomicZone.tshirt_boxer",
+      "@type": [
+        "skos:Concept",
+        "r2r:AnatomicZone"
+      ],
+      "skos:prefLabel": "tshirt boxer",
+      "skos:inScheme": {
+        "@id": "r2r:AnatomicZone"
+      }
+    },
+    {
+      "@id": "r2r:AnatomicZone.proximal_limb",
+      "@type": [
+        "skos:Concept",
+        "r2r:AnatomicZone"
+      ],
+      "skos:prefLabel": "proximal limb",
+      "skos:inScheme": {
+        "@id": "r2r:AnatomicZone"
+      }
+    },
+    {
+      "@id": "r2r:AnatomicZone.distal_limb",
+      "@type": [
+        "skos:Concept",
+        "r2r:AnatomicZone"
+      ],
+      "skos:prefLabel": "distal limb",
+      "skos:inScheme": {
+        "@id": "r2r:AnatomicZone"
+      }
+    },
+    {
+      "@id": "r2r:anatomicZone",
+      "@type": "rdf:Property",
+      "rdfs:label": "anatomic zone",
+      "rdfs:domain": {
+        "@id": "r2r:BodyRegion"
+      },
+      "rdfs:range": {
+        "@id": "r2r:AnatomicZone"
+      }
+    },
+    {
+      "@id": "r2r:countsAsLongBone",
+      "@type": "rdf:Property",
+      "rdfs:label": "counts as long bone",
+      "rdfs:comment": "The criteria count only the humerus and femur as long bones.",
+      "rdfs:domain": {
+        "@id": "r2r:Bone"
+      },
+      "rdfs:range": {
+        "@id": "xsd:boolean"
+      }
+    },
+    {
+      "@id": "r2r:ucumUnit",
+      "@type": "rdf:Property",
+      "rdfs:range": {
+        "@id": "xsd:string"
+      }
+    },
+    {
+      "@id": "r2r:loincName",
+      "@type": "rdf:Property",
+      "rdfs:range": {
+        "@id": "xsd:string"
+      }
+    }
+  ]
+}

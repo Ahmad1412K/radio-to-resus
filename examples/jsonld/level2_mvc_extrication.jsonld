@@ -1,0 +1,519 @@
+{
+  "@context": {
+    "@version": 1.1,
+    "r2r": "https://w3id.org/radio-to-resus/vocab#",
+    "loinc": "https://loinc.org/",
+    "snomed": "http://snomed.info/id/",
+    "ucum": "http://unitsofmeasure.org/",
+    "rdf": "http://www.w3.org/1999/02/22-rdf-syntax-ns#",
+    "rdfs": "http://www.w3.org/2000/01/rdf-schema#",
+    "skos": "http://www.w3.org/2004/02/skos/core#",
+    "xsd": "http://www.w3.org/2001/XMLSchema#",
+    "schema_version": {
+      "@id": "r2r:HandoverRecord.schema_version"
+    },
+    "identification": {
+      "@id": "r2r:HandoverRecord.identification",
+      "@context": {
+        "age_years": {
+          "@id": "r2r:Identification.age_years"
+        },
+        "sex": {
+          "@id": "r2r:Identification.sex",
+          "@type": "@vocab",
+          "@context": {
+            "male": "r2r:Sex.male",
+            "female": "r2r:Sex.female"
+          }
+        },
+        "pregnant": {
+          "@id": "r2r:Identification.pregnant"
+        },
+        "gestation_weeks": {
+          "@id": "r2r:Identification.gestation_weeks"
+        },
+        "arrival_mode": {
+          "@id": "r2r:Identification.arrival_mode",
+          "@type": "@vocab",
+          "@context": {
+            "ems_scene": "r2r:ArrivalMode.ems_scene",
+            "ems_interfacility": "r2r:ArrivalMode.ems_interfacility",
+            "walk_in": "r2r:ArrivalMode.walk_in"
+          }
+        },
+        "eta_minutes": {
+          "@id": "r2r:Identification.eta_minutes"
+        }
+      }
+    },
+    "mechanism": {
+      "@id": "r2r:HandoverRecord.mechanism",
+      "@context": {
+        "type": {
+          "@id": "r2r:Mechanism.type",
+          "@type": "@vocab",
+          "@context": {
+            "fall": "r2r:MechanismType.fall",
+            "motor_vehicle_crash": "r2r:MechanismType.motor_vehicle_crash",
+            "pedestrian_struck": "r2r:MechanismType.pedestrian_struck",
+            "bicyclist_struck": "r2r:MechanismType.bicyclist_struck",
+            "motorcycle_crash": "r2r:MechanismType.motorcycle_crash",
+            "atv_crash": "r2r:MechanismType.atv_crash",
+            "assault_blunt": "r2r:MechanismType.assault_blunt",
+            "other_blunt": "r2r:MechanismType.other_blunt",
+            "stab": "r2r:MechanismType.stab",
+            "gunshot": "r2r:MechanismType.gunshot",
+            "other_penetrating": "r2r:MechanismType.other_penetrating",
+            "burn": "r2r:MechanismType.burn",
+            "electrical": "r2r:MechanismType.electrical",
+            "crush": "r2r:MechanismType.crush",
+            "near_drowning": "r2r:MechanismType.near_drowning",
+            "near_hanging": "r2r:MechanismType.near_hanging"
+          }
+        },
+        "description": {
+          "@id": "r2r:Mechanism.description"
+        },
+        "fall": {
+          "@id": "r2r:Mechanism.fall",
+          "@context": {
+            "fall_type": {
+              "@id": "r2r:FallDetails.fall_type",
+              "@type": "@vocab",
+              "@context": {
+                "same_level": "r2r:FallType.same_level",
+                "from_height": "r2r:FallType.from_height"
+              }
+            },
+            "height_ft": {
+              "@id": "r2r:FallDetails.height_ft"
+            }
+          }
+        },
+        "vehicle": {
+          "@id": "r2r:Mechanism.vehicle",
+          "@context": {
+            "impact_speed_mph": {
+              "@id": "r2r:VehicleCrashDetails.impact_speed_mph"
+            },
+            "extrication_minutes": {
+              "@id": "r2r:VehicleCrashDetails.extrication_minutes"
+            },
+            "intrusion_occupant_site_in": {
+              "@id": "r2r:VehicleCrashDetails.intrusion_occupant_site_in"
+            },
+            "intrusion_any_site_in": {
+              "@id": "r2r:VehicleCrashDetails.intrusion_any_site_in"
+            },
+            "ejection": {
+              "@id": "r2r:VehicleCrashDetails.ejection",
+              "@type": "@vocab",
+              "@context": {
+                "none": "r2r:Ejection.none",
+                "partial": "r2r:Ejection.partial",
+                "complete": "r2r:Ejection.complete"
+              }
+            },
+            "death_same_compartment": {
+              "@id": "r2r:VehicleCrashDetails.death_same_compartment"
+            },
+            "patient_thrown": {
+              "@id": "r2r:VehicleCrashDetails.patient_thrown"
+            },
+            "run_over": {
+              "@id": "r2r:VehicleCrashDetails.run_over"
+            },
+            "rider_separated": {
+              "@id": "r2r:VehicleCrashDetails.rider_separated"
+            },
+            "rollover": {
+              "@id": "r2r:VehicleCrashDetails.rollover"
+            }
+          }
+        },
+        "loss_of_consciousness": {
+          "@id": "r2r:Mechanism.loss_of_consciousness",
+          "@context": {
+            "occurred": {
+              "@id": "r2r:LossOfConsciousness.occurred"
+            },
+            "duration_minutes": {
+              "@id": "r2r:LossOfConsciousness.duration_minutes"
+            }
+          }
+        }
+      }
+    },
+    "injuries": {
+      "@id": "r2r:HandoverRecord.injuries",
+      "@context": {
+        "type": {
+          "@id": "r2r:Injury.type",
+          "@type": "@vocab",
+          "@context": {
+            "fracture": "r2r:InjuryType.fracture",
+            "penetrating_wound": "r2r:InjuryType.penetrating_wound",
+            "amputation": "r2r:InjuryType.amputation",
+            "degloving": "r2r:InjuryType.degloving",
+            "crush": "r2r:InjuryType.crush",
+            "mangled_extremity": "r2r:InjuryType.mangled_extremity",
+            "pulseless_extremity": "r2r:InjuryType.pulseless_extremity",
+            "seatbelt_sign": "r2r:InjuryType.seatbelt_sign",
+            "laceration": "r2r:InjuryType.laceration",
+            "contusion": "r2r:InjuryType.contusion",
+            "abrasion": "r2r:InjuryType.abrasion",
+            "other": "r2r:InjuryType.other"
+          }
+        },
+        "region": {
+          "@id": "r2r:Injury.region",
+          "@type": "@vocab",
+          "@context": {
+            "head": "r2r:BodyRegion.head",
+            "face": "r2r:BodyRegion.face",
+            "neck": "r2r:BodyRegion.neck",
+            "shoulder_axilla": "r2r:BodyRegion.shoulder_axilla",
+            "chest": "r2r:BodyRegion.chest",
+            "abdomen": "r2r:BodyRegion.abdomen",
+            "flank": "r2r:BodyRegion.flank",
+            "back": "r2r:BodyRegion.back",
+            "pelvis": "r2r:BodyRegion.pelvis",
+            "groin_perineum": "r2r:BodyRegion.groin_perineum",
+            "buttock": "r2r:BodyRegion.buttock",
+            "upper_arm": "r2r:BodyRegion.upper_arm",
+            "elbow": "r2r:BodyRegion.elbow",
+            "forearm": "r2r:BodyRegion.forearm",
+            "wrist": "r2r:BodyRegion.wrist",
+            "hand": "r2r:BodyRegion.hand",
+            "finger": "r2r:BodyRegion.finger",
+            "thigh": "r2r:BodyRegion.thigh",
+            "knee": "r2r:BodyRegion.knee",
+            "lower_leg": "r2r:BodyRegion.lower_leg",
+            "ankle": "r2r:BodyRegion.ankle",
+            "foot": "r2r:BodyRegion.foot",
+            "toe": "r2r:BodyRegion.toe"
+          }
+        },
+        "side": {
+          "@id": "r2r:Injury.side",
+          "@type": "@vocab",
+          "@context": {
+            "left": "r2r:Side.left",
+            "right": "r2r:Side.right",
+            "bilateral": "r2r:Side.bilateral",
+            "midline": "r2r:Side.midline"
+          }
+        },
+        "suspected": {
+          "@id": "r2r:Injury.suspected"
+        },
+        "bone": {
+          "@id": "r2r:Injury.bone",
+          "@type": "@vocab",
+          "@context": {
+            "skull": "r2r:Bone.skull",
+            "vertebra": "r2r:Bone.vertebra",
+            "clavicle": "r2r:Bone.clavicle",
+            "rib": "r2r:Bone.rib",
+            "sternum": "r2r:Bone.sternum",
+            "humerus": "r2r:Bone.humerus",
+            "radius": "r2r:Bone.radius",
+            "ulna": "r2r:Bone.ulna",
+            "hand_bones": "r2r:Bone.hand_bones",
+            "pelvis": "r2r:Bone.pelvis",
+            "femur": "r2r:Bone.femur",
+            "patella": "r2r:Bone.patella",
+            "tibia": "r2r:Bone.tibia",
+            "fibula": "r2r:Bone.fibula",
+            "foot_bones": "r2r:Bone.foot_bones",
+            "other": "r2r:Bone.other"
+          }
+        },
+        "open_fracture": {
+          "@id": "r2r:Injury.open_fracture"
+        },
+        "depressed": {
+          "@id": "r2r:Injury.depressed"
+        },
+        "pelvis_unstable": {
+          "@id": "r2r:Injury.pelvis_unstable"
+        },
+        "digits_involved": {
+          "@id": "r2r:Injury.digits_involved"
+        }
+      }
+    },
+    "burns": {
+      "@id": "r2r:HandoverRecord.burns",
+      "@context": {
+        "tbsa_percent": {
+          "@id": "r2r:Burns.tbsa_percent"
+        },
+        "inhalation_injury": {
+          "@id": "r2r:Burns.inhalation_injury"
+        },
+        "electrical": {
+          "@id": "r2r:Burns.electrical"
+        }
+      }
+    },
+    "signs": {
+      "@id": "r2r:HandoverRecord.signs",
+      "@context": {
+        "vitals": {
+          "@id": "r2r:Signs.vitals",
+          "@context": {
+            "systolic_bp_mmhg": {
+              "@id": "r2r:Vitals.systolic_bp_mmhg"
+            },
+            "diastolic_bp_mmhg": {
+              "@id": "r2r:Vitals.diastolic_bp_mmhg"
+            },
+            "heart_rate_bpm": {
+              "@id": "r2r:Vitals.heart_rate_bpm"
+            },
+            "resp_rate_per_min": {
+              "@id": "r2r:Vitals.resp_rate_per_min"
+            },
+            "spo2_percent": {
+              "@id": "r2r:Vitals.spo2_percent"
+            },
+            "spo2_on_room_air": {
+              "@id": "r2r:Vitals.spo2_on_room_air"
+            }
+          }
+        },
+        "gcs": {
+          "@id": "r2r:Signs.gcs",
+          "@context": {
+            "eye": {
+              "@id": "r2r:GCS.eye"
+            },
+            "verbal": {
+              "@id": "r2r:GCS.verbal"
+            },
+            "motor": {
+              "@id": "r2r:GCS.motor"
+            },
+            "total": {
+              "@id": "r2r:GCS.total"
+            },
+            "before_intubation": {
+              "@id": "r2r:GCS.before_intubation"
+            }
+          }
+        },
+        "airway": {
+          "@id": "r2r:Signs.airway",
+          "@type": "@vocab",
+          "@context": {
+            "patent": "r2r:AirwayStatus.patent",
+            "compromised": "r2r:AirwayStatus.compromised",
+            "advanced_airway": "r2r:AirwayStatus.advanced_airway"
+          }
+        },
+        "flail_chest": {
+          "@id": "r2r:Signs.flail_chest"
+        },
+        "pneumothorax_or_hemothorax": {
+          "@id": "r2r:Signs.pneumothorax_or_hemothorax"
+        },
+        "clinical_signs_of_shock": {
+          "@id": "r2r:Signs.clinical_signs_of_shock"
+        },
+        "shock_signs": {
+          "@id": "r2r:Signs.shock_signs",
+          "@type": "@vocab",
+          "@context": {
+            "pale": "r2r:ShockSign.pale",
+            "cool_clammy": "r2r:ShockSign.cool_clammy",
+            "diaphoretic": "r2r:ShockSign.diaphoretic",
+            "delayed_cap_refill": "r2r:ShockSign.delayed_cap_refill",
+            "weak_thready_pulse": "r2r:ShockSign.weak_thready_pulse",
+            "altered_mentation": "r2r:ShockSign.altered_mentation"
+          }
+        },
+        "hemorrhage": {
+          "@id": "r2r:Signs.hemorrhage",
+          "@type": "@vocab",
+          "@context": {
+            "none": "r2r:Hemorrhage.none",
+            "controlled": "r2r:Hemorrhage.controlled",
+            "active_uncontrolled": "r2r:Hemorrhage.active_uncontrolled"
+          }
+        },
+        "paralysis": {
+          "@id": "r2r:Signs.paralysis"
+        },
+        "bilateral_sensory_loss": {
+          "@id": "r2r:Signs.bilateral_sensory_loss"
+        },
+        "suspected_spinal_cord_injury": {
+          "@id": "r2r:Signs.suspected_spinal_cord_injury"
+        },
+        "abdominal_pain": {
+          "@id": "r2r:Signs.abdominal_pain"
+        },
+        "abdomen_firm_or_distended": {
+          "@id": "r2r:Signs.abdomen_firm_or_distended"
+        },
+        "trend": {
+          "@id": "r2r:Signs.trend",
+          "@type": "@vocab",
+          "@context": {
+            "improving": "r2r:Trend.improving",
+            "stable": "r2r:Trend.stable",
+            "deteriorating": "r2r:Trend.deteriorating"
+          }
+        }
+      }
+    },
+    "treatment": {
+      "@id": "r2r:HandoverRecord.treatment",
+      "@context": {
+        "interventions": {
+          "@id": "r2r:Treatment.interventions",
+          "@type": "@vocab",
+          "@context": {
+            "endotracheal_intubation": "r2r:Intervention.endotracheal_intubation",
+            "supraglottic_airway": "r2r:Intervention.supraglottic_airway",
+            "surgical_airway": "r2r:Intervention.surgical_airway",
+            "bag_valve_mask": "r2r:Intervention.bag_valve_mask",
+            "supplemental_oxygen": "r2r:Intervention.supplemental_oxygen",
+            "needle_decompression": "r2r:Intervention.needle_decompression",
+            "tourniquet": "r2r:Intervention.tourniquet",
+            "wound_packing": "r2r:Intervention.wound_packing",
+            "pelvic_binder": "r2r:Intervention.pelvic_binder",
+            "blood_transfusion": "r2r:Intervention.blood_transfusion",
+            "iv_fluids": "r2r:Intervention.iv_fluids",
+            "spinal_motion_restriction": "r2r:Intervention.spinal_motion_restriction",
+            "splint": "r2r:Intervention.splint",
+            "analgesia": "r2r:Intervention.analgesia",
+            "other": "r2r:Intervention.other"
+          }
+        },
+        "blood_transfusion_required_to_maintain_vitals": {
+          "@id": "r2r:Treatment.blood_transfusion_required_to_maintain_vitals"
+        }
+      }
+    },
+    "allergies": {
+      "@id": "r2r:HandoverRecord.allergies"
+    },
+    "medications": {
+      "@id": "r2r:HandoverRecord.medications"
+    },
+    "background": {
+      "@id": "r2r:HandoverRecord.background"
+    },
+    "other": {
+      "@id": "r2r:HandoverRecord.other"
+    },
+    "retractions": {
+      "@id": "r2r:HandoverRecord.retractions",
+      "@context": {
+        "field": {
+          "@id": "r2r:Retraction.field"
+        },
+        "retracted_value": {
+          "@id": "r2r:Retraction.retracted_value"
+        },
+        "corrected_value": {
+          "@id": "r2r:Retraction.corrected_value"
+        }
+      }
+    },
+    "injuriesStated": {
+      "@id": "r2r:HandoverRecord.injuriesStated",
+      "@type": "xsd:boolean"
+    },
+    "allergiesStated": {
+      "@id": "r2r:HandoverRecord.allergiesStated",
+      "@type": "xsd:boolean"
+    },
+    "medicationsStated": {
+      "@id": "r2r:HandoverRecord.medicationsStated",
+      "@type": "xsd:boolean"
+    },
+    "backgroundStated": {
+      "@id": "r2r:HandoverRecord.backgroundStated",
+      "@type": "xsd:boolean"
+    },
+    "recordedAt": {
+      "@id": "r2r:HandoverRecord.recordedAt",
+      "@type": "xsd:dateTime"
+    }
+  },
+  "@id": "urn:radio-to-resus:example:level2_mvc_extrication",
+  "@type": "r2r:HandoverRecord",
+  "identification": {
+    "@type": "r2r:Identification",
+    "age_years": 46,
+    "sex": "female",
+    "arrival_mode": "ems_scene",
+    "eta_minutes": 15
+  },
+  "mechanism": {
+    "@type": "r2r:Mechanism",
+    "type": "motor_vehicle_crash",
+    "vehicle": {
+      "@type": "r2r:VehicleCrashDetails",
+      "extrication_minutes": 25.0,
+      "intrusion_occupant_site_in": 10.0,
+      "ejection": "none"
+    },
+    "loss_of_consciousness": {
+      "@type": "r2r:LossOfConsciousness",
+      "occurred": false
+    }
+  },
+  "injuries": [
+    {
+      "@type": "r2r:Injury",
+      "type": "fracture",
+      "region": "thigh",
+      "side": "right",
+      "suspected": true,
+      "bone": "femur",
+      "open_fracture": false
+    }
+  ],
+  "signs": {
+    "@type": "r2r:Signs",
+    "vitals": {
+      "@type": "r2r:Vitals",
+      "systolic_bp_mmhg": 118,
+      "diastolic_bp_mmhg": 76,
+      "heart_rate_bpm": 104,
+      "resp_rate_per_min": 20,
+      "spo2_percent": 97,
+      "spo2_on_room_air": true
+    },
+    "gcs": {
+      "@type": "r2r:GCS",
+      "total": 15
+    },
+    "airway": "patent",
+    "clinical_signs_of_shock": false,
+    "trend": "stable"
+  },
+  "treatment": {
+    "@type": "r2r:Treatment",
+    "interventions": [
+      "splint",
+      "analgesia",
+      "spinal_motion_restriction"
+    ]
+  },
+  "medications": [
+    "lisinopril"
+  ],
+  "background": [
+    "hypertension"
+  ],
+  "injuriesStated": true,
+  "allergiesStated": true,
+  "medicationsStated": true,
+  "backgroundStated": true,
+  "recordedAt": "2026-10-08T00:00:00+00:00"
+}

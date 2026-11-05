@@ -1,0 +1,12 @@
+{
+ "model": "qwen3:0.6b",
+ "backend": "ollama",
+ "split": "dev",
+ "fewshot": 0,
+ "constrained": true,
+ "num_ctx": 8192,
+ "think": "off",
+ "gold": "C:\\Users\\a.ali\\radio-to-resus\\examples\\synthetic_handovers_v2.csv",
+ "prompt_sha256": "191dfdd6495128b23991d2f840892bde644da5eb5fdffb8d75defd9819b453f1",
+ "started": "2026-11-01T13:13:23"
+}

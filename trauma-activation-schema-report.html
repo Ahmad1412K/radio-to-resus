@@ -1,0 +1,251 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Trauma Activation Schema Report</title>
+<style>
+:root{
+  --ground:#EFF3F2; --surface:#FFFFFF; --inset:#E5ECEB;
+  --ink:#0F1A1B; --ink2:#3B4D4E; --muted:#647677;
+  --rule:#CBD8D7; --rule-soft:#DEE7E6;
+  --accent:#0E5A61; --accent-soft:#DAEAEA;
+  --critical:#A2322A; --crit-bg:#F5E2DF;
+}
+@media (prefers-color-scheme: dark){
+  :root{
+    --ground:#0A1112; --surface:#111A1B; --inset:#162122;
+    --ink:#E3EAE9; --ink2:#B2C1C1; --muted:#7D8F91;
+    --rule:#243233; --rule-soft:#1B2627;
+    --accent:#7ECBCF; --accent-soft:#12302F;
+    --critical:#E28578; --crit-bg:#2E1917;
+  }
+}
+*{box-sizing:border-box}
+body{margin:0; background:var(--ground); color:var(--ink);
+  font-family:Georgia,"Times New Roman",serif; font-size:16.5px; line-height:1.6}
+.page{max-width:1000px; margin:0 auto; padding:56px 24px 80px}
+h1,h2{font-family:"Segoe UI",Arial,sans-serif; letter-spacing:-.01em}
+h1{font-size:2.3rem; margin:0 0 6px; line-height:1.1}
+.byline{font-family:Consolas,monospace; font-size:12px; color:var(--muted); letter-spacing:.06em; text-transform:uppercase; margin-bottom:36px}
+h2{font-size:1.45rem; margin:48px 0 14px; padding-top:18px; border-top:1px solid var(--rule)}
+p{margin:0 0 14px; max-width:72ch}
+ul,ol{max-width:72ch; padding-left:22px}
+li{margin-bottom:8px}
+code{font-family:Consolas,monospace; font-size:.84em; background:var(--inset); padding:.08em .32em; border-radius:2px}
+.twrap{overflow-x:auto; margin:18px 0 22px; border:1px solid var(--rule); border-radius:3px; background:var(--surface)}
+table{border-collapse:collapse; width:100%; min-width:640px; font-size:14.5px}
+th{text-align:left; font-family:"Segoe UI",Arial,sans-serif; font-size:13px; font-weight:600;
+  padding:11px 14px; border-bottom:1px solid var(--rule); background:var(--inset)}
+td{padding:10px 14px; border-bottom:1px solid var(--rule-soft); vertical-align:top; color:var(--ink2)}
+tr:last-child td{border-bottom:none}
+td:first-child{white-space:nowrap; color:var(--ink)}
+tr.flag td{background:var(--crit-bg)}
+.note{background:var(--accent-soft); padding:14px 18px; border-radius:3px; max-width:72ch}
+</style>
+</head>
+<body>
+<div class="page">
+
+<h1>Trauma Activation Schema Report</h1>
+<div class="byline">8 October 2026 · Ahmad Mohammad Odeh Ali</div>
+
+<h2>Summary</h2>
+<p>The handover schema is now a Pydantic model that can represent every one of the 37 criteria in the 2024 adult trauma activation document (16 Level I, 13 Level II, 8 Level III). A test checks this automatically. Since the first version of this report, a worked radio case and a JSON-LD layer have been added, and all 79 tests pass.</p>
+<p>The schema follows IMIST-AMBO and keeps three rules throughout: an unmentioned field is <code>None</code> and never a negative, units stay as the source document uses them (feet, mph, inches), and the record holds what the crew <em>said</em>, not the patient's true state.</p>
+<p>Files are in <code>C:\Users\a.ali\radio-to-resus\</code>:</p>
+<div class="twrap"><table>
+<thead><tr><th>File</th><th>What it is</th></tr></thead>
+<tbody>
+<tr><td><code>schema/handover.py</code></td><td>The Pydantic models and their validators</td></tr>
+<tr><td><code>schema/vocab.py</code></td><td>Enums and the body-region-to-zone mapping</td></tr>
+<tr><td><code>schema/criteria.yaml</code></td><td>Each criterion, verbatim, with the schema fields it needs</td></tr>
+<tr><td><code>schema/handover.schema.json</code></td><td>Exported JSON Schema, the target for constrained decoding</td></tr>
+<tr><td><code>examples/*.json</code></td><td>Five example records: one per level, a speaker correction, and the radio case</td></tr>
+<tr><td><code>examples/radio_case_001.txt</code></td><td>The radio handover text the radio case was converted from</td></tr>
+<tr><td><code>examples/jsonld/*.jsonld</code></td><td>The JSON-LD view of every example</td></tr>
+<tr><td><code>schema/jsonld/context.jsonld</code></td><td>JSON-LD context mapping every field and enum value to an IRI (generated)</td></tr>
+<tr><td><code>schema/jsonld/vocab.jsonld</code></td><td>The vocabulary: classes, properties, code lists, LOINC and UCUM links (generated)</td></tr>
+<tr><td><code>schema/jsonld/bindings.py</code></td><td>The verified LOINC codes, UCUM units and pending SNOMED CT slots</td></tr>
+<tr><td><code>schema/jsonld/build.py</code>, <code>convert.py</code></td><td>Generate the context and vocabulary; convert a record to JSON-LD</td></tr>
+<tr><td><code>tests/test_schema.py</code></td><td>Coverage, example and validator tests</td></tr>
+<tr><td><code>tests/test_jsonld.py</code></td><td>JSON-LD tests: generated files current, no value lost in RDF, empty lists kept</td></tr>
+<tr><td><code>scripts/make_examples.py</code></td><td>Regenerates the examples and the JSON Schema</td></tr>
+<tr><td><code>scripts/make_jsonld_examples.py</code></td><td>Regenerates the JSON-LD examples</td></tr>
+</tbody></table></div>
+
+<h2>The source document</h2>
+<p>The criteria assign a hospital trauma team activation level, not a transport destination. That makes them a closer fit for the thesis than the 2021 Field Triage Guideline, because the thesis output is exactly this pre-arrival activation decision.</p>
+<ul>
+<li><strong>Scope:</strong> adults aged 15–64, updated February 2024. The document references EPIC, so it comes from a US hospital.</li>
+<li><strong>Level I</strong> (trauma surgeon within 20 minutes): 16 criteria on physiology, airway and chest, hemorrhage, anatomic injury, burns and transfusion-dependent transfers.</li>
+<li><strong>Level II:</strong> 13 criteria, mostly mechanism of injury (falls, vehicle crashes) and less severe anatomic injury.</li>
+<li><strong>Level III</strong> (trauma note in EPIC): 8 criteria for low-risk mechanisms and minor injuries.</li>
+</ul>
+<p>The 2021 Field Triage Guideline stays useful as background, but the rule engine should implement this document if it is the protocol your supervisor wants to target.</p>
+
+<h2>Schema design</h2>
+<p>The top level follows the IMIST-AMBO order. Each section holds only what at least one criterion, or the handover protocol itself, needs.</p>
+<div class="twrap"><table>
+<thead><tr><th>Section</th><th>Model</th><th>Fields the criteria use</th></tr></thead>
+<tbody>
+<tr><td>Identification</td><td><code>Identification</code></td><td>age, sex, pregnancy and gestation, arrival mode (scene, interfacility transfer, walk-in), ETA</td></tr>
+<tr><td>Mechanism</td><td><code>Mechanism</code></td><td>mechanism type (16 values), fall type and height in ft, vehicle crash details, loss of consciousness and its duration</td></tr>
+<tr><td>Injuries</td><td><code>List[Injury]</code></td><td>injury type, body region, side, suspected, bone, open fracture, depressed skull, unstable pelvis, digits amputated</td></tr>
+<tr><td>Burns</td><td><code>Burns</code></td><td>% total body surface area, inhalation injury, electrical</td></tr>
+<tr><td>Signs</td><td><code>Signs</code>, <code>Vitals</code>, <code>GCS</code></td><td>SBP, HR, RR, SpO2 and whether on room air, GCS and whether taken before intubation, airway status, flail chest, hemo/pneumothorax, shock signs, hemorrhage, paralysis, sensory loss, suspected cord injury, abdominal findings, trend</td></tr>
+<tr><td>Treatment</td><td><code>Treatment</code></td><td>interventions (15 values), transfusion needed to maintain vitals</td></tr>
+<tr><td>Allergies, Medications, Background, Other</td><td>lists and free text</td><td>none, kept for the protocol</td></tr>
+<tr><td>Corrections</td><td><code>List[Retraction]</code></td><td>the retracted and corrected value for contribution C4</td></tr>
+</tbody></table></div>
+<p>Four design decisions shape the whole schema:</p>
+<ul>
+<li><strong>Not mentioned is <code>None</code>, not a negative.</strong> Booleans are three-valued: <code>occurred: False</code> means the crew said there was no loss of consciousness, while <code>None</code> means nobody mentioned it. Lists work the same way: <code>allergies: None</code> is "not mentioned", <code>allergies: []</code> is "no known allergies".</li>
+<li><strong>Source units.</strong> Fall height is in feet, speed in mph and intrusion in inches, so each rule can be read directly against the document's thresholds.</li>
+<li><strong>Measurement context is stored with the value.</strong> Two Level I criteria depend on it: SpO2 counts only on room air (<code>spo2_on_room_air</code>), and GCS counts only before intubation (<code>before_intubation</code>). A bare number would be ambiguous.</li>
+<li><strong>Body regions map to the document's landmarks.</strong> The criteria use "t-shirt/boxer area" and "proximal/distal to wrist or ankle". The schema records 23 ordinary body regions, and <code>vocab.ZONE_OF_REGION</code> maps each one to head, neck, t-shirt/boxer area, proximal limb or distal limb. The extractor reports where the injury is; the rule engine decides which zone that falls in.</li>
+</ul>
+
+<h2>Criterion-to-field coverage</h2>
+<p>All 37 criteria map to fields that exist in the schema. <code>test_criterion_fields_exist</code> follows every path through the Pydantic models, and it fails on an invented path such as <code>signs.vitals.made_up</code>. The full mapping, with each criterion quoted verbatim, is in <code>schema/criteria.yaml</code>.</p>
+<div class="twrap"><table>
+<thead><tr><th>ID</th><th>Criterion (abridged)</th><th>Schema fields</th></tr></thead>
+<tbody>
+<tr><td>L1-01</td><td>GCS &lt; 9 prior to intubation, traumatic mechanism</td><td><code>gcs.total</code>, <code>gcs.before_intubation</code>, <code>mechanism.type</code></td></tr>
+<tr><td>L1-02</td><td>SBP &lt; 90 and signs of shock</td><td><code>systolic_bp_mmhg</code>, <code>clinical_signs_of_shock</code>, <code>shock_signs</code></td></tr>
+<tr><td>L1-03</td><td>HR &gt; 120 and signs of shock</td><td><code>heart_rate_bpm</code>, <code>clinical_signs_of_shock</code>, <code>shock_signs</code></td></tr>
+<tr><td>L1-04</td><td>RR &lt; 10 or &gt; 29</td><td><code>resp_rate_per_min</code></td></tr>
+<tr><td>L1-05</td><td>SpO2 on room air &lt; 90%</td><td><code>spo2_percent</code>, <code>spo2_on_room_air</code></td></tr>
+<tr><td>L1-06</td><td>Airway compromise, advanced airway, flail chest, hemo/pneumothorax</td><td><code>airway</code>, <code>interventions</code>, <code>flail_chest</code>, <code>pneumothorax_or_hemothorax</code></td></tr>
+<tr><td>L1-07</td><td>Active or uncontrolled hemorrhage, tourniquet</td><td><code>hemorrhage</code>, <code>interventions</code></td></tr>
+<tr><td>L1-08</td><td>Penetrating injury: head, neck, t-shirt/boxer area</td><td><code>injuries[].type</code>, <code>injuries[].region</code></td></tr>
+<tr><td>L1-09</td><td>Pulseless extremity after trauma</td><td><code>injuries[].type</code>, <code>injuries[].region</code>, <code>mechanism.type</code></td></tr>
+<tr><td>L1-10</td><td>Amputation proximal to wrist or ankle</td><td><code>injuries[].type</code>, <code>injuries[].region</code></td></tr>
+<tr><td>L1-11</td><td>Paralysis, bilateral sensory loss, suspected cord injury</td><td><code>paralysis</code>, <code>bilateral_sensory_loss</code>, <code>suspected_spinal_cord_injury</code></td></tr>
+<tr><td>L1-12</td><td>Isolated burn &gt; 20% BSA or inhalation injury</td><td><code>tbsa_percent</code>, <code>inhalation_injury</code>, <code>electrical</code>, <code>injuries[].type</code></td></tr>
+<tr><td>L1-13</td><td>Unstable pelvic fracture</td><td><code>injuries[].bone</code>, <code>injuries[].pelvis_unstable</code></td></tr>
+<tr><td>L1-14</td><td>Open or depressed skull fracture</td><td><code>injuries[].bone</code>, <code>open_fracture</code>, <code>depressed</code></td></tr>
+<tr><td>L1-15</td><td>2+ long bone fractures (humerus, femur)</td><td><code>injuries[].type</code>, <code>injuries[].bone</code></td></tr>
+<tr><td>L1-16</td><td>Transfer needing blood to maintain vitals</td><td><code>arrival_mode</code>, <code>blood_transfusion_required_to_maintain_vitals</code></td></tr>
+<tr><td>L2-01</td><td>GCS 9–13, traumatic mechanism</td><td><code>gcs.total</code>, <code>mechanism.type</code></td></tr>
+<tr><td>L2-02</td><td>Fall &gt; 20 ft</td><td><code>fall.fall_type</code>, <code>fall.height_ft</code></td></tr>
+<tr><td>L2-03</td><td>High-risk auto crash</td><td><code>arrival_mode</code>, <code>extrication_minutes</code>, <code>intrusion_occupant_site_in</code>, <code>intrusion_any_site_in</code>, <code>ejection</code>, <code>death_same_compartment</code></td></tr>
+<tr><td>L2-04</td><td>High-risk pedestrian, cycle, ATV crash</td><td><code>patient_thrown</code>, <code>run_over</code>, <code>impact_speed_mph</code>, <code>rider_separated</code>, <code>rollover</code></td></tr>
+<tr><td>L2-05</td><td>Blunt trauma, LOC &gt; 5 min and GCS &lt; 13</td><td><code>loss_of_consciousness.*</code>, <code>gcs.total</code></td></tr>
+<tr><td>L2-06</td><td>One proximal long bone fracture</td><td><code>injuries[].bone</code></td></tr>
+<tr><td>L2-07</td><td>Open fracture proximal to wrist or ankle</td><td><code>open_fracture</code>, <code>injuries[].region</code></td></tr>
+<tr><td>L2-08</td><td>Penetrating, beyond t-shirt/boxer, proximal to wrist or ankle</td><td><code>injuries[].type</code>, <code>injuries[].region</code></td></tr>
+<tr><td>L2-09</td><td>Pregnancy with acute abdominal pain</td><td><code>pregnant</code>, <code>abdominal_pain</code></td></tr>
+<tr><td>L2-10</td><td>Degloving, crush, mangled extremity</td><td><code>injuries[].type</code>, <code>injuries[].region</code></td></tr>
+<tr><td>L2-11</td><td>Burn 10–20% with associated injuries</td><td><code>tbsa_percent</code>, <code>injuries[].type</code></td></tr>
+<tr><td>L2-12</td><td>Seatbelt sign, chest or abdomen</td><td><code>injuries[].type</code>, <code>injuries[].region</code></td></tr>
+<tr><td>L2-13</td><td>Blunt abdominal injury, firm or distended or painful</td><td><code>abdomen_firm_or_distended</code>, <code>abdominal_pain</code></td></tr>
+<tr><td>L3-01</td><td>Same-level fall at age ≥ 55, or fall 5–20 ft</td><td><code>age_years</code>, <code>fall.fall_type</code>, <code>fall.height_ft</code></td></tr>
+<tr><td>L3-02</td><td>Blunt trauma, LOC &lt; 5 min</td><td><code>loss_of_consciousness.*</code></td></tr>
+<tr><td>L3-03</td><td>Burn &lt; 10% without trauma</td><td><code>tbsa_percent</code>, <code>injuries[].type</code></td></tr>
+<tr><td>L3-04</td><td>Low-risk crash</td><td><code>arrival_mode</code>, <code>impact_speed_mph</code>, <code>rider_separated</code>, <code>injuries[].type</code></td></tr>
+<tr><td>L3-05</td><td>Amputation of 2+ digits</td><td><code>injuries[].region</code>, <code>digits_involved</code></td></tr>
+<tr><td>L3-06</td><td>Penetrating injury distal to wrist or ankle</td><td><code>injuries[].type</code>, <code>injuries[].region</code></td></tr>
+<tr><td>L3-07</td><td>Open fracture distal to wrist or ankle</td><td><code>open_fracture</code>, <code>injuries[].region</code></td></tr>
+<tr><td>L3-08</td><td>Near drowning, near hanging</td><td><code>mechanism.type</code></td></tr>
+</tbody></table></div>
+
+<h2>Validation rules</h2>
+<p>The grammar used for constrained decoding can only guarantee that the output has the right shape. These validators catch outputs that parse but contradict themselves, and each one has a test that feeds it a bad record and expects a rejection.</p>
+<div class="twrap"><table>
+<thead><tr><th>Rule</th><th>Rejects</th></tr></thead>
+<tbody>
+<tr><td>Unknown fields forbidden (<code>extra="forbid"</code>)</td><td>Any field the schema does not define</td></tr>
+<tr><td>Physiological ranges</td><td>e.g. HR above 300, GCS total outside 3–15, % body surface above 100</td></tr>
+<tr><td>GCS components sum</td><td>Eye + verbal + motor that does not equal the stated total</td></tr>
+<tr><td>SpO2 context</td><td><code>spo2_on_room_air</code> given with no SpO2 value</td></tr>
+<tr><td>Blood pressure</td><td>Diastolic higher than systolic</td></tr>
+<tr><td>Fields fit the injury type</td><td>A bone or open-fracture flag on a non-fracture, <code>depressed</code> on a non-skull fracture, <code>pelvis_unstable</code> on a non-pelvic fracture, digit count on a non-amputation</td></tr>
+<tr><td>Bone matches region</td><td>A femur fracture recorded on the upper arm, a skull fracture on the chest</td></tr>
+<tr><td>Limb-only findings</td><td>A pulseless, mangled or degloved "extremity" on the torso</td></tr>
+<tr><td>Mechanism details fit the mechanism</td><td>Fall details on a stabbing, vehicle details on a gunshot, a fall height on a same-level fall</td></tr>
+<tr><td>LOC duration</td><td>A duration given when LOC was denied</td></tr>
+<tr><td>Pregnancy</td><td>Pregnant and male; gestation weeks without pregnancy</td></tr>
+<tr><td>Shock</td><td>Shock signs listed while shock is recorded as absent</td></tr>
+<tr><td>Treatment against signs</td><td>An advanced airway placed while airway is recorded as patent; a tourniquet with hemorrhage recorded as none</td></tr>
+</tbody></table></div>
+<p>In the pipeline, a rejected record goes back to the model with the validator's message, up to a capped number of retries. If it still fails, the system asks the crew for the missing information rather than guessing.</p>
+
+<h2>Ambiguities and gaps in the criteria</h2>
+<p>The schema can store every case below, but the rule engine will need a decision on each one. The first row (highlighted) is the one to settle first, because my current assumption errs toward under-triage, the opposite of the project's stated safety principle.</p>
+<div class="twrap"><table>
+<thead><tr><th>Issue</th><th>Criteria</th><th>Assumption in the code</th><th>To decide</th></tr></thead>
+<tbody>
+<tr class="flag"><td>Where "t-shirt/boxer area" ends on the upper arm and thigh</td><td>L1-08, L2-08</td><td>The whole upper arm and thigh count as proximal limb (Level II)</td><td>Safer choice: treat them as t-shirt/boxer area (Level I). One line in <code>vocab.ZONE_OF_REGION</code></td></tr>
+<tr><td>Wrist and ankle themselves</td><td>L1-10, L2-07, L3-05–07</td><td>Counted as distal (Level III)</td><td>Confirm with a clinician</td></tr>
+<tr><td>Impact at exactly 20 mph, pedestrian or cyclist</td><td>L2-04 (&gt; 20), L3-04 (&lt; 20)</td><td>Not covered by either level</td><td>Pick a side; the motorcycle rule uses ≥ 20, which suggests Level II</td></tr>
+<tr><td>Fall of exactly 20 ft</td><td>L2-02 (&gt; 20), L3-01 (5–20)</td><td>Level III</td><td>Matches the text as written</td></tr>
+<tr><td>Fall under 5 ft for a patient under 55</td><td>L3-01</td><td>No activation</td><td>Matches the text as written</td></tr>
+<tr><td>LOC of exactly 5 minutes</td><td>L2-05 (&gt; 5), L3-02 (&lt; 5)</td><td>Not covered</td><td>Pick a side</td></tr>
+<tr><td>Burns: &gt; 20% with other injuries, 10–20% without, exactly 10% or 20%</td><td>L1-12, L2-11, L3-03</td><td>Not covered</td><td>Likely Level I for &gt; 20% with injuries; the rest need a decision</td></tr>
+<tr><td>"Clinical signs of shock" is not defined</td><td>L1-02, L1-03</td><td>The schema stores the crew's statement and the specific signs</td><td>Agree a definition, e.g. any 2 listed signs</td></tr>
+<tr><td>GCS &lt; 9 when the patient was never intubated</td><td>L1-01</td><td>The stated GCS applies</td><td>Confirm the reading of "prior to intubation"</td></tr>
+<tr><td>"EMS arrival only" under high-risk auto crash</td><td>L2-03</td><td>The rule applies only to EMS arrivals, not walk-ins</td><td>Confirm</td></tr>
+<tr><td>Long bones</td><td>L1-15, L2-06</td><td>Humerus and femur only, as the document says</td><td>Tibia fractures do not count</td></tr>
+<tr><td>More than one mechanism, e.g. assault then a fall</td><td>All mechanism rules</td><td>One primary mechanism plus free text</td><td>Accept as a limitation, or allow a list later</td></tr>
+<tr><td>Patients outside 15–64</td><td>All</td><td>The schema accepts any age; <code>in_adult_scope()</code> flags it</td><td>Generate data only for ages 15–64, or label the rest out of scope</td></tr>
+</tbody></table></div>
+
+<h2>Worked example: a radio handover</h2>
+<p>One realistic call was written out and converted by hand into a <code>HandoverRecord</code> to test the schema on radio speech. It validates, and it is included in the test suite.</p>
+<div class="note" style="font-family:Consolas,monospace;font-size:13.5px;line-height:1.55;white-space:pre-wrap">Memorial ED, Medic 14, how copy?
+... Copy Memorial, we're inbound to you priority one, ETA about twelve minutes.
+
+We've got a thirty-two-year-old male, motorcyclist versus car, estimated speed around forty-five miles an hour. Patient was separated from the bike and thrown roughly twenty feet, he was helmeted. Bystanders report a brief loss of consciousness on scene, under a minute.
+
+Injuries: open right femur fracture, mid-shaft, bleeding is controlled with a pressure dressing. Deformity to the left wrist, and some abrasions to the left flank. No other obvious injuries.
+
+Vitals: BP eighty-eight, uh, correction, one-oh-eight over sixty-two. Heart rate one-eighteen, resps twenty-four, sats ninety-five percent on room air. GCS fourteen, that's eyes four, verbal four, motor six, he's a bit confused, keeps asking what happened. Skin is pale and clammy.
+
+Treatment: traction splint to the right leg, splinted the left wrist, he's in a collar with full spinal precautions. Two large-bore IVs, five hundred of saline running, and fifty micrograms of fentanyl for pain.
+
+No known allergies. He's been stable en route. Any questions?</div>
+<p>Conversion decisions worth noting:</p>
+<div class="twrap"><table>
+<thead><tr><th>Spoken</th><th>Recorded as</th><th>Why</th></tr></thead>
+<tbody>
+<tr><td>"Deformity to the left wrist"</td><td>Fracture, <code>suspected: true</code>, no bone</td><td>The medic described a deformity, not a diagnosis</td></tr>
+<tr><td>"Under a minute" LOC</td><td><code>duration_minutes: 1</code></td><td>An upper bound, but well below the 5-minute threshold either way</td></tr>
+<tr><td>"Pale and clammy"</td><td><code>shock_signs</code> filled, <code>clinical_signs_of_shock: null</code></td><td>The medic never said "shock"; the term is undefined in the criteria</td></tr>
+<tr><td>"No known allergies"</td><td><code>allergies: []</code></td><td>Stated as none; medications and history were never mentioned, so they are <code>null</code></td></tr>
+<tr><td>Pressure dressing</td><td><code>interventions: other</code></td><td>No enum value exists; add <code>pressure_dressing</code> if dressings are common</td></tr>
+<tr><td>"BP eighty-eight, uh, correction, one-oh-eight"</td><td>SBP 108, plus a <code>retraction</code> of 88</td><td>The corrected value is the one the record keeps</td></tr>
+</tbody></table></div>
+<p><strong>Activation level: Level II</strong>, from L2-04 (motorcycle at 45 mph with rider separation), L2-06 (one femur fracture) and L2-07 (open fracture proximal to the ankle). No Level I threshold is met. The correction shows why contribution C4 matters: if an extractor kept the retracted 88, SBP &lt; 90 with pale, clammy skin would meet L1-02 and the patient would move to Level I.</p>
+
+<h2>JSON-LD layer</h2>
+<p>JSON-LD is added as a separate output layer, not inside the extraction schema. The model still decodes the plain JSON Schema, which keeps the grammar small; after validation, <code>to_jsonld()</code> adds <code>@context</code>, <code>@id</code>, an <code>@type</code> on every section and a timestamp.</p>
+<p>The context and vocabulary are generated from the Pydantic models rather than written by hand, so they cannot drift from the schema; a test fails if they are out of date. The vocabulary defines 13 classes and 14 code lists, and it also holds knowledge the criteria need as data: each body region's anatomic zone, and which bones count as long bones.</p>
+<div class="twrap"><table>
+<thead><tr><th>Terminology</th><th>Coverage</th><th>Status</th></tr></thead>
+<tbody>
+<tr><td>LOINC</td><td>11 codes: systolic and diastolic BP, heart rate, respiratory rate, SpO2 by pulse oximetry, GCS total and its three components, age, sex</td><td>Each code checked against the NLM Clinical Tables LOINC API on 8 October 2026</td></tr>
+<tr><td>UCUM</td><td>15 fields, e.g. <code>mm[Hg]</code>, <code>/min</code>, <code>[ft_i]</code>, <code>[mi_i]/h</code>, <code>[in_i]</code></td><td>Done</td></tr>
+<tr><td>SNOMED CT</td><td>8 code lists marked for binding: mechanisms, injury types, body regions, bones, interventions, shock signs, airway status, hemorrhage</td><td>Empty until the UMLS licence is in place; no unverified codes were written</td></tr>
+</tbody></table></div>
+<p>Two problems surfaced and were fixed:</p>
+<ul>
+<li><strong>JSON-LD silently drops unknown keys.</strong> A field missing from the context simply disappears, with no error. A test converts every example to RDF and checks that the number of stated values equals the number of triples. Removing a single term from the context turns 45 values into 44, and the test fails.</li>
+<li><strong>RDF cannot express an empty list.</strong> <code>allergies: []</code> ("no known allergies") and <code>null</code> ("not mentioned") would both produce no triples. The JSON-LD view therefore adds <code>allergiesStated</code>, <code>medicationsStated</code>, <code>backgroundStated</code> and <code>injuriesStated</code> flags. In the radio case, <code>allergiesStated: true</code> with no allergies listed means none known.</li>
+</ul>
+<p>Values that share a name stay distinct, because each enum value gets its own IRI: <code>Ejection.none</code> and <code>Hemorrhage.none</code> are separate concepts. The namespace <code>https://w3id.org/radio-to-resus/vocab#</code> is a placeholder; register it on w3id.org, or switch to a URL you control, before publishing the corpus.</p>
+
+<h2>Next steps for data generation</h2>
+<p>The schema fixes what the data generator must produce: two records per handover, one for the patient's true state and one for what the crew said, both valid <code>HandoverRecord</code>s.</p>
+<ol>
+<li><strong>Settle the ambiguities above</strong>, at least the t-shirt/boxer boundary, before any labels are generated. Every triage label depends on them.</li>
+<li><strong>Sample cases so every level and most criteria appear.</strong> The criteria are the natural sampling frame: include borderline cases on purpose (SBP 88 and 92, falls of 19 and 22 ft), because that is where extraction errors flip decisions.</li>
+<li><strong>Check which fields the datasets actually provide.</strong> NEMSIS should cover mechanism, vitals and procedures. Crash details such as intrusion in inches and extrication time may not exist there and would have to be sampled.</li>
+<li><strong>Add the enum values the radio case exposed</strong>, starting with <code>pressure_dressing</code>, and keep converting a few realistic calls by hand to find more gaps before generating at scale.</li>
+<li><strong>Write the rule engine against <code>criteria.yaml</code>.</strong> It can be built and tested on hand-made records now, without waiting for data access, and it produces the ground-truth label for every generated case.</li>
+</ol>
+<p class="note">To regenerate the examples and JSON Schema, run <code>scripts/make_examples.py</code> with the project's <code>.venv</code> Python. After any schema change, also run <code>python -m schema.jsonld.build</code> and <code>scripts/make_jsonld_examples.py</code>. To check everything, run <code>pytest</code>.</p>
+
+</div>
+</body>
+</html>

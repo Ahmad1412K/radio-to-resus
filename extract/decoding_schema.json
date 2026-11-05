@@ -1,0 +1,1043 @@
+{
+ "additionalProperties": false,
+ "properties": {
+  "identification": {
+   "additionalProperties": false,
+   "properties": {
+    "age_years": {
+     "anyOf": [
+      {
+       "maximum": 120,
+       "minimum": 0,
+       "type": "integer"
+      },
+      {
+       "type": "null"
+      }
+     ]
+    },
+    "sex": {
+     "anyOf": [
+      {
+       "enum": [
+        "male",
+        "female"
+       ],
+       "type": "string"
+      },
+      {
+       "type": "null"
+      }
+     ]
+    },
+    "pregnant": {
+     "anyOf": [
+      {
+       "type": "boolean"
+      },
+      {
+       "type": "null"
+      }
+     ]
+    },
+    "gestation_weeks": {
+     "anyOf": [
+      {
+       "maximum": 45,
+       "minimum": 1,
+       "type": "integer"
+      },
+      {
+       "type": "null"
+      }
+     ]
+    },
+    "arrival_mode": {
+     "anyOf": [
+      {
+       "enum": [
+        "ems_scene",
+        "ems_interfacility",
+        "walk_in"
+       ],
+       "type": "string"
+      },
+      {
+       "type": "null"
+      }
+     ]
+    },
+    "eta_minutes": {
+     "anyOf": [
+      {
+       "maximum": 240,
+       "minimum": 0,
+       "type": "integer"
+      },
+      {
+       "type": "null"
+      }
+     ]
+    }
+   },
+   "type": "object",
+   "required": [
+    "age_years",
+    "sex",
+    "pregnant",
+    "gestation_weeks",
+    "arrival_mode",
+    "eta_minutes"
+   ]
+  },
+  "mechanism": {
+   "additionalProperties": false,
+   "properties": {
+    "type": {
+     "anyOf": [
+      {
+       "enum": [
+        "fall",
+        "motor_vehicle_crash",
+        "pedestrian_struck",
+        "bicyclist_struck",
+        "motorcycle_crash",
+        "atv_crash",
+        "assault_blunt",
+        "other_blunt",
+        "stab",
+        "gunshot",
+        "other_penetrating",
+        "burn",
+        "electrical",
+        "crush",
+        "near_drowning",
+        "near_hanging"
+       ],
+       "type": "string"
+      },
+      {
+       "type": "null"
+      }
+     ]
+    },
+    "description": {
+     "anyOf": [
+      {
+       "maxLength": 300,
+       "type": "string"
+      },
+      {
+       "type": "null"
+      }
+     ]
+    },
+    "fall": {
+     "anyOf": [
+      {
+       "additionalProperties": false,
+       "properties": {
+        "fall_type": {
+         "anyOf": [
+          {
+           "enum": [
+            "same_level",
+            "from_height"
+           ],
+           "type": "string"
+          },
+          {
+           "type": "null"
+          }
+         ]
+        },
+        "height_ft": {
+         "anyOf": [
+          {
+           "maximum": 1000,
+           "minimum": 0,
+           "type": "number"
+          },
+          {
+           "type": "null"
+          }
+         ]
+        }
+       },
+       "type": "object",
+       "required": [
+        "fall_type",
+        "height_ft"
+       ]
+      },
+      {
+       "type": "null"
+      }
+     ]
+    },
+    "vehicle": {
+     "anyOf": [
+      {
+       "additionalProperties": false,
+       "properties": {
+        "impact_speed_mph": {
+         "anyOf": [
+          {
+           "maximum": 250,
+           "minimum": 0,
+           "type": "number"
+          },
+          {
+           "type": "null"
+          }
+         ]
+        },
+        "extrication_minutes": {
+         "anyOf": [
+          {
+           "maximum": 600,
+           "minimum": 0,
+           "type": "number"
+          },
+          {
+           "type": "null"
+          }
+         ]
+        },
+        "intrusion_occupant_site_in": {
+         "anyOf": [
+          {
+           "maximum": 120,
+           "minimum": 0,
+           "type": "number"
+          },
+          {
+           "type": "null"
+          }
+         ]
+        },
+        "intrusion_any_site_in": {
+         "anyOf": [
+          {
+           "maximum": 120,
+           "minimum": 0,
+           "type": "number"
+          },
+          {
+           "type": "null"
+          }
+         ]
+        },
+        "ejection": {
+         "anyOf": [
+          {
+           "enum": [
+            "none",
+            "partial",
+            "complete"
+           ],
+           "type": "string"
+          },
+          {
+           "type": "null"
+          }
+         ]
+        },
+        "death_same_compartment": {
+         "anyOf": [
+          {
+           "type": "boolean"
+          },
+          {
+           "type": "null"
+          }
+         ]
+        },
+        "patient_thrown": {
+         "anyOf": [
+          {
+           "type": "boolean"
+          },
+          {
+           "type": "null"
+          }
+         ]
+        },
+        "run_over": {
+         "anyOf": [
+          {
+           "type": "boolean"
+          },
+          {
+           "type": "null"
+          }
+         ]
+        },
+        "rider_separated": {
+         "anyOf": [
+          {
+           "type": "boolean"
+          },
+          {
+           "type": "null"
+          }
+         ]
+        },
+        "rollover": {
+         "anyOf": [
+          {
+           "type": "boolean"
+          },
+          {
+           "type": "null"
+          }
+         ]
+        }
+       },
+       "type": "object",
+       "required": [
+        "impact_speed_mph",
+        "extrication_minutes",
+        "intrusion_occupant_site_in",
+        "intrusion_any_site_in",
+        "ejection",
+        "death_same_compartment",
+        "patient_thrown",
+        "run_over",
+        "rider_separated",
+        "rollover"
+       ]
+      },
+      {
+       "type": "null"
+      }
+     ]
+    },
+    "loss_of_consciousness": {
+     "anyOf": [
+      {
+       "additionalProperties": false,
+       "properties": {
+        "occurred": {
+         "anyOf": [
+          {
+           "type": "boolean"
+          },
+          {
+           "type": "null"
+          }
+         ]
+        },
+        "duration_minutes": {
+         "anyOf": [
+          {
+           "maximum": 1440,
+           "minimum": 0,
+           "type": "number"
+          },
+          {
+           "type": "null"
+          }
+         ]
+        }
+       },
+       "type": "object",
+       "required": [
+        "occurred",
+        "duration_minutes"
+       ]
+      },
+      {
+       "type": "null"
+      }
+     ]
+    }
+   },
+   "type": "object",
+   "required": [
+    "type",
+    "description",
+    "fall",
+    "vehicle",
+    "loss_of_consciousness"
+   ]
+  },
+  "injuries": {
+   "anyOf": [
+    {
+     "items": {
+      "additionalProperties": false,
+      "properties": {
+       "type": {
+        "enum": [
+         "fracture",
+         "penetrating_wound",
+         "amputation",
+         "degloving",
+         "crush",
+         "mangled_extremity",
+         "pulseless_extremity",
+         "seatbelt_sign",
+         "laceration",
+         "contusion",
+         "abrasion",
+         "other"
+        ],
+        "type": "string"
+       },
+       "region": {
+        "enum": [
+         "head",
+         "face",
+         "neck",
+         "shoulder_axilla",
+         "chest",
+         "abdomen",
+         "flank",
+         "back",
+         "pelvis",
+         "groin_perineum",
+         "buttock",
+         "upper_arm",
+         "elbow",
+         "forearm",
+         "wrist",
+         "hand",
+         "finger",
+         "thigh",
+         "knee",
+         "lower_leg",
+         "ankle",
+         "foot",
+         "toe"
+        ],
+        "type": "string"
+       },
+       "side": {
+        "anyOf": [
+         {
+          "enum": [
+           "left",
+           "right",
+           "bilateral",
+           "midline"
+          ],
+          "type": "string"
+         },
+         {
+          "type": "null"
+         }
+        ]
+       },
+       "suspected": {
+        "anyOf": [
+         {
+          "type": "boolean"
+         },
+         {
+          "type": "null"
+         }
+        ]
+       },
+       "bone": {
+        "anyOf": [
+         {
+          "enum": [
+           "skull",
+           "vertebra",
+           "clavicle",
+           "rib",
+           "sternum",
+           "humerus",
+           "radius",
+           "ulna",
+           "hand_bones",
+           "pelvis",
+           "femur",
+           "patella",
+           "tibia",
+           "fibula",
+           "foot_bones",
+           "other"
+          ],
+          "type": "string"
+         },
+         {
+          "type": "null"
+         }
+        ]
+       },
+       "open_fracture": {
+        "anyOf": [
+         {
+          "type": "boolean"
+         },
+         {
+          "type": "null"
+         }
+        ]
+       },
+       "depressed": {
+        "anyOf": [
+         {
+          "type": "boolean"
+         },
+         {
+          "type": "null"
+         }
+        ]
+       },
+       "pelvis_unstable": {
+        "anyOf": [
+         {
+          "type": "boolean"
+         },
+         {
+          "type": "null"
+         }
+        ]
+       },
+       "digits_involved": {
+        "anyOf": [
+         {
+          "maximum": 20,
+          "minimum": 1,
+          "type": "integer"
+         },
+         {
+          "type": "null"
+         }
+        ]
+       }
+      },
+      "required": [
+       "type",
+       "region",
+       "side",
+       "suspected",
+       "bone",
+       "open_fracture",
+       "depressed",
+       "pelvis_unstable",
+       "digits_involved"
+      ],
+      "type": "object"
+     },
+     "type": "array"
+    },
+    {
+     "type": "null"
+    }
+   ]
+  },
+  "burns": {
+   "anyOf": [
+    {
+     "additionalProperties": false,
+     "properties": {
+      "tbsa_percent": {
+       "anyOf": [
+        {
+         "maximum": 100,
+         "minimum": 0,
+         "type": "number"
+        },
+        {
+         "type": "null"
+        }
+       ]
+      },
+      "inhalation_injury": {
+       "anyOf": [
+        {
+         "type": "boolean"
+        },
+        {
+         "type": "null"
+        }
+       ]
+      },
+      "electrical": {
+       "anyOf": [
+        {
+         "type": "boolean"
+        },
+        {
+         "type": "null"
+        }
+       ]
+      }
+     },
+     "type": "object",
+     "required": [
+      "tbsa_percent",
+      "inhalation_injury",
+      "electrical"
+     ]
+    },
+    {
+     "type": "null"
+    }
+   ]
+  },
+  "signs": {
+   "additionalProperties": false,
+   "properties": {
+    "vitals": {
+     "additionalProperties": false,
+     "properties": {
+      "systolic_bp_mmhg": {
+       "anyOf": [
+        {
+         "maximum": 300,
+         "minimum": 0,
+         "type": "integer"
+        },
+        {
+         "type": "null"
+        }
+       ]
+      },
+      "diastolic_bp_mmhg": {
+       "anyOf": [
+        {
+         "maximum": 200,
+         "minimum": 0,
+         "type": "integer"
+        },
+        {
+         "type": "null"
+        }
+       ]
+      },
+      "heart_rate_bpm": {
+       "anyOf": [
+        {
+         "maximum": 300,
+         "minimum": 0,
+         "type": "integer"
+        },
+        {
+         "type": "null"
+        }
+       ]
+      },
+      "resp_rate_per_min": {
+       "anyOf": [
+        {
+         "maximum": 80,
+         "minimum": 0,
+         "type": "integer"
+        },
+        {
+         "type": "null"
+        }
+       ]
+      },
+      "spo2_percent": {
+       "anyOf": [
+        {
+         "maximum": 100,
+         "minimum": 0,
+         "type": "integer"
+        },
+        {
+         "type": "null"
+        }
+       ]
+      },
+      "spo2_on_room_air": {
+       "anyOf": [
+        {
+         "type": "boolean"
+        },
+        {
+         "type": "null"
+        }
+       ]
+      }
+     },
+     "type": "object",
+     "required": [
+      "systolic_bp_mmhg",
+      "diastolic_bp_mmhg",
+      "heart_rate_bpm",
+      "resp_rate_per_min",
+      "spo2_percent",
+      "spo2_on_room_air"
+     ]
+    },
+    "gcs": {
+     "anyOf": [
+      {
+       "additionalProperties": false,
+       "properties": {
+        "eye": {
+         "anyOf": [
+          {
+           "maximum": 4,
+           "minimum": 1,
+           "type": "integer"
+          },
+          {
+           "type": "null"
+          }
+         ]
+        },
+        "verbal": {
+         "anyOf": [
+          {
+           "maximum": 5,
+           "minimum": 1,
+           "type": "integer"
+          },
+          {
+           "type": "null"
+          }
+         ]
+        },
+        "motor": {
+         "anyOf": [
+          {
+           "maximum": 6,
+           "minimum": 1,
+           "type": "integer"
+          },
+          {
+           "type": "null"
+          }
+         ]
+        },
+        "total": {
+         "anyOf": [
+          {
+           "maximum": 15,
+           "minimum": 3,
+           "type": "integer"
+          },
+          {
+           "type": "null"
+          }
+         ]
+        },
+        "before_intubation": {
+         "anyOf": [
+          {
+           "type": "boolean"
+          },
+          {
+           "type": "null"
+          }
+         ]
+        }
+       },
+       "type": "object",
+       "required": [
+        "eye",
+        "verbal",
+        "motor",
+        "total",
+        "before_intubation"
+       ]
+      },
+      {
+       "type": "null"
+      }
+     ]
+    },
+    "airway": {
+     "anyOf": [
+      {
+       "enum": [
+        "patent",
+        "compromised",
+        "advanced_airway"
+       ],
+       "type": "string"
+      },
+      {
+       "type": "null"
+      }
+     ]
+    },
+    "flail_chest": {
+     "anyOf": [
+      {
+       "type": "boolean"
+      },
+      {
+       "type": "null"
+      }
+     ]
+    },
+    "pneumothorax_or_hemothorax": {
+     "anyOf": [
+      {
+       "type": "boolean"
+      },
+      {
+       "type": "null"
+      }
+     ]
+    },
+    "clinical_signs_of_shock": {
+     "anyOf": [
+      {
+       "type": "boolean"
+      },
+      {
+       "type": "null"
+      }
+     ]
+    },
+    "shock_signs": {
+     "items": {
+      "enum": [
+       "pale",
+       "cool_clammy",
+       "diaphoretic",
+       "delayed_cap_refill",
+       "weak_thready_pulse",
+       "altered_mentation"
+      ],
+      "type": "string"
+     },
+     "type": "array"
+    },
+    "hemorrhage": {
+     "anyOf": [
+      {
+       "enum": [
+        "none",
+        "controlled",
+        "active_uncontrolled"
+       ],
+       "type": "string"
+      },
+      {
+       "type": "null"
+      }
+     ]
+    },
+    "paralysis": {
+     "anyOf": [
+      {
+       "type": "boolean"
+      },
+      {
+       "type": "null"
+      }
+     ]
+    },
+    "bilateral_sensory_loss": {
+     "anyOf": [
+      {
+       "type": "boolean"
+      },
+      {
+       "type": "null"
+      }
+     ]
+    },
+    "suspected_spinal_cord_injury": {
+     "anyOf": [
+      {
+       "type": "boolean"
+      },
+      {
+       "type": "null"
+      }
+     ]
+    },
+    "abdominal_pain": {
+     "anyOf": [
+      {
+       "type": "boolean"
+      },
+      {
+       "type": "null"
+      }
+     ]
+    },
+    "abdomen_firm_or_distended": {
+     "anyOf": [
+      {
+       "type": "boolean"
+      },
+      {
+       "type": "null"
+      }
+     ]
+    },
+    "trend": {
+     "anyOf": [
+      {
+       "enum": [
+        "improving",
+        "stable",
+        "deteriorating"
+       ],
+       "type": "string"
+      },
+      {
+       "type": "null"
+      }
+     ]
+    }
+   },
+   "type": "object",
+   "required": [
+    "vitals",
+    "gcs",
+    "airway",
+    "flail_chest",
+    "pneumothorax_or_hemothorax",
+    "clinical_signs_of_shock",
+    "shock_signs",
+    "hemorrhage",
+    "paralysis",
+    "bilateral_sensory_loss",
+    "suspected_spinal_cord_injury",
+    "abdominal_pain",
+    "abdomen_firm_or_distended",
+    "trend"
+   ]
+  },
+  "treatment": {
+   "additionalProperties": false,
+   "properties": {
+    "interventions": {
+     "items": {
+      "enum": [
+       "endotracheal_intubation",
+       "supraglottic_airway",
+       "surgical_airway",
+       "bag_valve_mask",
+       "supplemental_oxygen",
+       "needle_decompression",
+       "tourniquet",
+       "wound_packing",
+       "pelvic_binder",
+       "blood_transfusion",
+       "iv_fluids",
+       "spinal_motion_restriction",
+       "splint",
+       "analgesia",
+       "other"
+      ],
+      "type": "string"
+     },
+     "type": "array"
+    },
+    "blood_transfusion_required_to_maintain_vitals": {
+     "anyOf": [
+      {
+       "type": "boolean"
+      },
+      {
+       "type": "null"
+      }
+     ]
+    }
+   },
+   "type": "object",
+   "required": [
+    "interventions",
+    "blood_transfusion_required_to_maintain_vitals"
+   ]
+  },
+  "allergies": {
+   "anyOf": [
+    {
+     "items": {
+      "maxLength": 60,
+      "type": "string"
+     },
+     "type": "array"
+    },
+    {
+     "type": "null"
+    }
+   ]
+  },
+  "medications": {
+   "anyOf": [
+    {
+     "items": {
+      "maxLength": 60,
+      "type": "string"
+     },
+     "type": "array"
+    },
+    {
+     "type": "null"
+    }
+   ]
+  },
+  "background": {
+   "anyOf": [
+    {
+     "items": {
+      "maxLength": 80,
+      "type": "string"
+     },
+     "type": "array"
+    },
+    {
+     "type": "null"
+    }
+   ]
+  },
+  "other": {
+   "anyOf": [
+    {
+     "maxLength": 300,
+     "type": "string"
+    },
+    {
+     "type": "null"
+    }
+   ]
+  },
+  "retractions": {
+   "items": {
+    "additionalProperties": false,
+    "properties": {
+     "field": {
+      "maxLength": 80,
+      "type": "string"
+     },
+     "retracted_value": {
+      "maxLength": 60,
+      "type": "string"
+     },
+     "corrected_value": {
+      "maxLength": 60,
+      "type": "string"
+     }
+    },
+    "required": [
+     "field",
+     "retracted_value",
+     "corrected_value"
+    ],
+    "type": "object"
+   },
+   "type": "array"
+  }
+ },
+ "type": "object",
+ "required": [
+  "identification",
+  "mechanism",
+  "injuries",
+  "burns",
+  "signs",
+  "treatment",
+  "allergies",
+  "medications",
+  "background",
+  "other",
+  "retractions"
+ ]
+}

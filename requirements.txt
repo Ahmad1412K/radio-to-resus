@@ -1,0 +1,6 @@
+pydantic>=2.7
+pytest
+pyyaml
+pyld
+anthropic
+jsonschema

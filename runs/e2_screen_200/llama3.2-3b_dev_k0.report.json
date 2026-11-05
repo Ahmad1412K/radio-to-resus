@@ -1,0 +1,922 @@
+{
+ "predictions": "C:\\Users\\a.ali\\radio-to-resus\\runs\\llama3.2-3b_dev_k0.jsonl",
+ "gold": "C:\\Users\\a.ali\\radio-to-resus\\examples\\synthetic_handovers_v2.csv",
+ "split": "dev",
+ "missing_predictions": 0,
+ "status_counts": {
+  "valid": 172,
+  "invalid_json": 4,
+  "repaired": 24
+ },
+ "repairs": {
+  "fracture_fields_on_non_fracture": 7,
+  "loc_duration_without_loc": 5,
+  "bone_not_in_region": 3,
+  "gcs_components_mismatch": 3,
+  "unstable_not_pelvis": 2,
+  "room_air_without_spo2": 2,
+  "limb_injury_off_limb_dropped": 1,
+  "tourniquet_with_no_hemorrhage": 1,
+  "fall_details_wrong_mechanism": 1,
+  "vehicle_details_wrong_mechanism": 1
+ },
+ "overall": {
+  "n": 200,
+  "valid_rate": 0.86,
+  "usable_rate": 0.98,
+  "field_precision": 0.7603448275862069,
+  "field_recall": 0.6087796797349531,
+  "field_f1": 0.6761729530818767,
+  "hallucination_rate": 0.048693586698337295,
+  "exact_match": 0.0,
+  "correction_accuracy": 0.05263157894736842,
+  "n_corrections": 38,
+  "triage_accuracy": 0.705,
+  "under_triage_rate": 0.13,
+  "over_triage_rate": 0.135,
+  "scope_error_rate": 0.03,
+  "silent_under_triage_rate": 0.0,
+  "provisional_rate": 0.56,
+  "outcome_counts": {
+   "missed": 1091,
+   "correct": 2205,
+   "ok_null": 7209,
+   "wrong": 326,
+   "hallucinated": 369
+  }
+ },
+ "ci95": {
+  "valid_rate": [
+   0.81,
+   0.91
+  ],
+  "usable_rate": [
+   0.96,
+   0.995
+  ],
+  "field_f1": [
+   0.6526282951177663,
+   0.6988925471415743
+  ],
+  "hallucination_rate": [
+   0.04312169312169312,
+   0.054386661373560935
+  ],
+  "exact_match": [
+   0.0,
+   0.0
+  ],
+  "correction_accuracy": [
+   0.0,
+   0.13157894736842105
+  ],
+  "triage_accuracy": [
+   0.64,
+   0.765
+  ],
+  "under_triage_rate": [
+   0.09,
+   0.175
+  ],
+  "silent_under_triage_rate": [
+   0.0,
+   0.0
+  ]
+ },
+ "valid_only": {
+  "n": 172,
+  "valid_rate": 1.0,
+  "usable_rate": 1.0,
+  "field_precision": 0.7598736176935229,
+  "field_recall": 0.616864379608849,
+  "field_f1": 0.6809414262962308,
+  "hallucination_rate": 0.050360816827882696,
+  "exact_match": 0.0,
+  "correction_accuracy": 0.06451612903225806,
+  "n_corrections": 31,
+  "triage_accuracy": 0.7151162790697675,
+  "under_triage_rate": 0.10465116279069768,
+  "over_triage_rate": 0.14534883720930233,
+  "scope_error_rate": 0.03488372093023256,
+  "silent_under_triage_rate": 0.0,
+  "provisional_rate": 0.5465116279069767,
+  "outcome_counts": {
+   "missed": 915,
+   "correct": 1924,
+   "ok_null": 6185,
+   "wrong": 280,
+   "hallucinated": 328
+  }
+ },
+ "per_field": {
+  "identification.age_years": {
+   "missed": 156,
+   "correct": 44,
+   "precision": 1.0,
+   "recall": 0.22,
+   "hallucination_rate": null
+  },
+  "identification.sex": {
+   "correct": 129,
+   "missed": 71,
+   "precision": 1.0,
+   "recall": 0.645,
+   "hallucination_rate": null
+  },
+  "identification.pregnant": {
+   "ok_null": 197,
+   "correct": 3,
+   "precision": 1.0,
+   "recall": 1.0,
+   "hallucination_rate": 0.0
+  },
+  "identification.gestation_weeks": {
+   "ok_null": 200,
+   "precision": null,
+   "recall": null,
+   "hallucination_rate": 0.0
+  },
+  "identification.arrival_mode": {
+   "correct": 158,
+   "wrong": 38,
+   "missed": 4,
+   "precision": 0.8061224489795918,
+   "recall": 0.79,
+   "hallucination_rate": null
+  },
+  "identification.eta_minutes": {
+   "missed": 19,
+   "correct": 148,
+   "ok_null": 32,
+   "wrong": 1,
+   "precision": 0.9932885906040269,
+   "recall": 0.8809523809523809,
+   "hallucination_rate": 0.0
+  },
+  "mechanism.type": {
+   "correct": 157,
+   "missed": 26,
+   "wrong": 17,
+   "precision": 0.9022988505747126,
+   "recall": 0.785,
+   "hallucination_rate": null
+  },
+  "mechanism.description": {
+   "ok_null": 198,
+   "hallucinated": 2,
+   "precision": 0.0,
+   "recall": null,
+   "hallucination_rate": 0.01
+  },
+  "mechanism.fall.fall_type": {
+   "ok_null": 147,
+   "correct": 47,
+   "missed": 2,
+   "wrong": 4,
+   "precision": 0.9215686274509803,
+   "recall": 0.8867924528301887,
+   "hallucination_rate": 0.0
+  },
+  "mechanism.fall.height_ft": {
+   "ok_null": 164,
+   "correct": 26,
+   "missed": 10,
+   "precision": 1.0,
+   "recall": 0.7222222222222222,
+   "hallucination_rate": 0.0
+  },
+  "mechanism.vehicle.impact_speed_mph": {
+   "missed": 42,
+   "ok_null": 155,
+   "correct": 3,
+   "precision": 1.0,
+   "recall": 0.06666666666666667,
+   "hallucination_rate": 0.0
+  },
+  "mechanism.vehicle.extrication_minutes": {
+   "ok_null": 198,
+   "correct": 1,
+   "missed": 1,
+   "precision": 1.0,
+   "recall": 0.5,
+   "hallucination_rate": 0.0
+  },
+  "mechanism.vehicle.intrusion_occupant_site_in": {
+   "ok_null": 200,
+   "precision": null,
+   "recall": null,
+   "hallucination_rate": 0.0
+  },
+  "mechanism.vehicle.intrusion_any_site_in": {
+   "ok_null": 198,
+   "missed": 2,
+   "precision": null,
+   "recall": 0.0,
+   "hallucination_rate": 0.0
+  },
+  "mechanism.vehicle.ejection": {
+   "ok_null": 200,
+   "precision": null,
+   "recall": null,
+   "hallucination_rate": 0.0
+  },
+  "mechanism.vehicle.death_same_compartment": {
+   "ok_null": 200,
+   "precision": null,
+   "recall": null,
+   "hallucination_rate": 0.0
+  },
+  "mechanism.vehicle.patient_thrown": {
+   "ok_null": 200,
+   "precision": null,
+   "recall": null,
+   "hallucination_rate": 0.0
+  },
+  "mechanism.vehicle.run_over": {
+   "ok_null": 199,
+   "missed": 1,
+   "precision": null,
+   "recall": 0.0,
+   "hallucination_rate": 0.0
+  },
+  "mechanism.vehicle.rider_separated": {
+   "ok_null": 199,
+   "correct": 1,
+   "precision": 1.0,
+   "recall": 1.0,
+   "hallucination_rate": 0.0
+  },
+  "mechanism.vehicle.rollover": {
+   "ok_null": 193,
+   "missed": 7,
+   "precision": null,
+   "recall": 0.0,
+   "hallucination_rate": 0.0
+  },
+  "mechanism.loss_of_consciousness.occurred": {
+   "ok_null": 110,
+   "hallucinated": 7,
+   "missed": 67,
+   "correct": 14,
+   "wrong": 2,
+   "precision": 0.6086956521739131,
+   "recall": 0.1686746987951807,
+   "hallucination_rate": 0.05982905982905983
+  },
+  "mechanism.loss_of_consciousness.duration_minutes": {
+   "ok_null": 188,
+   "correct": 9,
+   "missed": 3,
+   "precision": 1.0,
+   "recall": 0.75,
+   "hallucination_rate": 0.0
+  },
+  "injuries": {
+   "correct": 76,
+   "hallucinated": 34,
+   "wrong": 86,
+   "ok_null": 2,
+   "missed": 2,
+   "precision": 0.3877551020408163,
+   "recall": 0.4634146341463415,
+   "hallucination_rate": 0.9444444444444444
+  },
+  "burns.tbsa_percent": {
+   "ok_null": 183,
+   "missed": 2,
+   "correct": 15,
+   "precision": 1.0,
+   "recall": 0.8823529411764706,
+   "hallucination_rate": 0.0
+  },
+  "burns.inhalation_injury": {
+   "ok_null": 194,
+   "correct": 3,
+   "hallucinated": 1,
+   "missed": 2,
+   "precision": 0.75,
+   "recall": 0.6,
+   "hallucination_rate": 0.005128205128205128
+  },
+  "burns.electrical": {
+   "ok_null": 200,
+   "precision": null,
+   "recall": null,
+   "hallucination_rate": 0.0
+  },
+  "signs.vitals.systolic_bp_mmhg": {
+   "ok_null": 10,
+   "correct": 156,
+   "missed": 29,
+   "wrong": 3,
+   "hallucinated": 2,
+   "precision": 0.968944099378882,
+   "recall": 0.8297872340425532,
+   "hallucination_rate": 0.16666666666666666
+  },
+  "signs.vitals.diastolic_bp_mmhg": {
+   "ok_null": 33,
+   "correct": 143,
+   "missed": 24,
+   "precision": 1.0,
+   "recall": 0.8562874251497006,
+   "hallucination_rate": 0.0
+  },
+  "signs.vitals.heart_rate_bpm": {
+   "correct": 146,
+   "ok_null": 22,
+   "missed": 24,
+   "wrong": 7,
+   "hallucinated": 1,
+   "precision": 0.948051948051948,
+   "recall": 0.8248587570621468,
+   "hallucination_rate": 0.043478260869565216
+  },
+  "signs.vitals.resp_rate_per_min": {
+   "correct": 150,
+   "missed": 27,
+   "ok_null": 18,
+   "wrong": 5,
+   "precision": 0.967741935483871,
+   "recall": 0.8241758241758241,
+   "hallucination_rate": 0.0
+  },
+  "signs.vitals.spo2_percent": {
+   "correct": 149,
+   "missed": 25,
+   "ok_null": 26,
+   "precision": 1.0,
+   "recall": 0.8563218390804598,
+   "hallucination_rate": 0.0
+  },
+  "signs.vitals.spo2_on_room_air": {
+   "correct": 100,
+   "missed": 71,
+   "ok_null": 26,
+   "wrong": 3,
+   "precision": 0.970873786407767,
+   "recall": 0.5747126436781609,
+   "hallucination_rate": 0.0
+  },
+  "signs.gcs.eye": {
+   "ok_null": 147,
+   "missed": 6,
+   "correct": 43,
+   "hallucinated": 3,
+   "wrong": 1,
+   "precision": 0.9148936170212766,
+   "recall": 0.86,
+   "hallucination_rate": 0.02
+  },
+  "signs.gcs.verbal": {
+   "ok_null": 147,
+   "missed": 6,
+   "correct": 43,
+   "hallucinated": 3,
+   "wrong": 1,
+   "precision": 0.9148936170212766,
+   "recall": 0.86,
+   "hallucination_rate": 0.02
+  },
+  "signs.gcs.motor": {
+   "ok_null": 147,
+   "missed": 6,
+   "correct": 44,
+   "hallucinated": 3,
+   "precision": 0.9361702127659575,
+   "recall": 0.88,
+   "hallucination_rate": 0.02
+  },
+  "signs.gcs.total": {
+   "ok_null": 11,
+   "missed": 105,
+   "correct": 80,
+   "wrong": 4,
+   "precision": 0.9523809523809523,
+   "recall": 0.42328042328042326,
+   "hallucination_rate": 0.0
+  },
+  "signs.gcs.before_intubation": {
+   "ok_null": 197,
+   "missed": 3,
+   "precision": null,
+   "recall": 0.0,
+   "hallucination_rate": 0.0
+  },
+  "signs.airway": {
+   "ok_null": 132,
+   "missed": 20,
+   "correct": 45,
+   "hallucinated": 3,
+   "precision": 0.9375,
+   "recall": 0.6923076923076923,
+   "hallucination_rate": 0.022222222222222223
+  },
+  "signs.flail_chest": {
+   "ok_null": 199,
+   "correct": 1,
+   "precision": 1.0,
+   "recall": 1.0,
+   "hallucination_rate": 0.0
+  },
+  "signs.pneumothorax_or_hemothorax": {
+   "ok_null": 171,
+   "missed": 29,
+   "precision": null,
+   "recall": 0.0,
+   "hallucination_rate": 0.0
+  },
+  "signs.clinical_signs_of_shock": {
+   "ok_null": 187,
+   "correct": 3,
+   "hallucinated": 10,
+   "precision": 0.23076923076923078,
+   "recall": 1.0,
+   "hallucination_rate": 0.050761421319796954
+  },
+  "signs.shock_signs": {
+   "ok_null": 186,
+   "wrong": 3,
+   "hallucinated": 10,
+   "missed": 1,
+   "precision": 0.0,
+   "recall": 0.0,
+   "hallucination_rate": 0.05102040816326531
+  },
+  "signs.hemorrhage": {
+   "ok_null": 103,
+   "correct": 36,
+   "missed": 39,
+   "hallucinated": 20,
+   "wrong": 2,
+   "precision": 0.6206896551724138,
+   "recall": 0.4675324675324675,
+   "hallucination_rate": 0.16260162601626016
+  },
+  "signs.paralysis": {
+   "missed": 47,
+   "ok_null": 150,
+   "correct": 2,
+   "hallucinated": 1,
+   "precision": 0.6666666666666666,
+   "recall": 0.04081632653061224,
+   "hallucination_rate": 0.006622516556291391
+  },
+  "signs.bilateral_sensory_loss": {
+   "missed": 47,
+   "ok_null": 149,
+   "correct": 4,
+   "precision": 1.0,
+   "recall": 0.0784313725490196,
+   "hallucination_rate": 0.0
+  },
+  "signs.suspected_spinal_cord_injury": {
+   "ok_null": 193,
+   "missed": 4,
+   "correct": 3,
+   "precision": 1.0,
+   "recall": 0.42857142857142855,
+   "hallucination_rate": 0.0
+  },
+  "signs.abdominal_pain": {
+   "missed": 36,
+   "ok_null": 153,
+   "correct": 11,
+   "precision": 1.0,
+   "recall": 0.23404255319148937,
+   "hallucination_rate": 0.0
+  },
+  "signs.abdomen_firm_or_distended": {
+   "missed": 30,
+   "ok_null": 160,
+   "wrong": 9,
+   "correct": 1,
+   "precision": 0.1,
+   "recall": 0.025,
+   "hallucination_rate": 0.0
+  },
+  "signs.trend": {
+   "ok_null": 103,
+   "missed": 75,
+   "correct": 22,
+   "precision": 1.0,
+   "recall": 0.2268041237113402,
+   "hallucination_rate": 0.0
+  },
+  "treatment.interventions": {
+   "ok_null": 134,
+   "wrong": 23,
+   "hallucinated": 16,
+   "correct": 20,
+   "missed": 7,
+   "precision": 0.3389830508474576,
+   "recall": 0.4,
+   "hallucination_rate": 0.10666666666666667
+  },
+  "treatment.blood_transfusion_required_to_maintain_vitals": {
+   "ok_null": 196,
+   "correct": 3,
+   "missed": 1,
+   "precision": 1.0,
+   "recall": 0.75,
+   "hallucination_rate": 0.0
+  },
+  "allergies": {
+   "wrong": 31,
+   "ok_null": 80,
+   "hallucinated": 25,
+   "correct": 59,
+   "missed": 5,
+   "precision": 0.5130434782608696,
+   "recall": 0.6210526315789474,
+   "hallucination_rate": 0.23809523809523808
+  },
+  "medications": {
+   "wrong": 16,
+   "ok_null": 76,
+   "hallucinated": 39,
+   "correct": 67,
+   "missed": 2,
+   "precision": 0.5491803278688525,
+   "recall": 0.788235294117647,
+   "hallucination_rate": 0.3391304347826087
+  },
+  "background": {
+   "wrong": 33,
+   "ok_null": 85,
+   "hallucinated": 38,
+   "correct": 40,
+   "missed": 4,
+   "precision": 0.36036036036036034,
+   "recall": 0.5194805194805194,
+   "hallucination_rate": 0.3089430894308943
+  },
+  "other": {
+   "ok_null": 200,
+   "precision": null,
+   "recall": null,
+   "hallucination_rate": 0.0
+  },
+  "retractions": {
+   "hallucinated": 151,
+   "missed": 1,
+   "wrong": 37,
+   "ok_null": 11,
+   "precision": 0.0,
+   "recall": 0.0,
+   "hallucination_rate": 0.9320987654320988
+  }
+ },
+ "list_items": {
+  "injuries": {
+   "tp": 90,
+   "fp": 174,
+   "fn": 48,
+   "precision": 0.3409090909090909,
+   "recall": 0.6521739130434783
+  },
+  "allergies": {
+   "tp": 42,
+   "fp": 19,
+   "fn": 21,
+   "precision": 0.6885245901639344,
+   "recall": 0.6666666666666666
+  },
+  "medications": {
+   "tp": 61,
+   "fp": 15,
+   "fn": 8,
+   "precision": 0.8026315789473685,
+   "recall": 0.8840579710144928
+  },
+  "background": {
+   "tp": 34,
+   "fp": 23,
+   "fn": 32,
+   "precision": 0.5964912280701754,
+   "recall": 0.5151515151515151
+  },
+  "retractions": {
+   "fp": 1013,
+   "fn": 34,
+   "tp": 4,
+   "precision": 0.003933136676499509,
+   "recall": 0.10526315789473684
+  },
+  "treatment.interventions": {
+   "tp": 41,
+   "fp": 113,
+   "fn": 21,
+   "precision": 0.2662337662337662,
+   "recall": 0.6612903225806451
+  },
+  "signs.shock_signs": {
+   "tp": 8,
+   "fp": 19,
+   "fn": 2,
+   "precision": 0.2962962962962963,
+   "recall": 0.8
+  }
+ },
+ "breakdowns": {
+  "borderline:False": {
+   "n": 166,
+   "valid_rate": 0.8433734939759037,
+   "usable_rate": 0.9759036144578314,
+   "field_f1": 0.6820873427091043,
+   "hallucination_rate": 0.04620514449031438,
+   "exact_match": 0.0,
+   "correction_accuracy": 0.06451612903225806,
+   "triage_accuracy": 0.7289156626506024,
+   "under_triage_rate": 0.13855421686746988,
+   "silent_under_triage_rate": 0.0
+  },
+  "borderline:True": {
+   "n": 34,
+   "valid_rate": 0.9411764705882353,
+   "usable_rate": 1.0,
+   "field_f1": 0.6475849731663685,
+   "hallucination_rate": 0.0609375,
+   "exact_match": 0.0,
+   "correction_accuracy": 0.0,
+   "triage_accuracy": 0.5882352941176471,
+   "under_triage_rate": 0.08823529411764706,
+   "silent_under_triage_rate": 0.0
+  },
+  "correction:False": {
+   "n": 162,
+   "valid_rate": 0.8703703703703703,
+   "usable_rate": 0.9814814814814815,
+   "field_f1": 0.6887189292543021,
+   "hallucination_rate": 0.052852755778244706,
+   "exact_match": 0.0,
+   "correction_accuracy": NaN,
+   "triage_accuracy": 0.7283950617283951,
+   "under_triage_rate": 0.12345679012345678,
+   "silent_under_triage_rate": 0.0
+  },
+  "correction:True": {
+   "n": 38,
+   "valid_rate": 0.8157894736842105,
+   "usable_rate": 0.9736842105263158,
+   "field_f1": 0.6253869969040248,
+   "hallucination_rate": 0.0301941049604601,
+   "exact_match": 0.0,
+   "correction_accuracy": 0.05263157894736842,
+   "triage_accuracy": 0.6052631578947368,
+   "under_triage_rate": 0.15789473684210525,
+   "silent_under_triage_rate": 0.0
+  },
+  "exchange:hospital says 'go ahead' after the call sign, otherwise one report": {
+   "n": 62,
+   "valid_rate": 0.8870967741935484,
+   "usable_rate": 0.9838709677419355,
+   "field_f1": 0.6538071065989848,
+   "hallucination_rate": 0.038922155688622756,
+   "exact_match": 0.0,
+   "correction_accuracy": 0.0,
+   "triage_accuracy": 0.7096774193548387,
+   "under_triage_rate": 0.11290322580645161,
+   "silent_under_triage_rate": 0.0
+  },
+  "exchange:one continuous report": {
+   "n": 65,
+   "valid_rate": 0.7846153846153846,
+   "usable_rate": 0.9538461538461539,
+   "field_f1": 0.7097966728280961,
+   "hallucination_rate": 0.05132382892057027,
+   "exact_match": 0.0,
+   "correction_accuracy": 0.1,
+   "triage_accuracy": 0.7076923076923077,
+   "under_triage_rate": 0.16923076923076924,
+   "silent_under_triage_rate": 0.0
+  },
+  "exchange:short back-and-forth, hospital asks for the next item": {
+   "n": 73,
+   "valid_rate": 0.9041095890410958,
+   "usable_rate": 1.0,
+   "field_f1": 0.6641541038525963,
+   "hallucination_rate": 0.05457809694793537,
+   "exact_match": 0.0,
+   "correction_accuracy": 0.0625,
+   "triage_accuracy": 0.6986301369863014,
+   "under_triage_rate": 0.1095890410958904,
+   "silent_under_triage_rate": 0.0
+  },
+  "fillers:frequent fillers and self-interruptions": {
+   "n": 54,
+   "valid_rate": 0.9444444444444444,
+   "usable_rate": 1.0,
+   "field_f1": 0.6543352601156068,
+   "hallucination_rate": 0.047898338220918865,
+   "exact_match": 0.0,
+   "correction_accuracy": 0.0,
+   "triage_accuracy": 0.7777777777777778,
+   "under_triage_rate": 0.07407407407407407,
+   "silent_under_triage_rate": 0.0
+  },
+  "fillers:no fillers": {
+   "n": 78,
+   "valid_rate": 0.7692307692307693,
+   "usable_rate": 0.9743589743589743,
+   "field_f1": 0.6877653415669626,
+   "hallucination_rate": 0.04891304347826087,
+   "exact_match": 0.0,
+   "correction_accuracy": 0.11764705882352941,
+   "triage_accuracy": 0.6025641025641025,
+   "under_triage_rate": 0.16666666666666666,
+   "silent_under_triage_rate": 0.0
+  },
+  "fillers:occasional 'uh' and 'um'": {
+   "n": 68,
+   "valid_rate": 0.8970588235294118,
+   "usable_rate": 0.9705882352941176,
+   "field_f1": 0.6796910495229441,
+   "hallucination_rate": 0.049072642967542504,
+   "exact_match": 0.0,
+   "correction_accuracy": 0.0,
+   "triage_accuracy": 0.7647058823529411,
+   "under_triage_rate": 0.1323529411764706,
+   "silent_under_triage_rate": 0.0
+  },
+  "in_scope:False": {
+   "n": 9,
+   "valid_rate": 0.7777777777777778,
+   "usable_rate": 1.0,
+   "field_f1": 0.7106227106227105,
+   "hallucination_rate": 0.047752808988764044,
+   "exact_match": 0.0,
+   "correction_accuracy": 0.0,
+   "triage_accuracy": 0.3333333333333333,
+   "under_triage_rate": 0.0,
+   "silent_under_triage_rate": 0.0
+  },
+  "in_scope:True": {
+   "n": 191,
+   "valid_rate": 0.8638743455497382,
+   "usable_rate": 0.9790575916230366,
+   "field_f1": 0.6746679468714994,
+   "hallucination_rate": 0.048739961229576294,
+   "exact_match": 0.0,
+   "correction_accuracy": 0.05405405405405406,
+   "triage_accuracy": 0.7225130890052356,
+   "under_triage_rate": 0.13612565445026178,
+   "silent_under_triage_rate": 0.0
+  },
+  "length:long": {
+   "n": 49,
+   "valid_rate": 0.8163265306122449,
+   "usable_rate": 0.9795918367346939,
+   "field_f1": 0.714537963507946,
+   "hallucination_rate": 0.05352266521026761,
+   "exact_match": 0.0,
+   "correction_accuracy": 0.0,
+   "triage_accuracy": 0.8163265306122449,
+   "under_triage_rate": 0.061224489795918366,
+   "silent_under_triage_rate": 0.0
+  },
+  "length:medium": {
+   "n": 113,
+   "valid_rate": 0.8761061946902655,
+   "usable_rate": 0.9734513274336283,
+   "field_f1": 0.6439436619718311,
+   "hallucination_rate": 0.043245756800744016,
+   "exact_match": 0.0,
+   "correction_accuracy": 0.09523809523809523,
+   "triage_accuracy": 0.6548672566371682,
+   "under_triage_rate": 0.17699115044247787,
+   "silent_under_triage_rate": 0.0
+  },
+  "length:short": {
+   "n": 38,
+   "valid_rate": 0.868421052631579,
+   "usable_rate": 1.0,
+   "field_f1": 0.7148468185388845,
+   "hallucination_rate": 0.058782849239280774,
+   "exact_match": 0.0,
+   "correction_accuracy": 0.0,
+   "triage_accuracy": 0.7105263157894737,
+   "under_triage_rate": 0.07894736842105263,
+   "silent_under_triage_rate": 0.0
+  },
+  "pace:a little disorganised, adds details as remembered": {
+   "n": 32,
+   "valid_rate": 0.875,
+   "usable_rate": 0.96875,
+   "field_f1": 0.6436781609195402,
+   "hallucination_rate": 0.05062240663900415,
+   "exact_match": 0.0,
+   "correction_accuracy": 0.0,
+   "triage_accuracy": 0.78125,
+   "under_triage_rate": 0.09375,
+   "silent_under_triage_rate": 0.0
+  },
+  "pace:calm and methodical": {
+   "n": 41,
+   "valid_rate": 0.8536585365853658,
+   "usable_rate": 0.975609756097561,
+   "field_f1": 0.6763358778625954,
+   "hallucination_rate": 0.04118404118404118,
+   "exact_match": 0.0,
+   "correction_accuracy": 0.0,
+   "triage_accuracy": 0.7073170731707317,
+   "under_triage_rate": 0.14634146341463414,
+   "silent_under_triage_rate": 0.0
+  },
+  "pace:experienced and terse, heavy use of radio shorthand": {
+   "n": 39,
+   "valid_rate": 0.7692307692307693,
+   "usable_rate": 0.9487179487179487,
+   "field_f1": 0.6301587301587303,
+   "hallucination_rate": 0.05288135593220339,
+   "exact_match": 0.0,
+   "correction_accuracy": 0.14285714285714285,
+   "triage_accuracy": 0.6153846153846154,
+   "under_triage_rate": 0.1794871794871795,
+   "silent_under_triage_rate": 0.0
+  },
+  "pace:rushed and clipped, under pressure": {
+   "n": 49,
+   "valid_rate": 0.8775510204081632,
+   "usable_rate": 1.0,
+   "field_f1": 0.7243510506798517,
+   "hallucination_rate": 0.05277185501066098,
+   "exact_match": 0.0,
+   "correction_accuracy": 0.0,
+   "triage_accuracy": 0.7142857142857143,
+   "under_triage_rate": 0.10204081632653061,
+   "silent_under_triage_rate": 0.0
+  },
+  "pace:slightly breathless, working on the patient": {
+   "n": 39,
+   "valid_rate": 0.9230769230769231,
+   "usable_rate": 1.0,
+   "field_f1": 0.6868217054263566,
+   "hallucination_rate": 0.04564032697547684,
+   "exact_match": 0.0,
+   "correction_accuracy": 0.14285714285714285,
+   "triage_accuracy": 0.717948717948718,
+   "under_triage_rate": 0.1282051282051282,
+   "silent_under_triage_rate": 0.0
+  },
+  "structure:follows IMIST-AMBO order": {
+   "n": 63,
+   "valid_rate": 0.8888888888888888,
+   "usable_rate": 1.0,
+   "field_f1": 0.7092682926829268,
+   "hallucination_rate": 0.04230609705516383,
+   "exact_match": 0.0,
+   "correction_accuracy": 0.0,
+   "triage_accuracy": 0.8095238095238095,
+   "under_triage_rate": 0.14285714285714285,
+   "silent_under_triage_rate": 0.0
+  },
+  "structure:leads with vital signs, then the story": {
+   "n": 68,
+   "valid_rate": 0.7941176470588235,
+   "usable_rate": 0.9558823529411765,
+   "field_f1": 0.634963768115942,
+   "hallucination_rate": 0.0546875,
+   "exact_match": 0.0,
+   "correction_accuracy": 0.058823529411764705,
+   "triage_accuracy": 0.6029411764705882,
+   "under_triage_rate": 0.14705882352941177,
+   "silent_under_triage_rate": 0.0
+  },
+  "structure:starts with mechanism, wanders a little": {
+   "n": 69,
+   "valid_rate": 0.8985507246376812,
+   "usable_rate": 0.9855072463768116,
+   "field_f1": 0.6863957597173144,
+   "hallucination_rate": 0.04871499808208669,
+   "exact_match": 0.0,
+   "correction_accuracy": 0.08333333333333333,
+   "triage_accuracy": 0.7101449275362319,
+   "under_triage_rate": 0.10144927536231885,
+   "silent_under_triage_rate": 0.0
+  }
+ },
+ "triage_confusion": {
+  "2->2": 46,
+  "1->1": 54,
+  "3->3": 19,
+  "3->1": 7,
+  "0->0": 19,
+  "2->1": 14,
+  "0->1": 5,
+  "1->2": 4,
+  "out_of_scope->1": 5,
+  "1->0": 3,
+  "3->0": 7,
+  "2->0": 8,
+  "out_of_scope->out_of_scope": 3,
+  "2->3": 3,
+  "1->3": 1,
+  "out_of_scope->2": 1,
+  "0->3": 1
+ },
+ "latency_s": {
+  "mean": 25.24352,
+  "max": 50.781
+ }
+}

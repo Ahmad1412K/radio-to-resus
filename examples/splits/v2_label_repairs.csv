@@ -1,0 +1,398 @@
+case_id,split,field,old,new,decision,reason
+H00005,dev,signs.clinical_signs_of_shock,null,true,applied,v2 crew says signs of shock
+H00010,dev,injuries,[],null,applied,'no injuries' not said in v2
+H00011,dev,injuries,[],null,applied,'no injuries' not said in v2
+H00013,test,signs.trend,null,"""stable""",applied,v2 crew states it
+H00019,test,injuries,[],null,applied,'no injuries' not said in v2
+H00022,test,signs.vitals.spo2,98,null,rejected,SpO2 given as 'N percent' in the vitals list
+H00024,test,signs.gcs.components,4/5/6,null,applied,GCS components not said in v2
+H00024,test,signs.pneumothorax_or_hemothorax,false,null,applied,not said in v2
+H00024,test,signs.abdomen,False/False,null,applied,abdomen not said in v2
+H00024,test,signs.neuro,False/False,null,applied,neuro exam not said in v2
+H00024,test,signs.clinical_signs_of_shock,true,null,applied,shock not said in v2
+H00027,dev,injuries,[],null,applied,'no injuries' not said in v2
+H00029,test,signs.neuro,None/None,false/false,rejected,'moving all four?' is the hospital's question; crew does not answer
+H00033,dev,signs.gcs.components,4/5/6,null,applied,GCS components not said in v2
+H00050,test,signs.clinical_signs_of_shock,null,true,applied,v2 crew says signs of shock
+H00058,test,signs.trend,null,"""stable""",applied,v2 crew states it
+H00089,dev,signs.trend,null,"""stable""",applied,v2 crew states it
+H00097,test,signs.clinical_signs_of_shock,null,true,applied,v2 crew says signs of shock
+H00101,test,signs.clinical_signs_of_shock,null,true,applied,v2 crew says signs of shock
+H00152,test,signs.clinical_signs_of_shock,null,true,applied,v2 crew says signs of shock
+H00165,test,signs.gcs.components,4/5/6,null,applied,GCS components not said in v2
+H00203,dev,background,diabetes,remove,rejected,text says 'diabetic' (detector looked for 'diabetes')
+H00203,dev,signs.vitals.spo2,98,null,rejected,SpO2 given as 'N percent' in the vitals list
+H00221,test,injuries,[],null,applied,'no injuries' not said in v2
+H00232,dev,signs.clinical_signs_of_shock,null,true,applied,v2 crew says signs of shock
+H00236,dev,signs.vitals.spo2,95,null,rejected,SpO2 given as 'N percent' in the vitals list
+H00247,dev,signs.trend,"""stable""",null,applied,not said in v2
+H00249,test,signs.airway,"""patent""",null,applied,not said in v2
+H00249,test,signs.neuro,False/False,null,applied,neuro exam not said in v2
+H00278,test,signs.trend,null,"""stable""",applied,v2 crew states it
+H00308,test,signs.airway,"""patent""",null,applied,not said in v2
+H00308,test,signs.abdomen,False/False,null,applied,abdomen not said in v2
+H00308,test,signs.neuro,False/False,null,applied,neuro exam not said in v2
+H00309,test,signs.trend,null,"""stable""",applied,v2 crew states it
+H00339,test,background,diabetes,remove,rejected,text says 'diabetic' (detector looked for 'diabetes')
+H00343,dev,signs.hemorrhage,"""none""",null,applied,not said in v2
+H00374,test,background,diabetes,remove,rejected,text says 'diabetic' (detector looked for 'diabetes')
+H00379,test,signs.trend,null,"""stable""",applied,v2 crew states it
+H00387,dev,injuries,null,[],applied,v2 says no injuries
+H00389,dev,injuries,[],null,applied,'no injuries' not said in v2
+H00398,test,background,diabetes,remove,rejected,text says 'diabetic' (detector looked for 'diabetes')
+H00411,dev,signs.clinical_signs_of_shock,null,true,applied,v2 crew says signs of shock
+H00425,test,signs.clinical_signs_of_shock,null,true,applied,v2 crew says signs of shock
+H00450,test,signs.clinical_signs_of_shock,null,true,applied,v2 crew says signs of shock
+H00476,test,injuries,[],null,applied,'no injuries' not said in v2
+H00498,test,injuries,[],null,applied,'no injuries' not said in v2
+H00508,dev,injuries,[],null,applied,'no injuries' not said in v2
+H00526,test,injuries,[],null,applied,'no injuries' not said in v2
+H00531,test,signs.neuro,False/False,null,applied,neuro exam not said in v2
+H00535,test,injuries,[],null,applied,'no injuries' not said in v2
+H00537,dev,signs.gcs.components,4/5/6,null,applied,GCS components not said in v2
+H00549,test,background,diabetes,remove,rejected,text says 'diabetic' (detector looked for 'diabetes')
+H00561,dev,signs.clinical_signs_of_shock,null,true,applied,v2 crew says signs of shock
+H00564,dev,injuries,[],null,applied,'no injuries' not said in v2
+H00564,dev,signs.trend,null,"""stable""",applied,v2 crew states it
+H00581,test,signs.trend,null,"""stable""",applied,v2 crew states it
+H00590,dev,injuries,[],null,applied,'no injuries' not said in v2
+H00611,test,signs.clinical_signs_of_shock,true,null,applied,shock not said in v2
+H00631,dev,signs.trend,null,"""stable""",applied,v2 crew states it
+H00632,dev,signs.clinical_signs_of_shock,null,true,applied,v2 crew says signs of shock
+H00646,test,signs.pneumothorax_or_hemothorax,false,null,applied,not said in v2
+H00647,test,signs.pneumothorax_or_hemothorax,false,null,applied,not said in v2
+H00647,test,signs.trend,"""stable""",null,applied,not said in v2
+H00658,test,signs.neuro,False/False,null,applied,neuro exam not said in v2
+H00680,test,injuries,[],null,applied,'no injuries' not said in v2
+H00687,dev,signs.clinical_signs_of_shock,null,true,applied,v2 crew says signs of shock
+H00696,dev,signs.gcs.components,4/5/6,null,applied,GCS components not said in v2
+H00706,test,injuries,[],null,applied,'no injuries' not said in v2
+H00712,dev,signs.gcs.components,4/5/6,null,applied,GCS components not said in v2
+H00733,dev,injuries,[],null,applied,'no injuries' not said in v2
+H00734,dev,signs.hemorrhage,"""none""",null,applied,not said in v2
+H00737,dev,injuries,[],null,applied,'no injuries' not said in v2
+H00739,dev,signs.neuro,False/False,null,applied,neuro exam not said in v2
+H00746,test,signs.gcs.components,4/5/6,null,applied,GCS components not said in v2
+H00746,test,signs.trend,"""stable""",null,applied,not said in v2
+H00750,test,injuries,[],null,applied,'no injuries' not said in v2
+H00755,dev,injuries,[],null,applied,'no injuries' not said in v2
+H00783,test,signs.clinical_signs_of_shock,true,null,applied,shock not said in v2
+H00784,dev,identification.eta_minutes,18,null,applied,ETA not said in v2
+H00794,test,signs.gcs.components,4/5/6,null,applied,GCS components not said in v2
+H00794,test,signs.abdomen,False/False,null,applied,abdomen not said in v2
+H00795,dev,signs.gcs.components,4/5/6,null,applied,GCS components not said in v2
+H00805,test,signs.clinical_signs_of_shock,true,null,applied,shock not said in v2
+H00812,test,signs.clinical_signs_of_shock,null,true,applied,v2 crew says signs of shock
+H00828,test,signs.pneumothorax_or_hemothorax,false,null,applied,not said in v2
+H00828,test,signs.abdomen,False/False,null,applied,abdomen not said in v2
+H00834,dev,signs.trend,null,"""stable""",applied,v2 crew states it
+H00837,test,injuries,[],null,applied,'no injuries' not said in v2
+H00845,dev,signs.gcs.components,4/5/6,null,applied,GCS components not said in v2
+H00866,test,signs.gcs.components,4/5/6,null,applied,GCS components not said in v2
+H00866,test,signs.trend,"""stable""",null,applied,not said in v2
+H00879,dev,injuries,[],null,applied,'no injuries' not said in v2
+H00881,dev,identification.eta_minutes,12,null,applied,ETA not said in v2
+H00909,dev,signs.gcs.components,4/5/6,null,applied,GCS components not said in v2
+H00910,test,signs.gcs.components,4/5/6,null,applied,GCS components not said in v2
+H00910,test,mechanism.loss_of_consciousness,"{""occurred"": false, ""duration_minutes"": null}",null,applied,LOC not said in v2
+H00916,dev,signs.clinical_signs_of_shock,null,true,applied,v2 crew says signs of shock
+H00918,test,signs.airway,"""patent""",null,applied,not said in v2
+H00918,test,signs.hemorrhage,"""none""",null,applied,not said in v2
+H00918,test,signs.clinical_signs_of_shock,true,null,applied,shock not said in v2
+H00921,test,injuries,[],null,applied,'no injuries' not said in v2
+H00928,dev,signs.hemorrhage,"""none""",null,applied,not said in v2
+H00947,test,mechanism.loss_of_consciousness,"{""occurred"": false, ""duration_minutes"": null}",null,applied,LOC not said in v2
+H00954,test,signs.trend,null,"""stable""",applied,v2 crew states it
+H00957,test,identification.eta_minutes,10,null,applied,ETA not said in v2
+H00958,dev,injuries,[],null,applied,'no injuries' not said in v2
+H00965,test,signs.airway,"""patent""",null,applied,not said in v2
+H00965,test,signs.trend,"""stable""",null,applied,not said in v2
+H00965,test,signs.abdomen,False/False,null,applied,abdomen not said in v2
+H00965,test,signs.neuro,False/False,null,applied,neuro exam not said in v2
+H00979,test,injuries,[],null,applied,'no injuries' not said in v2
+H00984,test,signs.abdomen,False/False,null,applied,abdomen not said in v2
+H00986,dev,signs.clinical_signs_of_shock,null,true,applied,v2 crew says signs of shock
+H00988,dev,signs.abdomen,False/False,null,applied,abdomen not said in v2
+H00998,test,identification.eta_minutes,18,null,applied,ETA not said in v2
+H01006,dev,injuries,[],null,applied,'no injuries' not said in v2
+H01006,dev,identification.eta_minutes,20,null,applied,ETA not said in v2
+H01009,dev,signs.airway,"""patent""",null,applied,not said in v2
+H01009,dev,signs.abdomen,False/False,null,applied,abdomen not said in v2
+H01012,dev,signs.clinical_signs_of_shock,null,true,applied,v2 crew says signs of shock
+H01017,test,signs.trend,"""stable""",null,applied,not said in v2
+H01017,test,signs.clinical_signs_of_shock,true,null,applied,shock not said in v2
+H01037,test,signs.clinical_signs_of_shock,null,true,applied,v2 crew says signs of shock
+H01039,dev,identification.eta_minutes,18,null,applied,ETA not said in v2
+H01043,dev,injuries,[],null,applied,'no injuries' not said in v2
+H01077,test,signs.trend,null,"""stable""",applied,v2 crew states it
+H01078,test,signs.gcs.components,4/5/6,null,applied,GCS components not said in v2
+H01088,dev,signs.pneumothorax_or_hemothorax,false,null,applied,not said in v2
+H01090,test,signs.gcs.components,4/5/6,null,applied,GCS components not said in v2
+H01090,test,signs.pneumothorax_or_hemothorax,false,null,applied,not said in v2
+H01090,test,signs.neuro,False/False,null,applied,neuro exam not said in v2
+H01100,test,signs.clinical_signs_of_shock,null,true,applied,v2 crew says signs of shock
+H01106,dev,identification.eta_minutes,15,null,applied,ETA not said in v2
+H01157,test,signs.clinical_signs_of_shock,null,true,applied,v2 crew says signs of shock
+H01172,test,signs.pneumothorax_or_hemothorax,false,null,applied,not said in v2
+H01193,dev,signs.gcs.components,4/5/6,null,applied,GCS components not said in v2
+H01193,dev,identification.eta_minutes,15,null,applied,ETA not said in v2
+H01197,dev,injuries,[],null,applied,'no injuries' not said in v2
+H01199,dev,signs.clinical_signs_of_shock,null,true,applied,v2 crew says signs of shock
+H01203,dev,identification.eta_minutes,20,null,applied,ETA not said in v2
+H01208,dev,signs.clinical_signs_of_shock,null,true,applied,v2 crew says signs of shock
+H01213,test,signs.hemorrhage,"""none""",null,applied,not said in v2
+H01213,test,signs.abdomen,False/False,null,applied,abdomen not said in v2
+H01214,dev,injuries,[],null,applied,'no injuries' not said in v2
+H01220,test,injuries,[],null,applied,'no injuries' not said in v2
+H01226,test,mechanism.loss_of_consciousness,"{""occurred"": false, ""duration_minutes"": null}",null,applied,LOC not said in v2
+H01233,dev,signs.hemorrhage,"""none""",null,applied,not said in v2
+H01244,dev,signs.gcs.components,4/5/6,null,applied,GCS components not said in v2
+H01247,dev,signs.trend,"""stable""",null,applied,not said in v2
+H01258,dev,signs.gcs.components,4/5/6,null,applied,GCS components not said in v2
+H01258,dev,signs.hemorrhage,"""none""",null,applied,not said in v2
+H01259,dev,allergies,[],null,rejected,text says 'allergies? none known' (detector missed the phrasing)
+H01260,dev,signs.gcs.components,4/5/6,null,applied,GCS components not said in v2
+H01260,dev,signs.hemorrhage,"""none""",null,applied,not said in v2
+H01264,test,signs.neuro,False/False,null,applied,neuro exam not said in v2
+H01275,test,signs.gcs.components,4/5/6,null,applied,GCS components not said in v2
+H01281,dev,signs.trend,null,"""stable""",applied,v2 crew states it
+H01285,dev,injuries,[],null,applied,'no injuries' not said in v2
+H01299,dev,signs.trend,"""stable""",null,applied,not said in v2
+H01307,test,signs.neuro,False/False,null,applied,neuro exam not said in v2
+H01313,dev,signs.airway,"""patent""",null,applied,not said in v2
+H01313,dev,signs.abdomen,False/False,null,applied,abdomen not said in v2
+H01313,dev,signs.neuro,False/False,null,applied,neuro exam not said in v2
+H01337,test,injuries,[],null,applied,'no injuries' not said in v2
+H01343,test,injuries,[],null,applied,'no injuries' not said in v2
+H01344,dev,injuries,[],null,applied,'no injuries' not said in v2
+H01351,test,injuries,[],null,applied,'no injuries' not said in v2
+H01357,dev,signs.neuro,False/False,null,applied,neuro exam not said in v2
+H01357,dev,identification.eta_minutes,18,null,applied,ETA not said in v2
+H01362,test,injuries,[],null,applied,'no injuries' not said in v2
+H01371,test,signs.gcs.components,4/5/6,null,applied,GCS components not said in v2
+H01371,test,signs.abdomen,False/False,null,applied,abdomen not said in v2
+H01376,dev,injuries,[],null,applied,'no injuries' not said in v2
+H01378,test,injuries,null,[],applied,v2 says no injuries
+H01378,test,signs.gcs.components,4/5/6,null,applied,GCS components not said in v2
+H01378,test,signs.abdomen,False/False,null,applied,abdomen not said in v2
+H01378,test,signs.neuro,False/False,null,applied,neuro exam not said in v2
+H01378,test,identification.eta_minutes,25,null,applied,ETA not said in v2
+H01384,test,identification.eta_minutes,18,null,applied,ETA not said in v2
+H01403,test,injuries,[],null,applied,'no injuries' not said in v2
+H01411,test,signs.trend,null,"""stable""",applied,v2 crew states it
+H01417,test,signs.pneumothorax_or_hemothorax,false,null,applied,not said in v2
+H01417,test,signs.hemorrhage,"""none""",null,applied,not said in v2
+H01421,test,signs.clinical_signs_of_shock,null,true,applied,v2 crew says signs of shock
+H01424,test,identification.eta_minutes,18,null,applied,ETA not said in v2
+H01432,test,injuries,[],null,applied,'no injuries' not said in v2
+H01433,dev,signs.gcs.components,4/5/6,null,applied,GCS components not said in v2
+H01433,dev,signs.airway,"""patent""",null,applied,not said in v2
+H01433,dev,signs.neuro,False/False,null,applied,neuro exam not said in v2
+H01433,dev,identification.eta_minutes,15,null,applied,ETA not said in v2
+H01435,test,signs.gcs.components,4/5/6,null,applied,GCS components not said in v2
+H01436,dev,signs.gcs.components,4/5/6,null,applied,GCS components not said in v2
+H01440,dev,signs.gcs.components,4/5/6,null,applied,GCS components not said in v2
+H01440,dev,signs.clinical_signs_of_shock,true,null,applied,shock not said in v2
+H01446,test,signs.gcs.components,4/5/6,null,applied,GCS components not said in v2
+H01450,test,injuries,[],null,applied,'no injuries' not said in v2
+H01452,test,signs.clinical_signs_of_shock,null,true,applied,v2 crew says signs of shock
+H01453,test,injuries,[],null,applied,'no injuries' not said in v2
+H01456,dev,injuries,[],null,applied,'no injuries' not said in v2
+H01456,dev,signs.abdomen,False/False,null,applied,abdomen not said in v2
+H01470,dev,injuries,[],null,applied,'no injuries' not said in v2
+H01472,test,injuries,[],null,applied,'no injuries' not said in v2
+H01472,test,signs.gcs.components,4/5/6,null,applied,GCS components not said in v2
+H01472,test,signs.airway,"""patent""",null,applied,not said in v2
+H01472,test,signs.pneumothorax_or_hemothorax,false,null,applied,not said in v2
+H01479,dev,signs.trend,null,"""stable""",applied,v2 crew states it
+H01491,dev,injuries,[],null,applied,'no injuries' not said in v2
+H01496,dev,injuries,[],null,applied,'no injuries' not said in v2
+H01502,dev,injuries,[],null,applied,'no injuries' not said in v2
+H01506,test,signs.clinical_signs_of_shock,null,true,applied,v2 crew says signs of shock
+H01509,dev,signs.trend,"""stable""",null,applied,not said in v2
+H01510,test,signs.trend,null,"""stable""",applied,v2 crew states it
+H01533,test,injuries,[],null,applied,'no injuries' not said in v2
+H01540,dev,signs.gcs.components,4/5/6,null,applied,GCS components not said in v2
+H01550,dev,signs.trend,null,"""stable""",applied,v2 crew states it
+H01551,dev,signs.clinical_signs_of_shock,null,true,applied,v2 crew says signs of shock
+H01557,dev,signs.clinical_signs_of_shock,null,true,applied,v2 crew says signs of shock
+H01569,test,injuries,[],null,applied,'no injuries' not said in v2
+H01585,dev,injuries,[],null,applied,'no injuries' not said in v2
+H01587,dev,signs.trend,"""stable""",null,applied,not said in v2
+H01593,test,injuries,[],null,applied,'no injuries' not said in v2
+H01598,dev,signs.gcs.components,4/5/6,null,applied,GCS components not said in v2
+H01601,test,signs.neuro,False/False,null,applied,neuro exam not said in v2
+H01602,test,background,[],null,applied,'none' not said in v2
+H01603,test,signs.neuro,False/False,null,applied,neuro exam not said in v2
+H01608,dev,injuries,[],null,applied,'no injuries' not said in v2
+H01614,dev,injuries,[],null,applied,'no injuries' not said in v2
+H01632,dev,signs.neuro,False/False,null,applied,neuro exam not said in v2
+H01636,dev,injuries,null,[],applied,v2 says no injuries
+H01649,test,identification.eta_minutes,15,null,rejected,text says 'eta? <n>' without 'minutes'
+H01660,test,signs.airway,"""patent""",null,applied,not said in v2
+H01676,dev,injuries,[],null,applied,'no injuries' not said in v2
+H01683,dev,signs.clinical_signs_of_shock,null,true,applied,v2 crew says signs of shock
+H01693,dev,allergies,[],null,rejected,text says 'allergies? none known' (detector missed the phrasing)
+H01712,test,signs.airway,null,"""patent""",applied,v2 crew states it
+H01736,dev,injuries,[],null,applied,'no injuries' not said in v2
+H01755,dev,identification.eta_minutes,18,null,rejected,text says 'eta? <n>' without 'minutes'
+H01798,dev,signs.hemorrhage,"""none""",null,applied,not said in v2
+H01799,test,signs.airway,"""patent""",null,applied,not said in v2
+H01816,dev,signs.clinical_signs_of_shock,null,true,applied,v2 crew says signs of shock
+H01827,dev,allergies,[],null,rejected,text says 'allergies? none known' (detector missed the phrasing)
+H01833,dev,signs.clinical_signs_of_shock,null,true,applied,v2 crew says signs of shock
+H01839,dev,signs.airway,"""patent""",null,applied,not said in v2
+H01847,dev,signs.trend,"""stable""",null,applied,not said in v2
+H01857,dev,signs.clinical_signs_of_shock,null,true,applied,v2 crew says signs of shock
+H01858,test,injuries,[],null,applied,'no injuries' not said in v2
+H01858,test,signs.hemorrhage,"""none""",null,applied,not said in v2
+H01860,dev,injuries,[],null,applied,'no injuries' not said in v2
+H01866,test,signs.trend,"""stable""",null,applied,not said in v2
+H01913,test,signs.airway,"""patent""",null,applied,not said in v2
+H01913,test,signs.trend,"""improving""",null,applied,not said in v2
+H01933,dev,mechanism.loss_of_consciousness,"{""occurred"": false, ""duration_minutes"": null}",null,applied,LOC not said in v2
+H01938,test,signs.pneumothorax_or_hemothorax,false,null,applied,not said in v2
+H01938,test,signs.hemorrhage,"""none""",null,applied,not said in v2
+H01938,test,signs.abdomen,False/False,null,applied,abdomen not said in v2
+H01938,test,signs.clinical_signs_of_shock,null,true,applied,v2 crew says signs of shock
+H01943,dev,signs.airway,"""patent""",null,applied,not said in v2
+H01943,dev,signs.hemorrhage,"""none""",null,applied,not said in v2
+H01943,dev,signs.trend,"""improving""",null,applied,not said in v2
+H01943,dev,signs.abdomen,False/False,null,applied,abdomen not said in v2
+H01949,dev,mechanism.loss_of_consciousness,"{""occurred"": false, ""duration_minutes"": null}",null,applied,LOC not said in v2
+H01960,test,medications,[],null,rejected,text says 'medications? none'
+H01968,test,signs.hemorrhage,"""none""",null,applied,not said in v2
+H01970,test,injuries,[],null,applied,'no injuries' not said in v2
+H01976,dev,signs.clinical_signs_of_shock,null,true,applied,v2 crew says signs of shock
+H01988,dev,signs.trend,"""stable""",null,applied,not said in v2
+H01988,dev,signs.abdomen,False/False,null,applied,abdomen not said in v2
+H01997,test,injuries,[],null,applied,'no injuries' not said in v2
+H02000,test,signs.clinical_signs_of_shock,null,true,applied,v2 crew says signs of shock
+H02003,dev,injuries,[],null,applied,'no injuries' not said in v2
+H02040,dev,signs.hemorrhage,"""none""",null,applied,not said in v2
+H02052,dev,signs.clinical_signs_of_shock,null,true,applied,v2 crew says signs of shock
+H02053,dev,injuries,[],null,applied,'no injuries' not said in v2
+H02066,dev,signs.neuro,False/False,null,applied,neuro exam not said in v2
+H02069,test,signs.gcs.components,4/5/6,null,applied,GCS components not said in v2
+H02088,dev,injuries,[],null,applied,'no injuries' not said in v2
+H02096,dev,mechanism.loss_of_consciousness,"{""occurred"": false, ""duration_minutes"": null}",null,applied,LOC not said in v2
+H02120,dev,injuries,null,[],applied,v2 says no injuries
+H02136,test,signs.trend,"""stable""",null,applied,not said in v2
+H02138,test,injuries,[],null,applied,'no injuries' not said in v2
+H02139,test,signs.clinical_signs_of_shock,null,true,applied,v2 crew says signs of shock
+H02146,test,signs.abdomen,False/False,null,applied,abdomen not said in v2
+H02167,dev,injuries,[],null,applied,'no injuries' not said in v2
+H02203,test,signs.clinical_signs_of_shock,null,true,applied,v2 crew says signs of shock
+H02214,dev,injuries,null,[],applied,v2 says no injuries
+H02235,dev,signs.clinical_signs_of_shock,null,true,applied,v2 crew says signs of shock
+H02240,test,signs.clinical_signs_of_shock,null,true,applied,v2 crew says signs of shock
+H02249,test,signs.airway,"""patent""",null,applied,not said in v2
+H02266,dev,signs.clinical_signs_of_shock,null,true,applied,v2 crew says signs of shock
+H02280,dev,signs.clinical_signs_of_shock,null,true,applied,v2 crew says signs of shock
+H02283,dev,mechanism.loss_of_consciousness,"{""occurred"": false, ""duration_minutes"": null}",null,applied,LOC not said in v2
+H02289,test,injuries,[],null,applied,'no injuries' not said in v2
+H02299,dev,mechanism.loss_of_consciousness,"{""occurred"": false, ""duration_minutes"": null}",null,applied,LOC not said in v2
+H02302,dev,mechanism.loss_of_consciousness,"{""occurred"": false, ""duration_minutes"": null}",null,applied,LOC not said in v2
+H02307,dev,signs.clinical_signs_of_shock,null,true,applied,v2 crew says signs of shock
+H02315,test,signs.gcs.components,4/5/6,null,applied,GCS components not said in v2
+H02330,test,signs.gcs.components,4/5/6,null,applied,GCS components not said in v2
+H02330,test,medications,[],null,applied,'none' not said in v2
+H02345,test,mechanism.loss_of_consciousness,"{""occurred"": false, ""duration_minutes"": null}",null,applied,LOC not said in v2
+H02349,test,signs.clinical_signs_of_shock,null,true,applied,v2 crew says signs of shock
+H02397,dev,signs.trend,"""stable""",null,applied,not said in v2
+H02397,dev,signs.clinical_signs_of_shock,null,true,applied,v2 crew says signs of shock
+H02404,test,signs.gcs.components,4/5/6,null,applied,GCS components not said in v2
+H02407,dev,signs.clinical_signs_of_shock,null,true,applied,v2 crew says signs of shock
+H02410,dev,signs.neuro,False/False,null,applied,neuro exam not said in v2
+H02410,dev,mechanism.loss_of_consciousness,"{""occurred"": false, ""duration_minutes"": null}",null,applied,LOC not said in v2
+H02419,dev,signs.hemorrhage,"""none""",null,applied,not said in v2
+H02420,test,signs.trend,"""stable""",null,applied,not said in v2
+H02420,test,signs.abdomen,False/False,null,applied,abdomen not said in v2
+H02422,dev,signs.airway,"""patent""",null,applied,not said in v2
+H02422,dev,signs.hemorrhage,"""none""",null,applied,not said in v2
+H02422,dev,signs.trend,"""stable""",null,applied,not said in v2
+H02422,dev,signs.neuro,False/False,null,applied,neuro exam not said in v2
+H02448,test,signs.hemorrhage,"""none""",null,applied,not said in v2
+H02448,test,signs.neuro,False/False,null,applied,neuro exam not said in v2
+H02448,test,background,[],null,applied,'none' not said in v2
+H02482,dev,signs.clinical_signs_of_shock,null,true,applied,v2 crew says signs of shock
+H02526,dev,signs.airway,null,"""patent""",applied,v2 crew states it
+H02531,dev,signs.hemorrhage,"""none""",null,applied,not said in v2
+H02551,dev,signs.clinical_signs_of_shock,null,true,applied,v2 crew says signs of shock
+H02559,dev,allergies,[],null,rejected,text says 'allergies? none known' (detector missed the phrasing)
+H02560,test,mechanism.loss_of_consciousness,"{""occurred"": false, ""duration_minutes"": null}",null,applied,LOC not said in v2
+H02575,test,signs.hemorrhage,"""none""",null,applied,not said in v2
+H02584,dev,injuries,[],null,applied,'no injuries' not said in v2
+H02589,dev,mechanism.loss_of_consciousness,"{""occurred"": false, ""duration_minutes"": null}",null,applied,LOC not said in v2
+H02591,test,signs.airway,"""patent""",null,applied,not said in v2
+H02595,dev,injuries,[],null,applied,'no injuries' not said in v2
+H02602,test,signs.clinical_signs_of_shock,null,true,applied,v2 crew says signs of shock
+H02603,dev,signs.clinical_signs_of_shock,null,true,applied,v2 crew says signs of shock
+H02608,test,injuries,[],null,applied,'no injuries' not said in v2
+H02608,test,signs.clinical_signs_of_shock,null,true,applied,v2 crew says signs of shock
+H02611,test,signs.abdomen,False/False,null,applied,abdomen not said in v2
+H02611,test,mechanism.loss_of_consciousness,"{""occurred"": false, ""duration_minutes"": null}",null,applied,LOC not said in v2
+H02612,dev,mechanism.loss_of_consciousness,"{""occurred"": false, ""duration_minutes"": null}",null,applied,LOC not said in v2
+H02614,dev,mechanism.loss_of_consciousness,"{""occurred"": false, ""duration_minutes"": null}",null,applied,LOC not said in v2
+H02619,test,signs.hemorrhage,"""none""",null,applied,not said in v2
+H02626,test,injuries,[],null,applied,'no injuries' not said in v2
+H02626,test,signs.hemorrhage,"""none""",null,applied,not said in v2
+H02631,test,injuries,[],null,applied,'no injuries' not said in v2
+H02635,dev,mechanism.loss_of_consciousness,"{""occurred"": false, ""duration_minutes"": null}",null,applied,LOC not said in v2
+H02641,dev,signs.clinical_signs_of_shock,null,true,applied,v2 crew says signs of shock
+H02650,dev,mechanism.loss_of_consciousness,"{""occurred"": false, ""duration_minutes"": null}",null,applied,LOC not said in v2
+H02675,test,signs.neuro,False/False,null,applied,neuro exam not said in v2
+H02683,test,signs.abdomen,False/False,null,applied,abdomen not said in v2
+H02690,test,injuries,[],null,applied,'no injuries' not said in v2
+H02698,test,signs.clinical_signs_of_shock,null,true,applied,v2 crew says signs of shock
+H02705,dev,signs.abdomen,False/False,null,applied,abdomen not said in v2
+H02710,test,injuries,[],null,applied,'no injuries' not said in v2
+H02715,test,signs.airway,null,"""patent""",applied,v2 crew states it
+H02723,dev,injuries,[],null,applied,'no injuries' not said in v2
+H02724,test,injuries,[],null,applied,'no injuries' not said in v2
+H02727,dev,injuries,[],null,applied,'no injuries' not said in v2
+H02733,test,signs.hemorrhage,"""none""",null,applied,not said in v2
+H02738,test,mechanism.loss_of_consciousness,"{""occurred"": false, ""duration_minutes"": null}",null,applied,LOC not said in v2
+H02740,test,injuries,[],null,applied,'no injuries' not said in v2
+H02749,dev,mechanism.loss_of_consciousness,"{""occurred"": false, ""duration_minutes"": null}",null,applied,LOC not said in v2
+H02751,dev,injuries,[],null,applied,'no injuries' not said in v2
+H02751,dev,mechanism.loss_of_consciousness,"{""occurred"": false, ""duration_minutes"": null}",null,applied,LOC not said in v2
+H02754,test,signs.airway,"""patent""",null,applied,not said in v2
+H02755,dev,signs.abdomen,False/False,null,applied,abdomen not said in v2
+H02785,test,signs.hemorrhage,"""none""",null,applied,not said in v2
+H02787,test,signs.abdomen,False/False,null,applied,abdomen not said in v2
+H02802,test,injuries,[],null,applied,'no injuries' not said in v2
+H02810,test,signs.hemorrhage,"""none""",null,applied,not said in v2
+H02819,dev,signs.hemorrhage,"""none""",null,applied,not said in v2
+H02826,dev,injuries,[],null,applied,'no injuries' not said in v2
+H02829,test,signs.gcs.components,4/5/6,null,applied,GCS components not said in v2
+H02829,test,signs.airway,"""patent""",null,applied,not said in v2
+H02829,test,signs.abdomen,False/False,null,applied,abdomen not said in v2
+H02831,test,mechanism.loss_of_consciousness,"{""occurred"": false, ""duration_minutes"": null}",null,applied,LOC not said in v2
+H02832,dev,signs.abdomen,False/False,null,applied,abdomen not said in v2
+H02836,test,mechanism.loss_of_consciousness,"{""occurred"": false, ""duration_minutes"": null}",null,applied,LOC not said in v2
+H02838,test,injuries,[],null,applied,'no injuries' not said in v2
+H02838,test,signs.hemorrhage,"""none""",null,applied,not said in v2
+H02848,dev,background,[],null,applied,'none' not said in v2
+H02850,test,signs.clinical_signs_of_shock,null,true,applied,v2 crew says signs of shock
+H02868,dev,mechanism.loss_of_consciousness,"{""occurred"": false, ""duration_minutes"": null}",null,applied,LOC not said in v2
+H02882,dev,mechanism.loss_of_consciousness,"{""occurred"": false, ""duration_minutes"": null}",null,applied,LOC not said in v2
+H02885,test,injuries,[],null,applied,'no injuries' not said in v2
+H02896,dev,mechanism.loss_of_consciousness,"{""occurred"": false, ""duration_minutes"": null}",null,applied,LOC not said in v2
+H02899,dev,signs.clinical_signs_of_shock,null,true,applied,v2 crew says signs of shock
+H02902,dev,mechanism.loss_of_consciousness,"{""occurred"": false, ""duration_minutes"": null}",null,applied,LOC not said in v2
+H02903,test,signs.abdomen,False/False,null,applied,abdomen not said in v2
+H02920,dev,signs.clinical_signs_of_shock,null,true,applied,v2 crew says signs of shock
+H02930,test,injuries,[],null,applied,'no injuries' not said in v2
+H02932,dev,signs.clinical_signs_of_shock,null,true,applied,v2 crew says signs of shock
+H02933,test,injuries,[],null,applied,'no injuries' not said in v2
+H02943,dev,signs.trend,"""stable""",null,applied,not said in v2
+H02946,test,mechanism.loss_of_consciousness,"{""occurred"": false, ""duration_minutes"": null}",null,applied,LOC not said in v2
+H02958,test,injuries,[],null,applied,'no injuries' not said in v2
+H02959,test,injuries,[],null,applied,'no injuries' not said in v2
+H02964,dev,mechanism.loss_of_consciousness,"{""occurred"": false, ""duration_minutes"": null}",null,applied,LOC not said in v2
+H02971,dev,signs.trend,"""stable""",null,applied,not said in v2
+H02982,test,signs.clinical_signs_of_shock,null,true,applied,v2 crew says signs of shock
+H02986,dev,signs.hemorrhage,"""none""",null,applied,not said in v2
+H02988,test,signs.neuro,False/False,null,applied,neuro exam not said in v2
+H03000,test,mechanism.loss_of_consciousness,"{""occurred"": false, ""duration_minutes"": null}",null,applied,LOC not said in v2

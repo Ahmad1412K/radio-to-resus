@@ -1,0 +1,92 @@
+{
+  "schema_version": "1.0",
+  "identification": {
+    "age_years": 46,
+    "sex": "female",
+    "pregnant": null,
+    "gestation_weeks": null,
+    "arrival_mode": "ems_scene",
+    "eta_minutes": 15
+  },
+  "mechanism": {
+    "type": "motor_vehicle_crash",
+    "description": null,
+    "fall": null,
+    "vehicle": {
+      "impact_speed_mph": null,
+      "extrication_minutes": 25.0,
+      "intrusion_occupant_site_in": 10.0,
+      "intrusion_any_site_in": null,
+      "ejection": "none",
+      "death_same_compartment": null,
+      "patient_thrown": null,
+      "run_over": null,
+      "rider_separated": null,
+      "rollover": null
+    },
+    "loss_of_consciousness": {
+      "occurred": false,
+      "duration_minutes": null
+    }
+  },
+  "injuries": [
+    {
+      "type": "fracture",
+      "region": "thigh",
+      "side": "right",
+      "suspected": true,
+      "bone": "femur",
+      "open_fracture": false,
+      "depressed": null,
+      "pelvis_unstable": null,
+      "digits_involved": null
+    }
+  ],
+  "burns": null,
+  "signs": {
+    "vitals": {
+      "systolic_bp_mmhg": 118,
+      "diastolic_bp_mmhg": 76,
+      "heart_rate_bpm": 104,
+      "resp_rate_per_min": 20,
+      "spo2_percent": 97,
+      "spo2_on_room_air": true
+    },
+    "gcs": {
+      "eye": null,
+      "verbal": null,
+      "motor": null,
+      "total": 15,
+      "before_intubation": null
+    },
+    "airway": "patent",
+    "flail_chest": null,
+    "pneumothorax_or_hemothorax": null,
+    "clinical_signs_of_shock": false,
+    "shock_signs": [],
+    "hemorrhage": null,
+    "paralysis": null,
+    "bilateral_sensory_loss": null,
+    "suspected_spinal_cord_injury": null,
+    "abdominal_pain": null,
+    "abdomen_firm_or_distended": null,
+    "trend": "stable"
+  },
+  "treatment": {
+    "interventions": [
+      "splint",
+      "analgesia",
+      "spinal_motion_restriction"
+    ],
+    "blood_transfusion_required_to_maintain_vitals": null
+  },
+  "allergies": [],
+  "medications": [
+    "lisinopril"
+  ],
+  "background": [
+    "hypertension"
+  ],
+  "other": null,
+  "retractions": []
+}

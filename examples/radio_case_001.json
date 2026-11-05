@@ -1,0 +1,112 @@
+{
+  "schema_version": "1.0",
+  "identification": {
+    "age_years": 32,
+    "sex": "male",
+    "pregnant": null,
+    "gestation_weeks": null,
+    "arrival_mode": "ems_scene",
+    "eta_minutes": 12
+  },
+  "mechanism": {
+    "type": "motorcycle_crash",
+    "description": "motorcyclist versus car, about 45 mph, separated from bike and thrown roughly 20 ft, helmeted",
+    "fall": null,
+    "vehicle": {
+      "impact_speed_mph": 45,
+      "extrication_minutes": null,
+      "intrusion_occupant_site_in": null,
+      "intrusion_any_site_in": null,
+      "ejection": null,
+      "death_same_compartment": null,
+      "patient_thrown": true,
+      "run_over": null,
+      "rider_separated": true,
+      "rollover": null
+    },
+    "loss_of_consciousness": {
+      "occurred": true,
+      "duration_minutes": 1
+    }
+  },
+  "injuries": [
+    {
+      "type": "fracture",
+      "region": "thigh",
+      "side": "right",
+      "suspected": null,
+      "bone": "femur",
+      "open_fracture": true,
+      "depressed": null,
+      "pelvis_unstable": null,
+      "digits_involved": null
+    },
+    {
+      "type": "fracture",
+      "region": "wrist",
+      "side": "left",
+      "suspected": true,
+      "bone": null,
+      "open_fracture": null,
+      "depressed": null,
+      "pelvis_unstable": null,
+      "digits_involved": null
+    },
+    {
+      "type": "abrasion",
+      "region": "flank",
+      "side": "left",
+      "suspected": null,
+      "bone": null,
+      "open_fracture": null,
+      "depressed": null,
+      "pelvis_unstable": null,
+      "digits_involved": null
+    }
+  ],
+  "burns": null,
+  "signs": {
+    "vitals": {
+      "systolic_bp_mmhg": 108,
+      "diastolic_bp_mmhg": 62,
+      "heart_rate_bpm": 118,
+      "resp_rate_per_min": 24,
+      "spo2_percent": 95,
+      "spo2_on_room_air": true
+    },
+    "gcs": {
+      "eye": 4,
+      "verbal": 4,
+      "motor": 6,
+      "total": 14,
+      "before_intubation": null
+    },
+    "airway": null,
+    "flail_chest": null,
+    "pneumothorax_or_hemothorax": null,
+    "clinical_signs_of_shock": null,
+    "shock_signs": ["pale", "cool_clammy"],
+    "hemorrhage": "controlled",
+    "paralysis": null,
+    "bilateral_sensory_loss": null,
+    "suspected_spinal_cord_injury": null,
+    "abdominal_pain": null,
+    "abdomen_firm_or_distended": null,
+    "trend": "stable"
+  },
+  "treatment": {
+    "interventions": ["splint", "spinal_motion_restriction", "iv_fluids", "analgesia", "other"],
+    "blood_transfusion_required_to_maintain_vitals": null
+  },
+  "allergies": [],
+  "medications": null,
+  "background": null,
+  "other": null,
+  "retractions": [
+    {
+      "field": "signs.vitals.systolic_bp_mmhg",
+      "retracted_value": "88",
+      "corrected_value": "108"
+    }
+  ]
+}

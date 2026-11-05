@@ -1,0 +1,238 @@
+case_id,gold_level,pred_level,provisional,empty_record,criteria_lost
+H00016,2,0,True,False,L2-11
+H00023,3,0,True,False,L3-01
+H00037,2,0,True,True,L2-08
+H00039,2,3,True,False,L2-02
+H00054,3,0,True,False,L3-02 L3-07
+H00083,3,0,True,False,L3-05
+H00089,2,0,True,False,L2-02
+H00127,2,0,True,False,L2-02
+H00129,3,0,True,False,L3-01
+H00140,3,0,True,False,L3-05
+H00160,3,0,True,False,L3-01
+H00164,1,0,True,False,L1-14 L3-02
+H00176,2,0,True,True,L2-10
+H00181,3,0,True,False,L3-05
+H00182,3,0,True,False,L3-03
+H00198,2,0,True,False,L2-07 L3-01
+H00200,3,0,True,False,L3-05
+H00211,1,2,True,False,L1-09
+H00218,2,0,True,True,L2-11
+H00233,2,0,True,False,L2-01 L3-04
+H00239,3,0,True,False,L3-07
+H00242,2,0,True,False,L2-02
+H00244,2,0,True,False,L2-04
+H00246,3,0,True,False,L3-03
+H00260,1,2,True,False,L1-03 L3-01
+H00275,1,2,True,False,L1-14
+H00333,2,0,True,False,L2-01 L3-04
+H00357,2,0,True,True,L2-06 L3-02
+H00381,3,0,True,False,L3-02
+H00383,2,0,True,False,L2-04
+H00402,3,0,True,False,L3-04
+H00413,1,0,True,False,L1-14 L2-01
+H00419,2,0,True,False,L2-09 L2-13
+H00428,1,0,True,True,L1-07 L1-10
+H00444,3,0,True,False,L3-07
+H00446,3,0,True,False,L3-07
+H00453,2,0,True,False,L2-01 L3-02
+H00462,3,0,True,False,L3-01
+H00466,2,0,True,False,L2-01
+H00467,1,0,True,False,L1-12
+H00483,3,0,True,False,L3-03
+H00528,1,0,True,False,L1-06 L3-04
+H00536,2,0,True,False,L2-01 L3-04
+H00544,3,0,True,False,L3-03
+H00547,2,0,True,False,L2-02
+H00556,2,0,True,True,L2-08
+H00602,3,0,True,False,L3-02 L3-05
+H00605,3,0,True,False,L3-05
+H00608,2,0,True,False,L2-09 L2-13
+H00612,1,0,True,False,L1-14 L3-02
+H00617,2,0,True,False,L2-09 L2-13
+H00637,2,3,True,False,L2-02
+H00655,2,0,True,True,L2-01
+H00657,3,0,True,False,L3-01
+H00686,3,0,True,False,L3-07
+H00696,2,0,True,False,L2-02
+H00703,2,0,True,False,L2-02
+H00710,3,0,True,False,L3-07
+H00739,2,0,True,False,L2-01
+H00744,2,0,True,True,L2-06
+H00745,1,0,True,True,L1-07 L1-10
+H00788,1,0,True,False,L1-14
+H00797,3,0,True,False,L3-03
+H00802,3,0,True,False,L3-07
+H00827,2,0,True,False,L2-04
+H00830,1,0,True,False,L1-14 L2-01 L3-01
+H00832,3,0,True,False,L3-05
+H00844,3,0,True,False,L3-07
+H00845,3,0,True,False,L3-02 L3-05
+H00862,2,0,True,True,L2-10
+H00897,2,0,True,True,L2-11
+H00912,3,0,True,False,L3-01
+H00917,3,0,True,False,L3-07
+H00932,1,0,True,True,L1-02 L3-02
+H00956,1,0,True,False,L1-12
+H00969,2,0,True,False,L2-02
+H00977,2,0,True,True,L2-13
+H00989,3,0,True,False,L3-04
+H01029,3,0,True,False,L3-05
+H01032,2,0,True,True,L2-07 L3-01
+H01080,2,3,True,False,L2-07
+H01083,1,0,True,True,L1-07 L1-10
+H01103,2,0,True,False,L2-04
+H01104,2,3,True,False,L2-02
+H01114,2,0,True,True,L2-01 L2-05
+H01120,2,0,True,False,L2-01 L2-05
+H01131,3,0,True,False,L3-07
+H01156,2,0,True,False,L2-01 L2-05
+H01173,2,0,True,False,L2-02
+H01181,3,0,True,False,L3-07
+H01187,1,2,True,False,L1-14 L3-02
+H01200,2,0,True,False,L2-09 L2-13
+H01204,3,0,True,False,L3-07
+H01248,3,0,True,False,L3-07
+H01259,2,0,True,False,L2-04
+H01265,3,0,True,False,L3-02 L3-05
+H01269,1,2,True,False,L1-15
+H01270,3,0,True,False,L3-05
+H01290,2,0,True,True,L2-13 L3-02
+H01291,3,0,True,False,L3-02 L3-05
+H01297,3,0,True,False,L3-01
+H01299,3,0,True,False,L3-02
+H01309,1,2,True,False,L1-06 L3-01
+H01311,1,2,True,False,L1-10
+H01318,2,0,True,False,L2-02
+H01331,2,0,True,False,L2-01
+H01334,3,0,True,False,L3-04
+H01372,2,0,True,False,L2-07 L3-01
+H01380,3,0,True,False,L3-02 L3-05
+H01390,3,0,True,False,L3-07
+H01407,2,0,True,False,L2-07
+H01409,3,0,True,False,L3-03
+H01414,3,0,True,False,L3-05
+H01420,3,0,True,False,L3-01
+H01425,3,0,True,False,L3-07
+H01442,2,0,True,False,L2-09 L2-13
+H01473,2,3,True,False,L2-03
+H01482,3,0,True,False,L3-01
+H01487,2,0,True,False,L2-07 L3-01
+H01492,2,0,True,True,L2-04
+H01500,3,0,True,False,L3-05
+H01504,3,0,True,False,L3-01
+H01516,3,0,True,False,L3-05
+H01534,3,0,True,False,L3-03
+H01584,3,0,True,False,L3-01
+H01586,1,0,True,True,L1-11 L3-01
+H01604,1,2,True,False,L1-09
+H01605,2,0,True,True,L2-03 L3-04
+H01607,3,0,True,True,L3-08
+H01617,2,0,True,False,L2-01
+H01632,2,0,True,True,L2-11
+H01641,2,0,True,False,L2-04
+H01644,3,0,True,False,L3-02
+H01656,3,0,True,False,L3-05
+H01696,2,0,True,False,L2-07 L3-01
+H01700,2,3,True,False,L2-02
+H01710,1,0,True,True,L1-04 L3-04
+H01720,2,0,True,False,L2-04
+H01721,1,2,True,False,L1-09
+H01727,2,0,True,False,L2-02
+H01731,3,0,True,False,L3-02 L3-07
+H01739,3,0,True,False,L3-01
+H01741,2,0,True,False,L2-09 L2-13
+H01754,2,0,True,True,L2-02
+H01776,3,0,True,False,L3-01
+H01786,2,0,True,False,L2-02
+H01820,1,0,True,True,L1-09
+H01824,2,0,True,False,L2-01 L2-05
+H01827,3,0,True,False,L3-07
+H01839,3,0,True,False,L3-07
+H01847,2,0,True,False,L2-07
+H01851,3,0,True,False,L3-07
+H01870,2,0,True,True,L2-12
+H01886,3,0,True,False,L3-02 L3-05
+H01903,1,2,True,False,L1-15 L3-01
+H01907,1,2,True,False,L1-09
+H01927,1,0,True,True,L1-02
+H01954,3,0,True,False,L3-02
+H01959,2,0,True,False,L2-11
+H01964,2,0,True,False,L2-01
+H01982,2,0,True,False,L2-04
+H01994,2,0,True,False,L2-09 L2-13 L3-04
+H01999,3,0,True,False,L3-02 L3-05
+H02001,2,0,True,True,L2-04
+H02013,1,0,True,True,L1-12
+H02014,3,0,True,False,L3-02 L3-05
+H02056,3,0,True,False,L3-03
+H02062,1,0,True,False,L1-05 L3-04
+H02077,3,0,True,False,L3-03
+H02117,2,3,True,False,L2-02
+H02120,3,0,True,False,L3-04
+H02176,1,0,True,False,L1-12
+H02181,1,2,True,False,L1-09 L2-04
+H02188,1,0,True,False,L1-14
+H02189,2,0,True,True,L2-07
+H02195,3,0,True,False,L3-03
+H02221,1,2,True,False,L1-09
+H02228,2,0,True,False,L2-04
+H02229,1,0,True,False,L1-14 L3-01
+H02230,1,2,True,False,L1-12
+H02232,3,0,True,False,L3-07
+H02254,2,0,True,False,L2-01 L3-01
+H02263,1,0,True,True,L1-06 L2-01 L3-04
+H02264,2,0,True,False,L2-01 L2-05
+H02287,2,0,True,False,L2-02
+H02312,1,2,True,False,L1-09
+H02337,1,0,True,False,L1-01 L3-01
+H02356,2,0,True,False,L2-04
+H02358,3,0,True,False,L3-07
+H02377,3,0,True,False,L3-01
+H02382,2,0,True,False,L2-09 L2-13 L3-04
+H02387,2,0,True,False,L2-09 L2-13
+H02408,3,0,True,False,L3-02
+H02429,2,0,True,True,L2-01 L2-05
+H02431,2,0,True,True,L2-02
+H02470,1,0,True,False,L1-12
+H02471,3,0,True,False,L3-07
+H02477,3,0,True,False,L3-04
+H02491,2,0,True,False,L2-04
+H02500,3,0,True,False,L3-01
+H02505,2,0,True,False,L2-01 L2-05
+H02514,2,0,True,False,L2-07
+H02517,1,0,True,False,L1-12
+H02521,3,0,True,False,L3-05
+H02532,3,0,True,False,L3-02 L3-05
+H02552,3,0,True,False,L3-07
+H02558,3,0,True,False,L3-07
+H02565,3,0,True,False,L3-07
+H02606,1,2,True,False,L1-05
+H02636,1,0,True,True,L1-12
+H02650,2,0,True,False,L2-01
+H02654,3,0,True,False,L3-03
+H02705,2,3,True,False,L2-01
+H02719,1,2,True,False,L1-09
+H02721,3,0,True,False,L3-02
+H02726,2,0,True,False,L2-10
+H02744,3,0,True,True,L3-08
+H02751,1,0,True,True,L1-12
+H02760,1,2,True,False,L1-05 L3-01
+H02779,2,0,True,True,L2-07 L3-02
+H02798,2,0,True,False,L2-04
+H02822,1,2,True,False,L1-15 L3-02
+H02839,1,0,True,False,L1-14 L2-01 L3-02
+H02851,2,0,True,False,L2-09 L2-13
+H02868,3,0,True,False,L3-07
+H02877,1,0,True,True,L1-12
+H02908,1,0,True,False,L1-14
+H02911,2,0,True,True,L2-04
+H02926,3,0,True,False,L3-07
+H02928,3,0,True,False,L3-02
+H02945,1,2,True,False,L1-15
+H02954,3,0,True,False,L3-01
+H02957,2,0,True,False,L2-01
+H02965,2,0,True,True,L2-13
+H02967,3,0,True,False,L3-05
+H02977,1,2,True,False,L1-15
+H02993,3,0,True,False,L3-07

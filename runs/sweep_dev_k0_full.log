@@ -1,0 +1,392 @@
+== qwen3:1.7b
+[?2026h[?25l[1Gpulling manifest ⠋ [K[?25h[?2026l[?2026h[?25l[1Gpulling manifest ⠙ [K[?25h[?2026l[?2026h[?25l[1Gpulling manifest ⠹ [K[?25h[?2026l[?2026h[?25l[1Gpulling manifest ⠸ [K[?25h[?2026l[?2026h[?25l[1Gpulling manifest ⠼ [K[?25h[?2026l[?2026h[?25l[1Gpulling manifest ⠴ [K[?25h[?2026l[?2026h[?25l[1Gpulling manifest ⠦ [K[?25h[?2026l[?2026h[?25l[1Gpulling manifest [K
+pulling 3d0b790534fe: 100% ▕██████████████████▏ 1.4 GB                         [K
+pulling ae370d884f10: 100% ▕██████████████████▏ 1.7 KB                         [K
+pulling d18a5cc71b84: 100% ▕██████████████████▏  11 KB                         [K
+pulling cff3f395ef37: 100% ▕██████████████████▏  120 B                         [K
+pulling 517ccaff02fe: 100% ▕██████████████████▏  487 B                         [K
+verifying sha256 digest [K
+writing manifest ⠋ [K[?25h[?2026l[?2026h[?25l[A[A[A[A[A[A[A[1Gpulling manifest [K
+pulling 3d0b790534fe: 100% ▕██████████████████▏ 1.4 GB                         [K
+pulling ae370d884f10: 100% ▕██████████████████▏ 1.7 KB                         [K
+pulling d18a5cc71b84: 100% ▕██████████████████▏  11 KB                         [K
+pulling cff3f395ef37: 100% ▕██████████████████▏  120 B                         [K
+pulling 517ccaff02fe: 100% ▕██████████████████▏  487 B                         [K
+verifying sha256 digest [K
+writing manifest [K
+removing unused layers ⠋ [K[?25h[?2026l[?2026h[?25l[A[A[A[A[A[A[A[A[1Gpulling manifest [K
+pulling 3d0b790534fe: 100% ▕██████████████████▏ 1.4 GB                         [K
+pulling ae370d884f10: 100% ▕██████████████████▏ 1.7 KB                         [K
+pulling d18a5cc71b84: 100% ▕██████████████████▏  11 KB                         [K
+pulling cff3f395ef37: 100% ▕██████████████████▏  120 B                         [K
+pulling 517ccaff02fe: 100% ▕██████████████████▏  487 B                         [K
+verifying sha256 digest [K
+writing manifest [K
+removing unused layers [K
+success [K[?25h[?2026l
+50 cases, 200 already done, 0 to run -> C:\Users\a.ali\radio-to-resus\runs\qwen3-1.7b_dev_k0.jsonl
+done. score with: python -m extract.score C:\Users\a.ali\radio-to-resus\runs\qwen3-1.7b_dev_k0.jsonl --gold C:\Users\a.ali\radio-to-resus\examples\synthetic_handovers_v2.csv --split dev
+== qwen3:1.7b
+[?2026h[?25l[1Gpulling manifest ⠋ [K[?25h[?2026l[?2026h[?25l[1Gpulling manifest ⠙ [K[?25h[?2026l[?2026h[?25l[1Gpulling manifest ⠹ [K[?25h[?2026l[?2026h[?25l[1Gpulling manifest ⠸ [K[?25h[?2026l[?2026h[?25l[1Gpulling manifest ⠼ [K[?25h[?2026l[?2026h[?25l[1Gpulling manifest ⠴ [K[?25h[?2026l[?2026h[?25l[1Gpulling manifest ⠦ [K[?25h[?2026l[?2026h[?25l[1Gpulling manifest ⠧ [K[?25h[?2026l[?2026h[?25l[1Gpulling manifest [K
+pulling 3d0b790534fe: 100% ▕██████████████████▏ 1.4 GB                         [K
+pulling ae370d884f10: 100% ▕██████████████████▏ 1.7 KB                         [K
+pulling d18a5cc71b84: 100% ▕██████████████████▏  11 KB                         [K
+pulling cff3f395ef37: 100% ▕██████████████████▏  120 B                         [K
+pulling 517ccaff02fe: 100% ▕██████████████████▏  487 B                         [K
+verifying sha256 digest [K
+writing manifest [K
+removing unused layers ⠋ [K[?25h[?2026l[?2026h[?25l[A[A[A[A[A[A[A[A[1Gpulling manifest [K
+pulling 3d0b790534fe: 100% ▕██████████████████▏ 1.4 GB                         [K
+pulling ae370d884f10: 100% ▕██████████████████▏ 1.7 KB                         [K
+pulling d18a5cc71b84: 100% ▕██████████████████▏  11 KB                         [K
+pulling cff3f395ef37: 100% ▕██████████████████▏  120 B                         [K
+pulling 517ccaff02fe: 100% ▕██████████████████▏  487 B                         [K
+verifying sha256 digest [K
+writing manifest [K
+removing unused layers ⠙ [K[?25h[?2026l[?2026h[?25l[A[A[A[A[A[A[A[A[1Gpulling manifest [K
+pulling 3d0b790534fe: 100% ▕██████████████████▏ 1.4 GB                         [K
+pulling ae370d884f10: 100% ▕██████████████████▏ 1.7 KB                         [K
+pulling d18a5cc71b84: 100% ▕██████████████████▏  11 KB                         [K
+pulling cff3f395ef37: 100% ▕██████████████████▏  120 B                         [K
+pulling 517ccaff02fe: 100% ▕██████████████████▏  487 B                         [K
+verifying sha256 digest [K
+writing manifest [K
+removing unused layers [K
+success [K[?25h[?2026l
+50 cases, 420 already done, 0 to run -> C:\Users\a.ali\radio-to-resus\runs\qwen3-1.7b_dev_k0.jsonl
+done. score with: python -m extract.score C:\Users\a.ali\radio-to-resus\runs\qwen3-1.7b_dev_k0.jsonl --gold C:\Users\a.ali\radio-to-resus\examples\synthetic_handovers_v2.csv --split dev
+1482 cases, 420 already done, 1062 to run -> C:\Users\a.ali\radio-to-resus\runs\qwen3-1.7b_dev_k0.jsonl
+  25/1062  last 6.0s  errors 0
+  50/1062  last 6.0s  errors 0
+  75/1062  last 7.4s  errors 0
+  100/1062  last 6.8s  errors 0
+  125/1062  last 7.5s  errors 0
+  150/1062  last 7.7s  errors 0
+  175/1062  last 8.0s  errors 0
+  200/1062  last 7.3s  errors 0
+  225/1062  last 6.7s  errors 0
+  250/1062  last 7.3s  errors 0
+  275/1062  last 7.5s  errors 0
+  300/1062  last 7.7s  errors 0
+  325/1062  last 6.7s  errors 0
+  350/1062  last 8.0s  errors 0
+  375/1062  last 9.2s  errors 0
+  400/1062  last 7.5s  errors 0
+  425/1062  last 6.6s  errors 0
+  450/1062  last 6.5s  errors 0
+  475/1062  last 7.1s  errors 0
+  500/1062  last 7.2s  errors 0
+  525/1062  last 6.4s  errors 0
+  550/1062  last 8.8s  errors 0
+  575/1062  last 9.9s  errors 0
+  600/1062  last 6.4s  errors 0
+  625/1062  last 9.5s  errors 0
+  650/1062  last 6.7s  errors 0
+  675/1062  last 6.7s  errors 0
+  700/1062  last 6.7s  errors 0
+  725/1062  last 7.6s  errors 0
+  750/1062  last 7.2s  errors 0
+  775/1062  last 6.1s  errors 0
+  800/1062  last 7.5s  errors 0
+  825/1062  last 6.3s  errors 0
+  850/1062  last 7.0s  errors 0
+  875/1062  last 7.8s  errors 0
+  900/1062  last 6.1s  errors 0
+  925/1062  last 6.0s  errors 0
+  950/1062  last 7.5s  errors 0
+  975/1062  last 6.0s  errors 0
+  1000/1062  last 6.3s  errors 0
+  1025/1062  last 6.2s  errors 0
+  1050/1062  last 8.9s  errors 0
+  1062/1062  last 8.4s  errors 0
+done. score with: python -m extract.score C:\Users\a.ali\radio-to-resus\runs\qwen3-1.7b_dev_k0.jsonl --gold C:\Users\a.ali\radio-to-resus\examples\synthetic_handovers_v2.csv --split dev
+   -> {'model': 'qwen3:1.7b', 'think': 'off', 'note': '', 'n': 1482, 'valid_rate': 0.1167, 'usable_rate': 0.9966, 'field_f1': 0.6269, 'hallucination_rate': 0.1465, 'exact_match': 0.0, 'correction_accuracy': 0.0, 'triage_accuracy': 0.5142, 'under_triage_rate': 0.0324, 'silent_under_triage_rate': 0.0, 'over_triage_rate': 0.4507, 'latency_mean_s': 7.38}
+== qwen2.5:3b
+[?2026h[?25l[1Gpulling manifest ⠋ [K[?25h[?2026l[?2026h[?25l[1Gpulling manifest ⠙ [K[?25h[?2026l[?2026h[?25l[1Gpulling manifest ⠹ [K[?25h[?2026l[?2026h[?25l[1Gpulling manifest ⠸ [K[?25h[?2026l[?2026h[?25l[1Gpulling manifest ⠼ [K[?25h[?2026l[?2026h[?25l[1Gpulling manifest ⠴ [K[?25h[?2026l[?2026h[?25l[1Gpulling manifest ⠦ [K[?25h[?2026l[?2026h[?25l[1Gpulling manifest ⠧ [K[?25h[?2026l[?2026h[?25l[1Gpulling manifest ⠇ [K[?25h[?2026l[?2026h[?25l[1Gpulling manifest ⠏ [K[?25h[?2026l[?2026h[?25l[1Gpulling manifest ⠋ [K[?25h[?2026l[?2026h[?25l[1Gpulling manifest ⠙ [K[?25h[?2026l[?2026h[?25l[1Gpulling manifest [K
+pulling 5ee4f07cdb9b: 100% ▕██████████████████▏ 1.9 GB                         [K
+pulling 66b9ea09bd5b: 100% ▕██████████████████▏   68 B                         [K
+pulling eb4402837c78: 100% ▕██████████████████▏ 1.5 KB                         [K
+pulling b5c0e5cf74cf: 100% ▕██████████████████▏ 7.4 KB                         [K
+pulling 161ddde4c9cd: 100% ▕██████████████████▏  487 B                         [K
+verifying sha256 digest [K
+writing manifest [K
+removing unused layers [K
+success [K[?25h[?2026l
+50 cases, 200 already done, 0 to run -> C:\Users\a.ali\radio-to-resus\runs\qwen2.5-3b_dev_k0.jsonl
+done. score with: python -m extract.score C:\Users\a.ali\radio-to-resus\runs\qwen2.5-3b_dev_k0.jsonl --gold C:\Users\a.ali\radio-to-resus\examples\synthetic_handovers_v2.csv --split dev
+1482 cases, 200 already done, 1282 to run -> C:\Users\a.ali\radio-to-resus\runs\qwen2.5-3b_dev_k0.jsonl
+  25/1282  last 11.4s  errors 0
+  50/1282  last 15.7s  errors 0
+  75/1282  last 10.0s  errors 0
+  100/1282  last 9.0s  errors 0
+  125/1282  last 10.4s  errors 0
+  150/1282  last 8.7s  errors 0
+  175/1282  last 10.5s  errors 0
+  200/1282  last 7.4s  errors 0
+  225/1282  last 7.7s  errors 0
+  250/1282  last 15.2s  errors 0
+  275/1282  last 7.2s  errors 0
+  300/1282  last 9.5s  errors 0
+  325/1282  last 11.7s  errors 0
+  350/1282  last 11.1s  errors 0
+  375/1282  last 10.1s  errors 0
+  400/1282  last 7.9s  errors 0
+  425/1282  last 12.9s  errors 0
+  450/1282  last 9.0s  errors 0
+  475/1282  last 15.2s  errors 0
+  500/1282  last 10.5s  errors 0
+  525/1282  last 13.0s  errors 0
+  550/1282  last 11.3s  errors 0
+  575/1282  last 16.9s  errors 0
+  600/1282  last 9.5s  errors 0
+  625/1282  last 8.7s  errors 0
+  650/1282  last 7.8s  errors 0
+  675/1282  last 18.4s  errors 0
+  700/1282  last 11.5s  errors 0
+  725/1282  last 13.8s  errors 0
+  750/1282  last 10.9s  errors 0
+  775/1282  last 10.8s  errors 0
+  800/1282  last 10.8s  errors 0
+  825/1282  last 10.0s  errors 0
+  850/1282  last 9.7s  errors 0
+  875/1282  last 8.0s  errors 0
+  900/1282  last 15.9s  errors 0
+  925/1282  last 8.3s  errors 0
+  950/1282  last 10.9s  errors 0
+  975/1282  last 11.4s  errors 0
+  1000/1282  last 12.4s  errors 0
+  1025/1282  last 15.2s  errors 0
+  1050/1282  last 9.5s  errors 0
+  1075/1282  last 11.3s  errors 0
+  1100/1282  last 12.0s  errors 0
+  1125/1282  last 10.9s  errors 0
+  1150/1282  last 12.7s  errors 0
+  1175/1282  last 9.1s  errors 0
+  1200/1282  last 9.8s  errors 0
+  1225/1282  last 9.2s  errors 0
+  1250/1282  last 15.7s  errors 0
+  1275/1282  last 8.4s  errors 0
+  1282/1282  last 12.3s  errors 0
+done. score with: python -m extract.score C:\Users\a.ali\radio-to-resus\runs\qwen2.5-3b_dev_k0.jsonl --gold C:\Users\a.ali\radio-to-resus\examples\synthetic_handovers_v2.csv --split dev
+   -> {'model': 'qwen2.5:3b', 'think': '', 'note': '', 'n': 1482, 'valid_rate': 0.5715, 'usable_rate': 0.9696, 'field_f1': 0.6674, 'hallucination_rate': 0.1037, 'exact_match': 0.0, 'correction_accuracy': 0.0175, 'triage_accuracy': 0.7422, 'under_triage_rate': 0.1599, 'silent_under_triage_rate': 0.0, 'over_triage_rate': 0.0951, 'latency_mean_s': 11.35}
+== llama3.2:3b
+[?2026h[?25l[1Gpulling manifest ⠋ [K[?25h[?2026l[?2026h[?25l[1Gpulling manifest ⠙ [K[?25h[?2026l[?2026h[?25l[1Gpulling manifest ⠹ [K[?25h[?2026l[?2026h[?25l[1Gpulling manifest ⠸ [K[?25h[?2026l[?2026h[?25l[1Gpulling manifest ⠼ [K[?25h[?2026l[?2026h[?25l[1Gpulling manifest ⠴ [K[?25h[?2026l[?2026h[?25l[1Gpulling manifest ⠦ [K[?25h[?2026l[?2026h[?25l[1Gpulling manifest ⠧ [K[?25h[?2026l[?2026h[?25l[1Gpulling manifest [K
+pulling dde5aa3fc5ff: 100% ▕██████████████████▏ 2.0 GB                         [K
+pulling 966de95ca8a6: 100% ▕██████████████████▏ 1.4 KB                         [K
+pulling fcc5a6bec9da: 100% ▕██████████████████▏ 7.7 KB                         [K
+pulling a70ff7e570d9: 100% ▕██████████████████▏ 6.0 KB                         [K
+pulling 56bb8bd477a5: 100% ▕██████████████████▏   96 B                         [K
+pulling 34bb5ab01051: 100% ▕██████████████████▏  561 B                         [K
+verifying sha256 digest [K
+writing manifest [K
+removing unused layers [K
+success [K[?25h[?2026l
+50 cases, 200 already done, 0 to run -> C:\Users\a.ali\radio-to-resus\runs\llama3.2-3b_dev_k0.jsonl
+done. score with: python -m extract.score C:\Users\a.ali\radio-to-resus\runs\llama3.2-3b_dev_k0.jsonl --gold C:\Users\a.ali\radio-to-resus\examples\synthetic_handovers_v2.csv --split dev
+== qwen3:1.7b: already in sweep_dev_k0_nall.csv, skipping
+== qwen2.5:3b: already in sweep_dev_k0_nall.csv, skipping
+== llama3.2:3b
+[?2026h[?25l[1Gpulling manifest ⠋ [K[?25h[?2026l[?2026h[?25l[1Gpulling manifest ⠙ [K[?25h[?2026l[?2026h[?25l[1Gpulling manifest ⠹ [K[?25h[?2026l[?2026h[?25l[1Gpulling manifest ⠸ [K[?25h[?2026l[?2026h[?25l[1Gpulling manifest ⠼ [K[?25h[?2026l[?2026h[?25l[1Gpulling manifest ⠴ [K[?25h[?2026l[?2026h[?25l[1Gpulling manifest ⠦ [K[?25h[?2026l[?2026h[?25l[1Gpulling manifest ⠧ [K[?25h[?2026l[?2026h[?25l[1Gpulling manifest ⠇ [K[?25h[?2026l[?2026h[?25l[1Gpulling manifest [K
+pulling dde5aa3fc5ff: 100% ▕██████████████████▏ 2.0 GB                         [K
+pulling 966de95ca8a6: 100% ▕██████████████████▏ 1.4 KB                         [K
+pulling fcc5a6bec9da: 100% ▕██████████████████▏ 7.7 KB                         [K
+pulling a70ff7e570d9: 100% ▕██████████████████▏ 6.0 KB                         [K
+pulling 56bb8bd477a5: 100% ▕██████████████████▏   96 B                         [K
+pulling 34bb5ab01051: 100% ▕██████████████████▏  561 B                         [K
+verifying sha256 digest [K
+writing manifest [K
+removing unused layers [K
+success [K[?25h[?2026l
+50 cases, 1210 already done, 0 to run -> C:\Users\a.ali\radio-to-resus\runs\llama3.2-3b_dev_k0.jsonl
+done. score with: python -m extract.score C:\Users\a.ali\radio-to-resus\runs\llama3.2-3b_dev_k0.jsonl --gold C:\Users\a.ali\radio-to-resus\examples\synthetic_handovers_v2.csv --split dev
+1482 cases, 1210 already done, 272 to run -> C:\Users\a.ali\radio-to-resus\runs\llama3.2-3b_dev_k0.jsonl
+  25/272  last 19.3s  errors 0
+  50/272  last 55.0s  errors 0
+  75/272  last 21.8s  errors 0
+  100/272  last 31.2s  errors 0
+  125/272  last 26.0s  errors 0
+  150/272  last 49.5s  errors 0
+  175/272  last 28.0s  errors 0
+  200/272  last 25.8s  errors 0
+  225/272  last 28.4s  errors 0
+  250/272  last 18.8s  errors 0
+  272/272  last 21.8s  errors 0
+done. score with: python -m extract.score C:\Users\a.ali\radio-to-resus\runs\llama3.2-3b_dev_k0.jsonl --gold C:\Users\a.ali\radio-to-resus\examples\synthetic_handovers_v2.csv --split dev
+   -> {'model': 'llama3.2:3b', 'think': '', 'note': '', 'n': 1482, 'valid_rate': 0.7949, 'usable_rate': 0.9696, 'field_f1': 0.6532, 'hallucination_rate': 0.0466, 'exact_match': 0.0, 'correction_accuracy': 0.0807, 'triage_accuracy': 0.7011, 'under_triage_rate': 0.1296, 'silent_under_triage_rate': 0.0, 'over_triage_rate': 0.1404, 'latency_mean_s': 25.31}
+== qwen3:4b
+[?2026h[?25l[1Gpulling manifest ⠋ [K[?25h[?2026l[?2026h[?25l[1Gpulling manifest ⠙ [K[?25h[?2026l[?2026h[?25l[1Gpulling manifest ⠹ [K[?25h[?2026l[?2026h[?25l[1Gpulling manifest ⠸ [K[?25h[?2026l[?2026h[?25l[1Gpulling manifest ⠼ [K[?25h[?2026l[?2026h[?25l[1Gpulling manifest ⠴ [K[?25h[?2026l[?2026h[?25l[1Gpulling manifest ⠦ [K[?25h[?2026l[?2026h[?25l[1Gpulling manifest ⠧ [K[?25h[?2026l[?2026h[?25l[1Gpulling manifest ⠇ [K[?25h[?2026l[?2026h[?25l[1Gpulling manifest [K
+pulling 3e4cb1417446: 100% ▕██████████████████▏ 2.5 GB                         [K
+pulling 2d54db2b9bb2: 100% ▕██████████████████▏ 1.5 KB                         [K
+pulling d18a5cc71b84: 100% ▕██████████████████▏  11 KB                         [K
+pulling cff3f395ef37: 100% ▕██████████████████▏  120 B                         [K
+pulling e18a783aae55: 100% ▕██████████████████▏  487 B                         [K
+verifying sha256 digest [K
+writing manifest [K
+removing unused layers ⠋ [K[?25h[?2026l[?2026h[?25l[A[A[A[A[A[A[A[A[1Gpulling manifest [K
+pulling 3e4cb1417446: 100% ▕██████████████████▏ 2.5 GB                         [K
+pulling 2d54db2b9bb2: 100% ▕██████████████████▏ 1.5 KB                         [K
+pulling d18a5cc71b84: 100% ▕██████████████████▏  11 KB                         [K
+pulling cff3f395ef37: 100% ▕██████████████████▏  120 B                         [K
+pulling e18a783aae55: 100% ▕██████████████████▏  487 B                         [K
+verifying sha256 digest [K
+writing manifest [K
+removing unused layers [K
+success [K[?25h[?2026l
+50 cases, 200 already done, 0 to run -> C:\Users\a.ali\radio-to-resus\runs\qwen3-4b_dev_k0.jsonl
+done. score with: python -m extract.score C:\Users\a.ali\radio-to-resus\runs\qwen3-4b_dev_k0.jsonl --gold C:\Users\a.ali\radio-to-resus\examples\synthetic_handovers_v2.csv --split dev
+== qwen3:1.7b: already in sweep_dev_k0_nall.csv, skipping
+== qwen2.5:3b: already in sweep_dev_k0_nall.csv, skipping
+== llama3.2:3b: already in sweep_dev_k0_nall.csv, skipping
+== qwen3:4b
+[?2026h[?25l[1Gpulling manifest ⠋ [K[?25h[?2026l[?2026h[?25l[1Gpulling manifest ⠙ [K[?25h[?2026l[?2026h[?25l[1Gpulling manifest ⠹ [K[?25h[?2026l[?2026h[?25l[1Gpulling manifest ⠸ [K[?25h[?2026l[?2026h[?25l[1Gpulling manifest ⠼ [K[?25h[?2026l[?2026h[?25l[1Gpulling manifest ⠴ [K[?25h[?2026l[?2026h[?25l[1Gpulling manifest ⠦ [K[?25h[?2026l[?2026h[?25l[1Gpulling manifest ⠧ [K[?25h[?2026l[?2026h[?25l[1Gpulling manifest [K
+pulling 3e4cb1417446: 100% ▕██████████████████▏ 2.5 GB                         [K
+pulling 2d54db2b9bb2: 100% ▕██████████████████▏ 1.5 KB                         [K
+pulling d18a5cc71b84: 100% ▕██████████████████▏  11 KB                         [K
+pulling cff3f395ef37: 100% ▕██████████████████▏  120 B                         [K
+pulling e18a783aae55: 100% ▕██████████████████▏  487 B                         [K
+verifying sha256 digest [K
+writing manifest [K
+removing unused layers [K
+success [K[?25h[?2026l
+50 cases, 232 already done, 0 to run -> C:\Users\a.ali\radio-to-resus\runs\qwen3-4b_dev_k0.jsonl
+done. score with: python -m extract.score C:\Users\a.ali\radio-to-resus\runs\qwen3-4b_dev_k0.jsonl --gold C:\Users\a.ali\radio-to-resus\examples\synthetic_handovers_v2.csv --split dev
+== qwen3:1.7b: already in sweep_dev_k0_nall.csv, skipping
+== qwen2.5:3b: already in sweep_dev_k0_nall.csv, skipping
+== llama3.2:3b: already in sweep_dev_k0_nall.csv, skipping
+== qwen3:4b
+[?2026h[?25l[1Gpulling manifest ⠋ [K[?25h[?2026l[?2026h[?25l[1Gpulling manifest ⠙ [K[?25h[?2026l[?2026h[?25l[1Gpulling manifest ⠹ [K[?25h[?2026l[?2026h[?25l[1Gpulling manifest ⠸ [K[?25h[?2026l[?2026h[?25l[1Gpulling manifest ⠼ [K[?25h[?2026l[?2026h[?25l[1Gpulling manifest ⠴ [K[?25h[?2026l[?2026h[?25l[1Gpulling manifest ⠦ [K[?25h[?2026l[?2026h[?25l[1Gpulling manifest ⠧ [K[?25h[?2026l[?2026h[?25l[1Gpulling manifest ⠇ [K[?25h[?2026l[?2026h[?25l[1Gpulling manifest [K
+pulling 3e4cb1417446: 100% ▕██████████████████▏ 2.5 GB                         [K
+pulling 2d54db2b9bb2: 100% ▕██████████████████▏ 1.5 KB                         [K
+pulling d18a5cc71b84: 100% ▕██████████████████▏  11 KB                         [K
+pulling cff3f395ef37: 100% ▕██████████████████▏  120 B                         [K
+pulling e18a783aae55: 100% ▕██████████████████▏  487 B                         [K
+verifying sha256 digest [K
+writing manifest [K
+removing unused layers ⠋ [K[?25h[?2026l[?2026h[?25l[A[A[A[A[A[A[A[A[1Gpulling manifest [K
+pulling 3e4cb1417446: 100% ▕██████████████████▏ 2.5 GB                         [K
+pulling 2d54db2b9bb2: 100% ▕██████████████████▏ 1.5 KB                         [K
+pulling d18a5cc71b84: 100% ▕██████████████████▏  11 KB                         [K
+pulling cff3f395ef37: 100% ▕██████████████████▏  120 B                         [K
+pulling e18a783aae55: 100% ▕██████████████████▏  487 B                         [K
+verifying sha256 digest [K
+writing manifest [K
+removing unused layers [K
+success [K[?25h[?2026l
+50 cases, 270 already done, 0 to run -> C:\Users\a.ali\radio-to-resus\runs\qwen3-4b_dev_k0.jsonl
+done. score with: python -m extract.score C:\Users\a.ali\radio-to-resus\runs\qwen3-4b_dev_k0.jsonl --gold C:\Users\a.ali\radio-to-resus\examples\synthetic_handovers_v2.csv --split dev
+== qwen3:1.7b: already in sweep_dev_k0_nall.csv, skipping
+== qwen2.5:3b: already in sweep_dev_k0_nall.csv, skipping
+== llama3.2:3b: already in sweep_dev_k0_nall.csv, skipping
+== qwen3:4b
+[?2026h[?25l[1Gpulling manifest ⠋ [K[?25h[?2026l[?2026h[?25l[1Gpulling manifest ⠙ [K[?25h[?2026l[?2026h[?25l[1Gpulling manifest ⠹ [K[?25h[?2026l[?2026h[?25l[1Gpulling manifest ⠸ [K[?25h[?2026l[?2026h[?25l[1Gpulling manifest ⠼ [K[?25h[?2026l[?2026h[?25l[1Gpulling manifest ⠴ [K[?25h[?2026l[?2026h[?25l[1Gpulling manifest ⠦ [K[?25h[?2026l[?2026h[?25l[1Gpulling manifest ⠧ [K[?25h[?2026l[?2026h[?25l[1Gpulling manifest ⠇ [K[?25h[?2026l[?2026h[?25l[1Gpulling manifest [K
+pulling 3e4cb1417446: 100% ▕██████████████████▏ 2.5 GB                         [K
+pulling 2d54db2b9bb2: 100% ▕██████████████████▏ 1.5 KB                         [K
+pulling d18a5cc71b84: 100% ▕██████████████████▏  11 KB                         [K
+pulling cff3f395ef37: 100% ▕██████████████████▏  120 B                         [K
+pulling e18a783aae55: 100% ▕██████████████████▏  487 B                         [K
+verifying sha256 digest [K
+writing manifest ⠋ [K[?25h[?2026l[?2026h[?25l[A[A[A[A[A[A[A[1Gpulling manifest [K
+pulling 3e4cb1417446: 100% ▕██████████████████▏ 2.5 GB                         [K
+pulling 2d54db2b9bb2: 100% ▕██████████████████▏ 1.5 KB                         [K
+pulling d18a5cc71b84: 100% ▕██████████████████▏  11 KB                         [K
+pulling cff3f395ef37: 100% ▕██████████████████▏  120 B                         [K
+pulling e18a783aae55: 100% ▕██████████████████▏  487 B                         [K
+verifying sha256 digest [K
+writing manifest [K
+removing unused layers [K
+success [K[?25h[?2026l
+50 cases, 478 already done, 0 to run -> C:\Users\a.ali\radio-to-resus\runs\qwen3-4b_dev_k0.jsonl
+done. score with: python -m extract.score C:\Users\a.ali\radio-to-resus\runs\qwen3-4b_dev_k0.jsonl --gold C:\Users\a.ali\radio-to-resus\examples\synthetic_handovers_v2.csv --split dev
+== qwen3:1.7b: already in sweep_dev_k0_nall.csv, skipping
+== qwen2.5:3b: already in sweep_dev_k0_nall.csv, skipping
+== llama3.2:3b: already in sweep_dev_k0_nall.csv, skipping
+== qwen3:4b
+[?2026h[?25l[1Gpulling manifest ⠋ [K[?25h[?2026l[?2026h[?25l[1Gpulling manifest ⠙ [K[?25h[?2026l[?2026h[?25l[1Gpulling manifest ⠹ [K[?25h[?2026l[?2026h[?25l[1Gpulling manifest ⠸ [K[?25h[?2026l[?2026h[?25l[1Gpulling manifest ⠼ [K[?25h[?2026l[?2026h[?25l[1Gpulling manifest ⠴ [K[?25h[?2026l[?2026h[?25l[1Gpulling manifest ⠦ [K[?25h[?2026l[?2026h[?25l[1Gpulling manifest ⠧ [K[?25h[?2026l[?2026h[?25l[1Gpulling manifest ⠇ [K[?25h[?2026l[?2026h[?25l[1Gpulling manifest [K
+pulling 3e4cb1417446: 100% ▕██████████████████▏ 2.5 GB                         [K
+pulling 2d54db2b9bb2: 100% ▕██████████████████▏ 1.5 KB                         [K
+pulling d18a5cc71b84: 100% ▕██████████████████▏  11 KB                         [K
+pulling cff3f395ef37: 100% ▕██████████████████▏  120 B                         [K
+pulling e18a783aae55: 100% ▕██████████████████▏  487 B                         [K
+verifying sha256 digest [K
+writing manifest [K
+removing unused layers [K
+success [K[?25h[?2026l
+50 cases, 513 already done, 0 to run -> C:\Users\a.ali\radio-to-resus\runs\qwen3-4b_dev_k0.jsonl
+done. score with: python -m extract.score C:\Users\a.ali\radio-to-resus\runs\qwen3-4b_dev_k0.jsonl --gold C:\Users\a.ali\radio-to-resus\examples\synthetic_handovers_v2.csv --split dev
+== qwen3:1.7b: already in sweep_dev_k0_nall.csv, skipping
+== qwen2.5:3b: already in sweep_dev_k0_nall.csv, skipping
+== llama3.2:3b: already in sweep_dev_k0_nall.csv, skipping
+== qwen3:4b
+[?2026h[?25l[1Gpulling manifest ⠋ [K[?25h[?2026l[?2026h[?25l[1Gpulling manifest ⠙ [K[?25h[?2026l[?2026h[?25l[1Gpulling manifest ⠹ [K[?25h[?2026l[?2026h[?25l[1Gpulling manifest ⠸ [K[?25h[?2026l[?2026h[?25l[1Gpulling manifest ⠼ [K[?25h[?2026l[?2026h[?25l[1Gpulling manifest ⠴ [K[?25h[?2026l[?2026h[?25l[1Gpulling manifest ⠦ [K[?25h[?2026l[?2026h[?25l[1Gpulling manifest ⠧ [K[?25h[?2026l[?2026h[?25l[1Gpulling manifest [K
+pulling 3e4cb1417446: 100% ▕██████████████████▏ 2.5 GB                         [K
+pulling 2d54db2b9bb2: 100% ▕██████████████████▏ 1.5 KB                         [K
+pulling d18a5cc71b84: 100% ▕██████████████████▏  11 KB                         [K
+pulling cff3f395ef37: 100% ▕██████████████████▏  120 B                         [K
+pulling e18a783aae55: 100% ▕██████████████████▏  487 B                         [K
+verifying sha256 digest [K
+writing manifest [K
+removing unused layers [K
+success [K[?25h[?2026l
+50 cases, 529 already done, 0 to run -> C:\Users\a.ali\radio-to-resus\runs\qwen3-4b_dev_k0.jsonl
+done. score with: python -m extract.score C:\Users\a.ali\radio-to-resus\runs\qwen3-4b_dev_k0.jsonl --gold C:\Users\a.ali\radio-to-resus\examples\synthetic_handovers_v2.csv --split dev
+== qwen3:1.7b: already in sweep_dev_k0_nall.csv, skipping
+== qwen2.5:3b: already in sweep_dev_k0_nall.csv, skipping
+== llama3.2:3b: already in sweep_dev_k0_nall.csv, skipping
+== qwen3:4b
+[?2026h[?25l[1Gpulling manifest ⠋ [K[?25h[?2026l[?2026h[?25l[1Gpulling manifest ⠙ [K[?25h[?2026l[?2026h[?25l[1Gpulling manifest ⠹ [K[?25h[?2026l[?2026h[?25l[1Gpulling manifest ⠸ [K[?25h[?2026l[?2026h[?25l[1Gpulling manifest ⠼ [K[?25h[?2026l[?2026h[?25l[1Gpulling manifest ⠴ [K[?25h[?2026l[?2026h[?25l[1Gpulling manifest ⠦ [K[?25h[?2026l[?2026h[?25l[1Gpulling manifest ⠧ [K[?25h[?2026l[?2026h[?25l[1Gpulling manifest ⠇ [K[?25h[?2026l[?2026h[?25l[1Gpulling manifest ⠏ [K[?25h[?2026l[?2026h[?25l[1Gpulling manifest ⠋ [K[?25h[?2026l[?2026h[?25l[1Gpulling manifest ⠙ [K[?25h[?2026l[?2026h[?25l[1Gpulling manifest ⠹ [K[?25h[?2026l[?2026h[?25l[1Gpulling manifest [K
+pulling 3e4cb1417446: 100% ▕██████████████████▏ 2.5 GB                         [K
+pulling 2d54db2b9bb2: 100% ▕██████████████████▏ 1.5 KB                         [K
+pulling d18a5cc71b84: 100% ▕██████████████████▏  11 KB                         [K
+pulling cff3f395ef37: 100% ▕██████████████████▏  120 B                         [K
+pulling e18a783aae55: 100% ▕██████████████████▏  487 B                         [K
+verifying sha256 digest [K
+writing manifest [K
+removing unused layers ⠋ [K[?25h[?2026l[?2026h[?25l[A[A[A[A[A[A[A[A[1Gpulling manifest [K
+pulling 3e4cb1417446: 100% ▕██████████████████▏ 2.5 GB                         [K
+pulling 2d54db2b9bb2: 100% ▕██████████████████▏ 1.5 KB                         [K
+pulling d18a5cc71b84: 100% ▕██████████████████▏  11 KB                         [K
+pulling cff3f395ef37: 100% ▕██████████████████▏  120 B                         [K
+pulling e18a783aae55: 100% ▕██████████████████▏  487 B                         [K
+verifying sha256 digest [K
+writing manifest [K
+removing unused layers [K
+success [K[?25h[?2026l
+50 cases, 665 already done, 0 to run -> C:\Users\a.ali\radio-to-resus\runs\qwen3-4b_dev_k0.jsonl
+done. score with: python -m extract.score C:\Users\a.ali\radio-to-resus\runs\qwen3-4b_dev_k0.jsonl --gold C:\Users\a.ali\radio-to-resus\examples\synthetic_handovers_v2.csv --split dev
+1482 cases, 665 already done, 817 to run -> C:\Users\a.ali\radio-to-resus\runs\qwen3-4b_dev_k0.jsonl
+  25/817  last 37.1s  errors 0
+  50/817  last 37.5s  errors 0
+  75/817  last 37.4s  errors 0
+  100/817  last 47.2s  errors 0
+  125/817  last 53.9s  errors 0
+  150/817  last 40.2s  errors 0
+  175/817  last 38.4s  errors 0
+  200/817  last 40.2s  errors 0
+  225/817  last 37.2s  errors 0
+  250/817  last 37.9s  errors 0
+  275/817  last 37.0s  errors 0
+  300/817  last 35.4s  errors 0
+  325/817  last 41.1s  errors 0
+  350/817  last 39.5s  errors 0
+  375/817  last 40.2s  errors 0
+  400/817  last 40.7s  errors 0
+  425/817  last 42.2s  errors 0
+  450/817  last 31.8s  errors 0
+  475/817  last 36.7s  errors 0
+  500/817  last 36.1s  errors 0
+  525/817  last 39.4s  errors 0
+  550/817  last 38.1s  errors 0
+  575/817  last 35.4s  errors 0
+  600/817  last 37.4s  errors 0
+  625/817  last 41.1s  errors 0
+  650/817  last 41.2s  errors 0
+  675/817  last 37.3s  errors 0
+  700/817  last 39.3s  errors 0
+  725/817  last 45.7s  errors 0
+  750/817  last 42.6s  errors 0
+  775/817  last 37.6s  errors 0
+  800/817  last 39.5s  errors 0
+  817/817  last 37.6s  errors 0
+done. score with: python -m extract.score C:\Users\a.ali\radio-to-resus\runs\qwen3-4b_dev_k0.jsonl --gold C:\Users\a.ali\radio-to-resus\examples\synthetic_handovers_v2.csv --split dev
+   -> {'model': 'qwen3:4b', 'think': 'off', 'note': '', 'n': 1482, 'valid_rate': 0.9022, 'usable_rate': 0.9993, 'field_f1': 0.8315, 'hallucination_rate': 0.0448, 'exact_match': 0.0061, 'correction_accuracy': 0.1404, 'triage_accuracy': 0.8489, 'under_triage_rate': 0.0789, 'silent_under_triage_rate': 0.0, 'over_triage_rate': 0.0709, 'latency_mean_s': 43.83}
+summary: runs\sweep_dev_k0_nall.csv
