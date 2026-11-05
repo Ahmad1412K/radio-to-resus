@@ -1,5 +1,5 @@
 RADIO-TO-RESUS: PIPELINE AND STATUS
-Last updated: 2026-11-04
+Last updated: 2026-11-05
 
 Legend:  [x] done   [~] partial   [ ] to do
 
@@ -251,6 +251,12 @@ OPEN ITEMS
     kept corrections are shared; others are model-specific (llama3.2:3b
     never misreads 11x but misses speed 98%; qwen3:1.7b writes trend
     "stable" 70% when unsaid).
+
+- Git (2026-11-05): repo initialised on branch main, initial commit made,
+  NOT pushed (no remote set). .gitignore keeps out .venv, caches, .env and
+  the real recordings + transcripts (examples/*.flac|m4a|mp4,
+  examples/transcripts/); the notebook no longer prints transcript text,
+  and freeze_test.py --verify skips recordings that are absent.
 
 NEXT
 ----
